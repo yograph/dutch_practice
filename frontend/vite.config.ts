@@ -31,6 +31,29 @@ function resolveCommit(): string {
 }
 
 /**
+ * Which GitHub repo the footer's commit link should point at. From CI when
+ * available (correct on any fork), from the origin remote locally — a
+ * hardcoded owner/name would silently point a fork's footer at the upstream
+ * repo, where its commits do not exist.
+ */
+function resolveRepo(): string {
+  const fromCi = process.env.GITHUB_REPOSITORY;
+  if (fromCi) return fromCi;
+  try {
+    const url = execSync("git remote get-url origin", {
+      stdio: ["ignore", "pipe", "ignore"],
+    })
+      .toString()
+      .trim();
+    const match = url.match(/github\.com[/:]([^/]+\/[^/]+?)(?:\.git)?$/);
+    if (match) return match[1];
+  } catch {
+    // Fall through.
+  }
+  return "unknown";
+}
+
+/**
  * Serves the repo-level `data/` folder at `/data` during development, so the
  * app uses the exact same URLs it will use in production (where
  * scripts/postbuild.mjs copies `data/` into `dist/data`). Without this the SPA
@@ -87,10 +110,13 @@ function serveRepoData(): Plugin {
  */
 export default defineConfig({
   plugins: [react(), tailwindcss(), serveRepoData()],
-  base: "/",
+  // "/" for the custom domain and local dev; the Deploy workflow passes
+  // "/<repo>/" when the site is served as a GitHub project page instead.
+  base: process.env.VITE_BASE_PATH || "/",
   define: {
     __APP_COMMIT__: JSON.stringify(resolveCommit()),
     __BUILT_AT__: JSON.stringify(new Date().toISOString()),
+    __APP_REPO__: JSON.stringify(resolveRepo()),
   },
   resolve: {
     alias: {

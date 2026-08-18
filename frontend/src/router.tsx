@@ -103,6 +103,10 @@ const routeTree = rootRoute.addChildren([
 
 export const router = createRouter({
   routeTree,
+  // Vite's BASE_URL is "/" locally and on the custom domain, and "/<repo>/"
+  // when deployed as a GitHub project page — the router must agree with the
+  // asset base or every route 404s under the subpath.
+  basepath: import.meta.env.BASE_URL,
   defaultNotFoundComponent: NotFoundPage,
   defaultErrorComponent: RouteErrorPage,
   defaultPreload: "intent",

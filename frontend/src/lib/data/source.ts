@@ -28,7 +28,10 @@ import {
 export const DATA_BASE_URL: string =
   // The `?.` is what keeps this module importable outside a bundler - a node
   // script exercising the parser has no `import.meta.env` to read.
-  import.meta.env?.VITE_DATA_BASE_URL ?? "/data";
+  // The default follows Vite's base: "/data" at the domain root, and
+  // "/<repo>/data" when the site is served as a GitHub project page.
+  import.meta.env?.VITE_DATA_BASE_URL ??
+  `${(import.meta.env?.BASE_URL ?? "/").replace(/\/+$/, "")}/data`;
 
 /** Resolves a path relative to `data/` (as found in the manifest or audio index). */
 export function dataUrl(relativePath: string): string {

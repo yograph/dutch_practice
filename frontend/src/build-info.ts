@@ -9,9 +9,11 @@
 
 declare const __APP_COMMIT__: string;
 declare const __BUILT_AT__: string;
+declare const __APP_REPO__: string;
 
 export const APP_COMMIT: string = __APP_COMMIT__;
 export const BUILT_AT: string = __BUILT_AT__;
+export const APP_REPO: string = __APP_REPO__;
 
 /** e.g. "42be5d7 · 17 Aug 2026". Falls back gracefully if the date is unusable. */
 export function buildLabel(): string {
@@ -27,6 +29,6 @@ export function buildLabel(): string {
 
 /** Link straight to the deployed commit on GitHub. */
 export function commitUrl(): string | null {
-  if (APP_COMMIT === "unknown") return null;
-  return `https://github.com/nomomon/flashcards/commit/${APP_COMMIT}`;
+  if (APP_COMMIT === "unknown" || APP_REPO === "unknown") return null;
+  return `https://github.com/${APP_REPO}/commit/${APP_COMMIT}`;
 }

@@ -23,7 +23,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/configure-pages@v5
+      - id: pages
+        uses: actions/configure-pages@v5
 
       - uses: pnpm/action-setup@v4
 
@@ -41,8 +42,16 @@ jobs:
 
       # Produces frontend/dist, including a copy of data/, 404.html, .nojekyll
       # (postbuild.mjs) and everything in frontend/public (Vite).
+      #
+      # VITE_BASE_PATH comes from the Pages config itself: "" for a custom
+      # domain or user site (so the base stays "/", as before), "/<repo>" for a
+      # project page — which is what a fork without the custom domain gets.
+      # Without it a project-page deploy requests /assets/* at the domain root
+      # and renders a blank page.
       - name: Build
         run: pnpm build
+        env:
+          VITE_BASE_PATH: ${{ steps.pages.outputs.base_path }}/
 
       # The custom domain lives in frontend/public/CNAME and reaches dist via
       # Vite's public dir. Losing it points flashcards.nomomon.xyz at nothing,
