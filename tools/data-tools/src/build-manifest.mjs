@@ -12,7 +12,9 @@
 import { serializeJson, writeJsonIfChanged } from "./json.mjs";
 import {
   bankRelativePath,
+  exerciseRelativePath,
   loadBank,
+  loadExerciseSet,
   loadLibrary,
   SCHEMA_VERSION,
 } from "./library.mjs";
@@ -66,8 +68,44 @@ export function buildManifest() {
     };
   });
 
+  // Exercise sets mirror decks: metadata copied from library.json, count and
+  // revision derived from the set's file. The key is spread in only when the
+  // library lists any sets, so a library without them produces the exact bytes
+  // it produced before the field existed (invariant 6 compares bytes).
+  const librarySets = Array.isArray(library.exerciseSets)
+    ? library.exerciseSets
+    : [];
+  const exerciseSets = librarySets.map((set) => {
+    let loaded;
+    try {
+      loaded = loadExerciseSet(set?.id);
+    } catch (error) {
+      throw new Error(
+        `cannot read data/${exerciseRelativePath(set?.id)}: ${error.message}`,
+      );
+    }
+    return {
+      id: set.id,
+      name: set.name,
+      kind: set.kind,
+      // Optional fields spread in so an absent value produces NO key at all,
+      // same as a deck's icon: `"level": null` is not the same file as none.
+      ...(set.level === undefined ? {} : { level: set.level }),
+      color: set.color,
+      ...(set.icon === undefined ? {} : { icon: set.icon }),
+      exerciseCount: Array.isArray(loaded.json?.exercises)
+        ? loaded.json.exercises.length
+        : 0,
+      revision: loaded.revision,
+    };
+  });
+
   return {
-    manifest: { schemaVersion: SCHEMA_VERSION, decks },
+    manifest: {
+      schemaVersion: SCHEMA_VERSION,
+      decks,
+      ...(exerciseSets.length === 0 ? {} : { exerciseSets }),
+    },
     banks,
   };
 }
@@ -90,6 +128,12 @@ function main() {
     console.log(
       `  ${entry.id}: ${entry.wordCount} words, revision ${entry.revision}` +
         ` (${bankRelativePath(entry.id)})`,
+    );
+  }
+  for (const entry of manifest.exerciseSets ?? []) {
+    console.log(
+      `  ${entry.id}: ${entry.exerciseCount} exercises, revision ${entry.revision}` +
+        ` (${exerciseRelativePath(entry.id)})`,
     );
   }
 }

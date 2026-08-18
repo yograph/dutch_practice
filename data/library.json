@@ -31,6 +31,176 @@
           "locale": "en-US"
         }
       }
+    },
+    {
+      "id": "dutch-a1",
+      "name": "Dutch A1",
+      "color": "#16A34A",
+      "icon": "book-open",
+      "languages": {
+        "front": {
+          "label": "Dutch",
+          "locale": "nl-NL"
+        },
+        "back": {
+          "label": "English",
+          "locale": "en-US"
+        }
+      }
+    },
+    {
+      "id": "dutch-a2",
+      "name": "Dutch A2",
+      "color": "#2563EB",
+      "icon": "graduation-cap",
+      "languages": {
+        "front": {
+          "label": "Dutch",
+          "locale": "nl-NL"
+        },
+        "back": {
+          "label": "English",
+          "locale": "en-US"
+        }
+      }
+    },
+    {
+      "id": "dutch-b1",
+      "name": "Dutch B1",
+      "color": "#7C3AED",
+      "icon": "mountain",
+      "languages": {
+        "front": {
+          "label": "Dutch",
+          "locale": "nl-NL"
+        },
+        "back": {
+          "label": "English",
+          "locale": "en-US"
+        }
+      }
+    },
+    {
+      "id": "reacher-s1",
+      "name": "Reacher S1",
+      "color": "#B45309",
+      "icon": "compass",
+      "languages": {
+        "front": {
+          "label": "Dutch",
+          "locale": "nl-NL"
+        },
+        "back": {
+          "label": "English",
+          "locale": "en-US"
+        }
+      }
+    },
+    {
+      "id": "reacher-s2",
+      "name": "Reacher S2",
+      "color": "#9A3412",
+      "icon": "map",
+      "languages": {
+        "front": {
+          "label": "Dutch",
+          "locale": "nl-NL"
+        },
+        "back": {
+          "label": "English",
+          "locale": "en-US"
+        }
+      }
+    },
+    {
+      "id": "reacher-s3",
+      "name": "Reacher S3",
+      "color": "#7C2D12",
+      "icon": "ship",
+      "languages": {
+        "front": {
+          "label": "Dutch",
+          "locale": "nl-NL"
+        },
+        "back": {
+          "label": "English",
+          "locale": "en-US"
+        }
+      }
+    }
+  ],
+  "exerciseSets": [
+    {
+      "id": "grammar-a1",
+      "name": "Grammar A1",
+      "kind": "grammar",
+      "level": "A1",
+      "color": "#D97706",
+      "icon": "graduation-cap"
+    },
+    {
+      "id": "grammar-a2",
+      "name": "Grammar A2",
+      "kind": "grammar",
+      "level": "A2",
+      "color": "#D97706",
+      "icon": "graduation-cap"
+    },
+    {
+      "id": "grammar-b1",
+      "name": "Grammar B1",
+      "kind": "grammar",
+      "level": "B1",
+      "color": "#D97706",
+      "icon": "graduation-cap"
+    },
+    {
+      "id": "translation-a1",
+      "name": "Translation A1",
+      "kind": "translation",
+      "level": "A1",
+      "color": "#0D9488",
+      "icon": "languages"
+    },
+    {
+      "id": "translation-a2",
+      "name": "Translation A2",
+      "kind": "translation",
+      "level": "A2",
+      "color": "#0D9488",
+      "icon": "languages"
+    },
+    {
+      "id": "translation-b1",
+      "name": "Translation B1",
+      "kind": "translation",
+      "level": "B1",
+      "color": "#0D9488",
+      "icon": "languages"
+    },
+    {
+      "id": "writing-a1",
+      "name": "Writing A1",
+      "kind": "writing",
+      "level": "A1",
+      "color": "#4F46E5",
+      "icon": "book-open"
+    },
+    {
+      "id": "writing-a2",
+      "name": "Writing A2",
+      "kind": "writing",
+      "level": "A2",
+      "color": "#4F46E5",
+      "icon": "book-open"
+    },
+    {
+      "id": "writing-b1",
+      "name": "Writing B1",
+      "kind": "writing",
+      "level": "B1",
+      "color": "#4F46E5",
+      "icon": "book-open"
     }
   ]
 }

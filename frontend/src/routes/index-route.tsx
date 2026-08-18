@@ -3,10 +3,11 @@ import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { DeckGrid, DeckGridSkeleton } from "@/features/decks/deck-grid";
+import { PracticeGrid } from "@/features/practice/practice-grid";
 import { useManifest, useSyncData } from "@/lib/data/queries";
 import { cn } from "@/lib/utils";
 
-/** The deck overview. Renders entirely from the manifest. */
+/** The overview: decks, then practice sets. Renders entirely from the manifest. */
 export function OverviewPage() {
   const manifest = useManifest();
   const sync = useSyncData();
@@ -22,6 +23,7 @@ export function OverviewPage() {
   };
 
   const decks = manifest.data?.decks;
+  const exerciseSets = manifest.data?.exerciseSets;
 
   return (
     <div className="flex flex-col gap-6">
@@ -61,6 +63,19 @@ export function OverviewPage() {
           onRetry={handleSync}
         />
       )}
+
+      {/* Practice appears only when the manifest lists sets: a data payload
+          without them renders exactly the overview it always did. */}
+      {exerciseSets && exerciseSets.length > 0 ? (
+        <>
+          <header className="mt-4 flex items-center justify-between gap-4">
+            <h2 className="font-heading text-2xl font-semibold tracking-tight">
+              Practice
+            </h2>
+          </header>
+          <PracticeGrid sets={exerciseSets} />
+        </>
+      ) : null}
     </div>
   );
 }

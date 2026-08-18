@@ -8,15 +8,17 @@ import { z } from "zod";
 import { STUDY_DIRECTIONS } from "@/features/study/directions";
 import { DeckPage } from "@/routes/deck-route";
 import { OverviewPage } from "@/routes/index-route";
+import { PracticePage } from "@/routes/practice-route";
 import { NotFoundPage, RootLayout, RouteErrorPage } from "@/routes/root-layout";
 import { StudyPage } from "@/routes/study-route";
 
 /**
  * Route shape:
  *
- *   /                    the deck grid
+ *   /                    the deck grid and the practice sets
  *   /deck/$deckId        the deck's own page: word list, direction, start
  *   /deck/$deckId/study  the session
+ *   /practice/$setId     a practice set: grammar, translation or writing
  *
  * The deck used to open in a drawer over the grid, which capped how much could
  * be shown and nested a scroll area inside the page's own. A real page has the
@@ -84,7 +86,20 @@ const studyRoute = createRoute({
   component: StudyPage,
 });
 
-const routeTree = rootRoute.addChildren([indexRoute, deckRoute, studyRoute]);
+// No search params: a practice set has no direction or tag options, so its
+// whole configuration is the set id in the path.
+const practiceRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/practice/$setId",
+  component: PracticePage,
+});
+
+const routeTree = rootRoute.addChildren([
+  indexRoute,
+  deckRoute,
+  studyRoute,
+  practiceRoute,
+]);
 
 export const router = createRouter({
   routeTree,

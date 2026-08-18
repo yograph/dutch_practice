@@ -1,0 +1,228 @@
+id	front	back	tags
+# E1 — Welcome to Margrave: the diner, the arrest, the murder investigation
+de-moord	de moord	the murder	e1,crime
+vermoorden	vermoorden	to murder	e1,crime
+het-lijk	het lijk	the corpse, the dead body	e1,crime
+het-slachtoffer	het slachtoffer	the victim	e1,crime
+de-verdachte	de verdachte	the suspect	e1,police
+verdenken	verdenken	to suspect	e1,police
+arresteren	arresteren	to arrest	e1,police
+de-arrestatie	de arrestatie	the arrest	e1,police
+de-handboeien	de handboeien	the handcuffs	e1,police
+de-politie	de politie	the police	e1,police
+de-agent	de agent	the police officer	e1,police
+de-rechercheur	de rechercheur	the detective	e1,police
+het-politiebureau	het politiebureau	the police station	e1,police
+de-burgemeester	de burgemeester	the mayor	e1,town
+de-getuige	de getuige	the witness	e1,police
+het-alibi	het alibi	the alibi	e1,police
+het-verhoor	het verhoor	the interrogation	e1,police
+verhoren	verhoren	to interrogate	e1,police
+onschuldig	onschuldig	innocent	e1,crime
+schuldig	schuldig	guilty	e1,crime
+het-bewijs	het bewijs	the evidence	e1,crime
+de-vingerafdruk	de vingerafdruk	the fingerprint	e1,crime
+het-wapen	het wapen	the weapon	e1,crime
+het-pistool	het pistool	the pistol	e1,crime
+de-kogel	de kogel	the bullet	e1,crime
+schieten	schieten	to shoot	e1,crime
+het-schot	het schot	the (gun)shot	e1,crime
+de-moordenaar	de moordenaar	the murderer	e1,crime
+het-motief	het motief	the motive	e1,crime
+de-zwerver	de zwerver	the drifter, the vagrant	e1,town
+de-vreemdeling	de vreemdeling	the stranger	e1,town
+liften	liften	to hitchhike	e1,town
+de-lifter	de lifter	the hitchhiker	e1,town
+het-wegrestaurant	het wegrestaurant	the diner, the roadside restaurant	e1,town
+de-perziktaart	de perziktaart	the peach pie	e1,town
+het-stadje	het stadje	the small town	e1,town
+verdwijnen	verdwijnen	to disappear	e1,crime
+de-misdaad	de misdaad	the crime	e1,crime
+de-crimineel	de crimineel	the criminal	e1,crime
+het-bloed	het bloed	the blood	e1,crime
+de-snelweg	de snelweg	the highway	e1,town
+de-veteraan	de veteraan	the veteran	e1,military
+het-leger	het leger	the army	e1,military
+de-militair	de militair	the soldier	e1,military
+de-militaire-politie	de militaire politie	the military police	e1,military
+met-pensioen	met pensioen	retired	e1,military
+
+# E2 — First Dance: jail, the morgue, the second body
+de-gevangenis	de gevangenis	the prison	e2,prison
+de-cel	de cel	the (prison) cell	e2,prison
+de-bewaker	de bewaker	the guard	e2,prison
+de-gedetineerde	de gedetineerde	the inmate, the detainee	e2,prison
+de-bende	de bende	the gang	e2,prison
+de-vechtpartij	de vechtpartij	the fight, the brawl	e2,prison
+overleven	overleven	to survive	e2,prison
+ontsnappen	ontsnappen	to escape	e2,prison
+identificeren	identificeren	to identify	e2,investigation
+de-identiteit	de identiteit	the identity	e2,investigation
+het-mortuarium	het mortuarium	the morgue	e2,investigation
+de-lijkschouwer	de lijkschouwer	the coroner, the medical examiner	e2,investigation
+de-autopsie	de autopsie	the autopsy	e2,investigation
+de-doodsoorzaak	de doodsoorzaak	the cause of death	e2,investigation
+de-begrafenis	de begrafenis	the funeral	e2,grief
+rouwen	rouwen	to mourn	e2,grief
+het-verdriet	het verdriet	the grief, the sorrow	e2,grief
+de-wraak	de wraak	the revenge	e2,crime
+wreken	wreken	to avenge	e2,crime
+de-leugen	de leugen	the lie	e2,crime
+liegen	liegen	to lie (tell a lie)	e2,crime
+de-waarheid	de waarheid	the truth	e2,investigation
+vertrouwen	vertrouwen	to trust	e2,investigation
+samenwerken	samenwerken	to cooperate, to work together	e2,investigation
+het-spoor	het spoor	the trail, the track	e2,investigation
+de-aanwijzing	de aanwijzing	the clue	e2,investigation
+het-dossier	het dossier	the file, the dossier	e2,investigation
+de-zakenman	de zakenman	the businessman	e2,town
+machtig	machtig	powerful	e2,town
+corrupt	corrupt	corrupt	e2,crime
+de-corruptie	de corruptie	the corruption	e2,crime
+omkopen	omkopen	to bribe	e2,crime
+bedreigen	bedreigen	to threaten (someone)	e2,crime
+het-gevaar	het gevaar	the danger	e2,crime
+
+# E3 — Spoonful: the confession, counterfeit money, the cover-up
+vals	vals	counterfeit, false	e3,money
+het-valse-geld	het valse geld	the counterfeit money	e3,money
+vervalsen	vervalsen	to counterfeit, to forge	e3,money
+de-vervalser	de vervalser	the counterfeiter, the forger	e3,money
+het-biljet	het biljet	the banknote	e3,money
+de-drukpers	de drukpers	the printing press	e3,money
+drukken	drukken	to print	e3,money
+de-voorraad	de voorraad	the supply, the stock	e3,money
+het-magazijn	het magazijn	the warehouse	e3,money
+smokkelen	smokkelen	to smuggle	e3,crime
+de-smokkelaar	de smokkelaar	the smuggler	e3,crime
+witwassen	witwassen	to launder (money)	e3,money
+de-doofpot	de doofpot	the cover-up	e3,crime
+de-samenzwering	de samenzwering	the conspiracy	e3,crime
+het-netwerk	het netwerk	the network	e3,crime
+de-handlanger	de handlanger	the accomplice	e3,crime
+de-huurmoordenaar	de huurmoordenaar	the hitman	e3,crime
+opsporen	opsporen	to track down	e3,investigation
+achtervolgen	achtervolgen	to chase, to pursue	e3,investigation
+bekennen	bekennen	to confess	e3,investigation
+de-bekentenis	de bekentenis	the confession	e3,investigation
+chanteren	chanteren	to blackmail	e3,crime
+de-chantage	de chantage	the blackmail	e3,crime
+onder-druk-zetten	onder druk zetten	to put under pressure	e3,crime
+de-rekening	de rekening	the account, the bill	e3,money
+de-blues	de blues	the blues (music)	e3,music
+de-gitaar	de gitaar	the guitar	e3,music
+de-legende	de legende	the legend	e3,music
+het-geheim	het geheim	the secret	e3,investigation
+onthullen	onthullen	to reveal	e3,investigation
+het-raadsel	het raadsel	the mystery, the riddle	e3,investigation
+de-val	de val	the trap	e3,crime
+gewond	gewond	wounded, injured	e3,violence
+de-wond	de wond	the wound	e3,violence
+doden	doden	to kill	e3,violence
+dood	dood	dead	e3,violence
+de-dood	de dood	the death	e3,violence
+wanhopig	wanhopig	desperate	e3,feelings
+dapper	dapper	brave	e3,feelings
+de-held	de held	the hero	e3,feelings
+
+# E4-E8 — the second half of the season: the hunt, the paper trail, the showdown
+de-plaats-delict	de plaats delict	the crime scene	e4,crime
+het-sporenonderzoek	het sporenonderzoek	the forensic examination	e4,investigation
+opgraven	opgraven	to dig up, to exhume	e4,investigation
+de-schuilplaats	de schuilplaats	the hiding place	e4,places
+onderduiken	onderduiken	to go into hiding	e4,crime
+beschermen	beschermen	to protect	e4,crime
+de-sluipschutter	de sluipschutter	the sniper	e4,military
+de-uitkijkpost	de uitkijkpost	the lookout post	e4,military
+het-geweer	het geweer	the rifle	e4,military
+richten	richten	to aim	e4,military
+de-hinderlaag	de hinderlaag	the ambush	e4,military
+bewaken	bewaken	to guard	e4,surveillance
+de-bewaking	de bewaking	the surveillance, the security	e4,surveillance
+in-de-gaten-houden	in de gaten houden	to keep an eye on	e4,surveillance
+schaduwen	schaduwen	to tail someone	e4,surveillance
+afluisteren	afluisteren	to eavesdrop, to wiretap	e4,surveillance
+de-beveiligingscamera	de beveiligingscamera	the security camera	e4,surveillance
+het-veevoer	het veevoer	the cattle feed	e4,business
+de-vrachtwagen	de vrachtwagen	the truck, the lorry	e4,business
+de-loods	de loods	the warehouse, the shed	e4,places
+de-luchthaven	de luchthaven	the airport	e5,places
+de-parkeergarage	de parkeergarage	the parking garage	e5,places
+de-menigte	de menigte	the crowd	e5,places
+uit-het-oog-verliezen	uit het oog verliezen	to lose sight of	e5,surveillance
+de-camerabeelden	de camerabeelden	the camera footage	e5,surveillance
+ontvoeren	ontvoeren	to kidnap, to abduct	e5,crime
+de-ontvoering	de ontvoering	the kidnapping, the abduction	e5,crime
+neersteken	neersteken	to stab (someone)	e5,violence
+de-aanslag	de aanslag	the attack, the attempt on someone's life	e5,violence
+de-huurling	de huurling	the mercenary, the hired gun	e5,military
+inhuren	inhuren	to hire (someone for a job)	e5,business
+het-milieu	het milieu	the environment	e5,environment
+de-vervuiling	de vervuiling	the pollution	e5,environment
+de-chemicali-n	de chemicaliën	the chemicals	e5,environment
+de-inspecteur	de inspecteur	the inspector, the investigator	e5,investigation
+vermist	vermist	missing (of a person)	e5,investigation
+de-gegevens	de gegevens	the data, the records	e5,investigation
+waarschuwen	waarschuwen	to warn	e5,investigation
+verliefd	verliefd	in love	e5,feelings
+het-verlies	het verlies	the loss	e5,feelings
+de-papierfabriek	de papierfabriek	the paper mill	e6,business
+de-grondstof	de grondstof	the raw material	e6,business
+invoeren	invoeren	to import	e6,business
+de-haven	de haven	the port, the harbour	e6,places
+verschepen	verschepen	to ship (goods by sea)	e6,business
+de-lading	de lading	the cargo, the load	e6,business
+de-zending	de zending	the shipment, the consignment	e6,business
+de-kustwacht	de kustwacht	the coast guard	e6,military
+de-blokkade	de blokkade	the blockade	e6,military
+zich-opstapelen	zich opstapelen	to pile up, to accumulate	e6,money
+de-lijst	de lijst	the list	e6,investigation
+de-afkorting	de afkorting	the abbreviation	e6,investigation
+ontcijferen	ontcijferen	to decipher, to decode	e6,investigation
+de-inkt	de inkt	the ink	e6,money
+het-watermerk	het watermerk	the watermark	e6,money
+de-echtheid	de echtheid	the authenticity, the genuineness	e6,money
+nep	nep	fake, phony	e6,money
+de-valuta	de valuta	the currency	e6,money
+het-buitenland	het buitenland	abroad, foreign countries	e6,places
+de-geldstroom	de geldstroom	the flow of money	e6,money
+het-verraad	het verraad	the betrayal, the treason	e7,crime
+verraden	verraden	to betray	e7,crime
+de-verrader	de verrader	the traitor	e7,crime
+de-mol	de mol	the mole (infiltrator)	e7,crime
+ontmaskeren	ontmaskeren	to unmask, to expose	e7,investigation
+doorhebben	doorhebben	to see through, to be onto (someone)	e7,investigation
+wantrouwen	wantrouwen	to distrust	e7,feelings
+de-gijzelaar	de gijzelaar	the hostage	e7,crime
+gijzelen	gijzelen	to take hostage	e7,crime
+zich-voorbereiden	zich voorbereiden	to prepare (oneself)	e7,military
+de-munitie	de munitie	the ammunition	e7,military
+de-wapenwinkel	de wapenwinkel	the gun shop	e7,places
+het-hagelgeweer	het hagelgeweer	the shotgun	e7,military
+de-vuurkracht	de vuurkracht	the firepower	e7,military
+omsingelen	omsingelen	to surround, to encircle	e7,military
+lokken	lokken	to lure	e7,crime
+het-aas	het aas	the bait	e7,crime
+de-bondgenoot	de bondgenoot	the ally	e7,military
+uitschakelen	uitschakelen	to take out, to eliminate	e7,violence
+zwijgen	zwijgen	to remain silent, to say nothing	e7,feelings
+het-vuurgevecht	het vuurgevecht	the firefight, the gunfight	e8,violence
+de-schietpartij	de schietpartij	the shooting (incident)	e8,violence
+het-kruisvuur	het kruisvuur	the crossfire	e8,violence
+dekking-zoeken	dekking zoeken	to take cover	e8,military
+herladen	herladen	to reload	e8,military
+neerschieten	neerschieten	to gun down, to shoot (someone) down	e8,violence
+de-brand	de brand	the fire, the blaze	e8,fire
+in-brand-steken	in brand steken	to set on fire	e8,fire
+afbranden	afbranden	to burn down	e8,fire
+de-vlam	de vlam	the flame	e8,fire
+de-vuurzee	de vuurzee	the inferno, the sea of flames	e8,fire
+de-rook	de rook	the smoke	e8,fire
+de-explosie	de explosie	the explosion	e8,fire
+de-brandwond	de brandwond	the burn (injury)	e8,violence
+het-litteken	het litteken	the scar	e8,violence
+de-nooduitgang	de nooduitgang	the emergency exit	e8,places
+de-afrekening	de afrekening	the settling of scores, the reckoning	e8,crime
+het-afscheid	het afscheid	the farewell, the goodbye	e8,feelings
+verdertrekken	verdertrekken	to move on, to travel on	e8,travel
+zwerven	zwerven	to roam, to drift	e8,travel

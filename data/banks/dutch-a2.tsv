@@ -1,0 +1,238 @@
+id	front	back	tags
+# Verbs
+vertellen	vertellen	to tell	verbs
+uitleggen	uitleggen	to explain	verbs
+betekenen	betekenen	to mean	verbs
+herhalen	herhalen	to repeat	verbs
+onthouden	onthouden	to remember, to memorize	verbs
+vergeten	vergeten	to forget	verbs
+verliezen	verliezen	to lose	verbs
+winnen	winnen	to win	verbs
+sturen	sturen	to send	verbs
+ontvangen	ontvangen	to receive	verbs
+krijgen	krijgen	to get, to receive	verbs
+brengen	brengen	to bring	verbs
+halen	halen	to fetch, to get	verbs
+meenemen	meenemen	to take along	verbs
+afspreken	afspreken	to arrange to meet	verbs
+uitnodigen	uitnodigen	to invite	verbs
+bezoeken	bezoeken	to visit	verbs
+verhuizen	verhuizen	to move (house)	verbs
+huren	huren	to rent	verbs
+verkopen	verkopen	to sell	verbs
+bestellen	bestellen	to order	verbs
+reserveren	reserveren	to reserve	verbs
+aanraden	aanraden	to recommend	verbs
+kiezen	kiezen	to choose	verbs
+beslissen	beslissen	to decide	verbs
+veranderen	veranderen	to change	verbs
+verbeteren	verbeteren	to improve	verbs
+oefenen	oefenen	to practice	verbs
+slagen	slagen	to succeed, to pass (an exam)	verbs
+zakken	zakken	to fail (an exam)	verbs
+solliciteren	solliciteren	to apply (for a job)	verbs,work
+verdienen	verdienen	to earn	verbs,work
+sparen	sparen	to save (money)	verbs
+lenen	lenen	to borrow, to lend	verbs
+repareren	repareren	to repair	verbs
+schoonmaken	schoonmaken	to clean	verbs
+koken	koken	to cook	verbs
+bakken	bakken	to bake, to fry	verbs
+wassen	wassen	to wash	verbs
+opruimen	opruimen	to tidy up	verbs
+trouwen	trouwen	to marry	verbs
+scheiden	scheiden	to divorce, to separate	verbs
+geboren-worden	geboren worden	to be born	verbs
+huilen	huilen	to cry	verbs
+lachen	lachen	to laugh	verbs
+glimlachen	glimlachen	to smile	verbs
+schrikken	schrikken	to be startled	verbs
+zich-vervelen	zich vervelen	to be bored	verbs
+zich-haasten	zich haasten	to hurry	verbs
+zich-herinneren	zich herinneren	to remember	verbs
+gebeuren	gebeuren	to happen	verbs
+lukken	lukken	to succeed, to work out	verbs
+passen	passen	to fit, to try on	verbs
+proeven	proeven	to taste	verbs
+ruiken	ruiken	to smell	verbs
+aanraken	aanraken	to touch	verbs
+duwen	duwen	to push	verbs
+trekken	trekken	to pull	verbs
+vallen	vallen	to fall	verbs
+gooien	gooien	to throw	verbs
+vangen	vangen	to catch	verbs
+rennen	rennen	to run	verbs
+springen	springen	to jump	verbs
+klimmen	klimmen	to climb	verbs
+vertrekken	vertrekken	to depart	verbs,travel
+aankomen	aankomen	to arrive	verbs,travel
+instappen	instappen	to get in, to board	verbs,travel
+uitstappen	uitstappen	to get off	verbs,travel
+overstappen	overstappen	to transfer (trains, buses)	verbs,travel
+missen	missen	to miss	verbs
+ophalen	ophalen	to pick up	verbs
+parkeren	parkeren	to park	verbs,travel
+tanken	tanken	to fill up (fuel)	verbs,travel
+
+# Work & school
+de-baan	de baan	the job	work
+het-beroep	het beroep	the profession	work
+het-kantoor	het kantoor	the office	work
+de-vergadering	de vergadering	the meeting	work
+de-collega	de collega	the colleague	work
+de-baas	de baas	the boss	work
+het-salaris	het salaris	the salary	work
+het-sollicitatiegesprek	het sollicitatiegesprek	the job interview	work
+de-ervaring	de ervaring	the experience	work
+de-opleiding	de opleiding	the education, the training	school
+het-examen	het examen	the exam	school
+het-diploma	het diploma	the diploma	school
+de-cursus	de cursus	the course	school
+de-les	de les	the lesson	school
+het-huiswerk	het huiswerk	the homework	school
+de-leraar	de leraar	the teacher	school
+de-student	de student	the student	school
+
+# Health & body
+de-dokter	de dokter	the doctor	health
+de-huisarts	de huisarts	the general practitioner	health
+de-tandarts	de tandarts	the dentist	health
+de-apotheek	de apotheek	the pharmacy	health
+het-medicijn	het medicijn	the medicine	health
+de-pijn	de pijn	the pain	health
+de-hoofdpijn	de hoofdpijn	the headache	health
+de-koorts	de koorts	the fever	health
+de-verkoudheid	de verkoudheid	the (common) cold	health
+de-griep	de griep	the flu	health
+het-recept	het recept	the prescription, the recipe	health
+de-afspraak	de afspraak	the appointment	health
+het-lichaam	het lichaam	the body	body
+het-hoofd	het hoofd	the head	body
+de-arm	de arm	the arm	body
+het-been	het been	the leg	body
+de-hand	de hand	the hand	body
+de-voet	de voet	the foot	body
+de-rug	de rug	the back	body
+de-buik	de buik	the belly	body
+het-hart	het hart	the heart	body
+de-keel	de keel	the throat	body
+het-oog	het oog	the eye	body
+het-oor	het oor	the ear	body
+de-neus	de neus	the nose	body
+de-mond	de mond	the mouth	body
+de-tand	de tand	the tooth	body
+het-haar	het haar	the hair	body
+de-huid	de huid	the skin	body
+
+# Shopping & clothes
+de-kleding	de kleding	the clothes	shopping
+de-jas	de jas	the coat	shopping
+de-broek	de broek	the trousers	shopping
+het-shirt	het shirt	the shirt	shopping
+de-trui	de trui	the sweater	shopping
+de-jurk	de jurk	the dress	shopping
+de-rok	de rok	the skirt	shopping
+de-schoen	de schoen	the shoe	shopping
+de-sok	de sok	the sock	shopping
+de-maat	de maat	the size	shopping
+de-kassa	de kassa	the checkout	shopping
+de-korting	de korting	the discount	shopping
+de-aanbieding	de aanbieding	the offer, the sale	shopping
+de-bon	de bon	the receipt	shopping
+ruilen	ruilen	to exchange (an item)	shopping
+de-portemonnee	de portemonnee	the wallet	shopping
+de-tas	de tas	the bag	shopping
+het-cadeau	het cadeau	the gift	shopping
+
+# Feelings & opinions
+de-mening	de mening	the opinion	opinions
+het-idee	het idee	the idea	opinions
+het-eens-zijn-met	het eens zijn met	to agree with	opinions
+belangrijk	belangrijk	important	opinions
+interessant	interessant	interesting	opinions
+saai	saai	boring	opinions
+grappig	grappig	funny	opinions
+vreemd	vreemd	strange	opinions
+boos	boos	angry	feelings
+bang	bang	afraid	feelings
+trots	trots	proud	feelings
+jaloers	jaloers	jealous	feelings
+verbaasd	verbaasd	surprised	feelings
+teleurgesteld	teleurgesteld	disappointed	feelings
+tevreden	tevreden	satisfied	feelings
+zenuwachtig	zenuwachtig	nervous	feelings
+rustig	rustig	calm, quiet	feelings
+eerlijk	eerlijk	honest	character
+aardig	aardig	kind	character
+vriendelijk	vriendelijk	friendly	character
+beleefd	beleefd	polite	character
+onbeleefd	onbeleefd	rude	character
+verlegen	verlegen	shy	character
+zeker	zeker	sure, certain	opinions
+onzeker	onzeker	unsure, insecure	opinions
+
+# Time & adverbs
+eergisteren	eergisteren	the day before yesterday	time
+overmorgen	overmorgen	the day after tomorrow	time
+vorige-week	vorige week	last week	time
+volgende-week	volgende week	next week	time
+straks	straks	in a bit, later today	time
+net	net	just (now)	time
+al	al	already	time
+nog	nog	still, yet	time
+meteen	meteen	immediately	time
+eindelijk	eindelijk	finally	time
+opeens	opeens	suddenly	time
+plotseling	plotseling	suddenly	time
+ondertussen	ondertussen	meanwhile	time
+daarna	daarna	after that	time
+eerst	eerst	first	time
+toen	toen	then (in the past), when	time
+dus	dus	so	adverbs
+daarom	daarom	therefore	adverbs
+trouwens	trouwens	by the way	adverbs
+eigenlijk	eigenlijk	actually	adverbs
+bijna	bijna	almost	adverbs
+ongeveer	ongeveer	approximately	adverbs
+precies	precies	exactly	adverbs
+zelfs	zelfs	even	adverbs
+vooral	vooral	especially	adverbs
+tenminste	tenminste	at least	adverbs
+helaas	helaas	unfortunately	adverbs
+gelukkig	gelukkig	fortunately, happy	adverbs
+
+# Weather & nature
+de-temperatuur	de temperatuur	the temperature	weather
+de-graad	de graad	the degree	weather
+bewolkt	bewolkt	cloudy	weather
+de-wolk	de wolk	the cloud	weather
+het-onweer	het onweer	the thunderstorm	weather
+de-bliksem	de bliksem	the lightning	weather
+de-donder	de donder	the thunder	weather
+de-mist	de mist	the fog	weather
+glad	glad	slippery	weather
+de-lucht	de lucht	the sky, the air	nature
+de-zee	de zee	the sea	nature
+het-strand	het strand	the beach	nature
+het-bos	het bos	the forest	nature
+de-rivier	de rivier	the river	nature
+het-meer	het meer	the lake	nature
+de-berg	de berg	the mountain	nature
+het-eiland	het eiland	the island	nature
+
+# Practical life
+de-buurman	de buurman	the neighbour (m)	daily-life
+de-buurvrouw	de buurvrouw	the neighbour (f)	daily-life
+de-buurt	de buurt	the neighbourhood	daily-life
+de-gemeente	de gemeente	the municipality	daily-life
+het-paspoort	het paspoort	the passport	daily-life
+het-rijbewijs	het rijbewijs	the driving licence	daily-life
+de-verzekering	de verzekering	the insurance	daily-life
+het-formulier	het formulier	the form	daily-life
+invullen	invullen	to fill in	daily-life
+ondertekenen	ondertekenen	to sign	daily-life
+de-handtekening	de handtekening	the signature	daily-life
+de-envelop	de envelop	the envelope	daily-life
+de-postzegel	de postzegel	the (postage) stamp	daily-life
+het-pakket	het pakket	the package	daily-life
+de-brievenbus	de brievenbus	the mailbox	daily-life

@@ -9,6 +9,12 @@ import type {
   Manifest,
   Word,
 } from "@/types/deck";
+import type {
+  ExerciseSetSummary,
+  GrammarExercise,
+  TranslationExercise,
+  WritingExercise,
+} from "@/types/exercise";
 
 /**
  * Runtime validation for everything the app reads out of `data/`. The
@@ -128,9 +134,87 @@ const deckSummarySchema = z.object({
   icon: nonEmptyText.optional(),
 });
 
+/**
+ * Exercise items, one schema per set kind. Learner-facing text is plain (no
+ * inline markup), but that is a style rule the validator warns about at
+ * authoring time — the client checks presence only, same stance as bank rows.
+ */
+const exerciseTags = z.array(nonEmptyText);
+
+export const grammarExerciseSchema = z
+  .object({
+    id: slugId,
+    prompt: nonEmptyText,
+    choices: z.array(nonEmptyText).min(2),
+    answerIndex: z.number().int().nonnegative(),
+    explanation: nonEmptyText,
+    tags: exerciseTags,
+  })
+  // Out-of-range would render a question no choice can ever answer correctly.
+  .refine((exercise) => exercise.answerIndex < exercise.choices.length, {
+    message: "answerIndex must be an index into choices",
+  })
+  // The runner keys choice buttons by their text, so two identical choices
+  // would share React state. The repo validator enforces this too, but this
+  // schema is what guards data served from hosts that never ran it.
+  .refine(
+    (exercise) => new Set(exercise.choices).size === exercise.choices.length,
+    { message: "choices must be distinct" },
+  );
+
+export const translationExerciseSchema = z.object({
+  id: slugId,
+  source: nonEmptyText,
+  reference: nonEmptyText,
+  direction: z.enum(["nl-en", "en-nl"]),
+  tags: exerciseTags,
+});
+
+export const writingExerciseSchema = z.object({
+  id: slugId,
+  prompt: nonEmptyText,
+  instructions: nonEmptyText,
+  example: nonEmptyText,
+  tags: exerciseTags,
+});
+
+/**
+ * The shape of `exercises/<id>.json`, by set kind. The kind itself lives in
+ * `library.json` (and so in the manifest entry), never in the file, so the
+ * caller picks the schema from the summary it already holds.
+ */
+export const exerciseFileSchemas = {
+  grammar: z.object({
+    schemaVersion,
+    exercises: z.array(grammarExerciseSchema),
+  }),
+  translation: z.object({
+    schemaVersion,
+    exercises: z.array(translationExerciseSchema),
+  }),
+  writing: z.object({
+    schemaVersion,
+    exercises: z.array(writingExerciseSchema),
+  }),
+} as const;
+
+const exerciseSetSummarySchema = z.object({
+  id: slugId,
+  name: nonEmptyText,
+  kind: z.enum(["grammar", "translation", "writing"]),
+  level: nonEmptyText.optional(),
+  color: hexColor,
+  revision: contentRevision,
+  exerciseCount: z.number().int().nonnegative(),
+  // Same stance as a deck's icon: any string, unknown names fall back.
+  icon: nonEmptyText.optional(),
+});
+
 export const manifestSchema = z.object({
   schemaVersion,
   decks: z.array(deckSummarySchema),
+  // Optional: absent from manifests generated before exercise sets existed.
+  exerciseSets: z.array(exerciseSetSummarySchema).optional(),
 });
 
 const audioClipSchema = z.object({
@@ -195,4 +279,16 @@ export type AudioClipSchemaMatches = Expect<
 >;
 export type AudioIndexSchemaMatches = Expect<
   Mutual<z.output<typeof audioIndexSchema>, AudioIndex>
+>;
+export type GrammarExerciseSchemaMatches = Expect<
+  Mutual<z.output<typeof grammarExerciseSchema>, GrammarExercise>
+>;
+export type TranslationExerciseSchemaMatches = Expect<
+  Mutual<z.output<typeof translationExerciseSchema>, TranslationExercise>
+>;
+export type WritingExerciseSchemaMatches = Expect<
+  Mutual<z.output<typeof writingExerciseSchema>, WritingExercise>
+>;
+export type ExerciseSetSummarySchemaMatches = Expect<
+  Mutual<z.output<typeof exerciseSetSummarySchema>, ExerciseSetSummary>
 >;

@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "exercises": [
+    {
+      "id": "introduce-yourself-to-a-new-dutch",
+      "prompt": "Introduce yourself to a new Dutch class.",
+      "instructions": "Include your name, where you live, and your job or studies; write 5-6 sentences.",
+      "example": "Hallo, ik heet Sara en ik ben dertig jaar oud.\nIk kom uit Spanje, maar ik woon nu in Utrecht.\nIk woon daar al twee jaar met mijn vriend.\nIk werk als verpleegkundige in een groot ziekenhuis.\nIn mijn vrije tijd fiets ik graag langs de rivier.\nIk leer Nederlands omdat ik hier wil blijven wonen.",
+      "tags": [
+        "introduction",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "write-a-short-message-to-a",
+      "prompt": "Write a short message to a friend to cancel your plans for tonight.",
+      "instructions": "Include the reason you cancel, an apology, and a suggestion for a new date; write 4-5 sentences.",
+      "example": "Hoi Tom, sorry, maar ik kan vanavond niet komen.\nIk ben ziek geworden en ik heb koorts.\nHet spijt me echt, want ik had er zin in.\nZullen we volgende week vrijdag afspreken?\nIk hoor het graag van je!",
+      "tags": [
+        "friends",
+        "messages"
+      ]
+    },
+    {
+      "id": "describe-your-daily-routine-on-a",
+      "prompt": "Describe your daily routine on a normal working day.",
+      "instructions": "Include your morning, your work or school, and your evening, and mention at least two times of day; write 6 sentences.",
+      "example": "Ik sta elke dag om zeven uur op.\nEerst drink ik koffie en eet ik een boterham.\nOm half negen fiets ik naar mijn werk.\nIk werk tot vijf uur op een kantoor in het centrum.\n's Avonds kook ik meestal voor mijn gezin.\nOm elf uur ga ik naar bed.",
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "write-about-your-last-holiday",
+      "prompt": "Write about your last holiday.",
+      "instructions": "Say where you went, who you went with, and one thing you did there, using the perfect tense; write 5-6 sentences.",
+      "example": "Vorige zomer ben ik naar Griekenland geweest.\nIk ben er samen met mijn zus naartoe gegaan.\nWe hebben een week in een klein hotel aan zee geslapen.\nElke dag hebben we gezwommen en op het strand gelegen.\nOp de laatste dag hebben we een oude stad bezocht.\nHet was een fantastische vakantie!",
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "write-a-short-email-to-your",
+      "prompt": "Write a short email to your teacher to say that you cannot come to the lesson tomorrow.",
+      "instructions": "Include the reason, an apology, and a question about the homework; write 4-5 sentences.",
+      "example": "Beste mevrouw De Vries,\nIk kan morgen helaas niet naar de les komen.\nIk heb een afspraak bij de tandarts.\nHet spijt me dat ik de les mis.\nKunt u mij het huiswerk sturen?\nMet vriendelijke groeten, Ali",
+      "tags": [
+        "school",
+        "messages"
+      ]
+    },
+    {
+      "id": "give-your-opinion-do-you-prefer",
+      "prompt": "Give your opinion: do you prefer living in a city or in a village?",
+      "instructions": "State your preference and give two reasons; write 5 sentences.",
+      "example": "Ik woon liever in een stad dan in een dorp.\nIn de stad is er altijd iets te doen.\nEr zijn veel winkels, cafés en musea.\nOok kan ik overal met de fiets of de tram naartoe.\nEen dorp is rustig, maar voor mij is het te stil.",
+      "tags": [
+        "opinions",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "describe-your-best-friend",
+      "prompt": "Describe your best friend.",
+      "instructions": "Include their name, how you met, and what you do together; write 5-6 sentences.",
+      "example": "Mijn beste vriendin heet Emma.\nWe kennen elkaar al tien jaar.\nIk heb haar op school ontmoet.\nZe is grappig en ze helpt me altijd.\nIn het weekend gaan we vaak samen sporten.\nDaarna drinken we koffie in ons favoriete café.",
+      "tags": [
+        "friends"
+      ]
+    },
+    {
+      "id": "write-a-short-text-about-your",
+      "prompt": "Write a short text about your favourite food.",
+      "instructions": "Say what it is, when you eat it, and why you like it; write 5 sentences.",
+      "example": "Ik eet het liefst pannenkoeken.\nMijn moeder maakte ze vroeger elke zondag.\nIk eet ze graag met kaas en een beetje stroop.\nZe zijn lekker en makkelijk om te maken.\nAls vrienden komen eten, bak ik altijd pannenkoeken.",
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "write-a-short-note-to-your",
+      "prompt": "Write a short note to your neighbour asking them to accept a package for you.",
+      "instructions": "Say when the package arrives, why you are not at home, and thank them; write 4-5 sentences.",
+      "example": "Beste buurvrouw,\nMorgen komt er een pakketje voor mij.\nIk ben dan niet thuis, want ik moet werken.\nKunt u het pakketje voor mij aannemen?\nAlvast bedankt voor uw hulp!",
+      "tags": [
+        "messages",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "describe-your-house-or-apartment",
+      "prompt": "Describe your house or apartment.",
+      "instructions": "Name the rooms, say which room or place is your favourite, and explain why; write 5-6 sentences.",
+      "example": "Ik woon in een klein appartement in Rotterdam.\nHet heeft twee slaapkamers, een keuken en een badkamer.\nDe woonkamer is licht, want er zijn grote ramen.\nMijn lievelingsplek is het balkon.\nDaar drink ik 's ochtends mijn koffie.\nIn de zomer eten we daar ook vaak buiten.",
+      "tags": [
+        "home"
+      ]
+    },
+    {
+      "id": "write-about-your-plans-for-next",
+      "prompt": "Write about your plans for next weekend.",
+      "instructions": "Mention two activities and who you will do them with, using 'gaan' for the future; write 5 sentences.",
+      "example": "Volgend weekend ga ik veel leuke dingen doen.\nZaterdagochtend ga ik met mijn vader naar de markt.\nDaarna gaan we samen bij mijn oma lunchen.\nZondag ga ik met vrienden naar het park als het mooi weer is.\nIk hoop dat het niet gaat regenen!",
+      "tags": [
+        "free-time",
+        "plans"
+      ]
+    },
+    {
+      "id": "write-a-short-review-of-a",
+      "prompt": "Write a short review of a restaurant you visited recently.",
+      "instructions": "Say what you ate, what you thought of the service, and whether you recommend the restaurant, using the perfect tense; write 5-6 sentences.",
+      "example": "Vorige week heb ik bij restaurant De Zon gegeten.\nIk heb vis met frietjes en een salade besteld.\nHet eten was vers en heel lekker.\nDe ober was vriendelijk en snel.\nHet was ook niet duur.\nIk vind dit restaurant echt een aanrader!",
+      "tags": [
+        "food",
+        "opinions"
+      ]
+    }
+  ]
+}

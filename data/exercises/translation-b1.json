@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 2,
+  "exercises": [
+    {
+      "id": "ik-vind-dat-de-gemeente-meer",
+      "source": "Ik vind dat de gemeente meer fietspaden zou moeten aanleggen.",
+      "reference": "I think the municipality should build more bike paths.",
+      "direction": "nl-en",
+      "tags": [
+        "opinions",
+        "city-life"
+      ]
+    },
+    {
+      "id": "hoewel-het-hard-regende-zijn-we",
+      "source": "Hoewel het hard regende, zijn we toch naar het strand gegaan.",
+      "reference": "Although it was raining hard, we still went to the beach.",
+      "direction": "nl-en",
+      "tags": [
+        "leisure",
+        "weather"
+      ]
+    },
+    {
+      "id": "het-oude-station-wordt-volgend-jaar",
+      "source": "Het oude station wordt volgend jaar volledig gerenoveerd.",
+      "reference": "The old station will be completely renovated next year.",
+      "direction": "nl-en",
+      "tags": [
+        "city-life"
+      ]
+    },
+    {
+      "id": "als-ik-meer-tijd-had-zou",
+      "source": "Als ik meer tijd had, zou ik vaker naar mijn ouders gaan.",
+      "reference": "If I had more time, I would visit my parents more often.",
+      "direction": "nl-en",
+      "tags": [
+        "family",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "ze-heeft-besloten-een-cursus-spaans",
+      "source": "Ze heeft besloten een cursus Spaans te volgen, omdat ze naar Argentinië wil reizen.",
+      "reference": "She has decided to take a Spanish course because she wants to travel to Argentina.",
+      "direction": "nl-en",
+      "tags": [
+        "education",
+        "travel"
+      ]
+    },
+    {
+      "id": "volgens-mij-is-het-belangrijker-om",
+      "source": "Volgens mij is het belangrijker om gelukkig te zijn dan om veel geld te verdienen.",
+      "reference": "In my opinion it is more important to be happy than to earn a lot of money.",
+      "direction": "nl-en",
+      "tags": [
+        "opinions"
+      ]
+    },
+    {
+      "id": "de-vergadering-is-verplaatst-naar-donderdag",
+      "source": "De vergadering is verplaatst naar donderdag, omdat de directeur ziek is.",
+      "reference": "The meeting has been moved to Thursday because the director is ill.",
+      "direction": "nl-en",
+      "tags": [
+        "work"
+      ]
+    },
+    {
+      "id": "terwijl-ik-stond-te-koken-belde",
+      "source": "Terwijl ik stond te koken, belde mijn zus om het nieuws te vertellen.",
+      "reference": "While I was cooking, my sister called to tell me the news.",
+      "direction": "nl-en",
+      "tags": [
+        "daily-life",
+        "family"
+      ]
+    },
+    {
+      "id": "er-wordt-steeds-meer-plastic-gerecycled",
+      "source": "Er wordt steeds meer plastic gerecycled, maar het is nog niet genoeg.",
+      "reference": "More and more plastic is being recycled, but it is still not enough.",
+      "direction": "nl-en",
+      "tags": [
+        "environment"
+      ]
+    },
+    {
+      "id": "ik-zou-graag-willen-weten-of",
+      "source": "Ik zou graag willen weten of de cursus ook online gevolgd kan worden.",
+      "reference": "I would like to know whether the course can also be taken online.",
+      "direction": "nl-en",
+      "tags": [
+        "education"
+      ]
+    },
+    {
+      "id": "hij-is-naar-utrecht-verhuisd-zodat",
+      "source": "Hij is naar Utrecht verhuisd, zodat hij dichter bij zijn werk woont.",
+      "reference": "He moved to Utrecht so that he lives closer to his work.",
+      "direction": "nl-en",
+      "tags": [
+        "housing",
+        "work"
+      ]
+    },
+    {
+      "id": "het-lijkt-mij-een-goed-idee",
+      "source": "Het lijkt mij een goed idee om samen een cadeau voor haar te kopen.",
+      "reference": "It seems like a good idea to me to buy a present for her together.",
+      "direction": "nl-en",
+      "tags": [
+        "friendship",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "toen-we-in-parijs-waren-hebben",
+      "source": "Toen we in Parijs waren, hebben we elke dag in een ander restaurant gegeten.",
+      "reference": "When we were in Paris, we ate in a different restaurant every day.",
+      "direction": "nl-en",
+      "tags": [
+        "travel",
+        "food"
+      ]
+    },
+    {
+      "id": "de-trein-had-vertraging-waardoor-ik",
+      "source": "De trein had vertraging, waardoor ik mijn afspraak heb gemist.",
+      "reference": "The train was delayed, which caused me to miss my appointment.",
+      "direction": "nl-en",
+      "tags": [
+        "travel",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "steeds-meer-mensen-werken-thuis-omdat",
+      "source": "Steeds meer mensen werken thuis, omdat ze dan geen tijd verliezen in het verkeer.",
+      "reference": "More and more people work from home because then they do not lose time in traffic.",
+      "direction": "nl-en",
+      "tags": [
+        "work"
+      ]
+    },
+    {
+      "id": "if-the-weather-is-nice-tomorrow",
+      "source": "If the weather is nice tomorrow, we will have a picnic in the park.",
+      "reference": "Als het weer morgen mooi is, gaan we picknicken in het park.",
+      "direction": "en-nl",
+      "tags": [
+        "leisure",
+        "weather"
+      ]
+    },
+    {
+      "id": "i-think-public-transport-in-our",
+      "source": "I think public transport in our city should be cheaper.",
+      "reference": "Ik vind dat het openbaar vervoer in onze stad goedkoper zou moeten zijn.",
+      "direction": "en-nl",
+      "tags": [
+        "opinions",
+        "city-life"
+      ]
+    },
+    {
+      "id": "the-package-was-delivered-while-i",
+      "source": "The package was delivered while I was at work.",
+      "reference": "Het pakket werd bezorgd terwijl ik op mijn werk was.",
+      "direction": "en-nl",
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "although-the-film-received-good-reviews",
+      "source": "Although the film received good reviews, I found it quite boring.",
+      "reference": "Hoewel de film goede recensies kreeg, vond ik hem behoorlijk saai.",
+      "direction": "en-nl",
+      "tags": [
+        "opinions",
+        "leisure"
+      ]
+    },
+    {
+      "id": "she-asked-me-whether-i-could",
+      "source": "She asked me whether I could help her with the move on Saturday.",
+      "reference": "Ze vroeg me of ik haar zaterdag kon helpen met de verhuizing.",
+      "direction": "en-nl",
+      "tags": [
+        "friendship",
+        "housing"
+      ]
+    },
+    {
+      "id": "if-i-were-you-i-would",
+      "source": "If I were you, I would talk to your boss about the problem.",
+      "reference": "Als ik jou was, zou ik met je baas over het probleem praten.",
+      "direction": "en-nl",
+      "tags": [
+        "work",
+        "advice"
+      ]
+    },
+    {
+      "id": "we-have-been-living-in-this",
+      "source": "We have been living in this neighborhood for five years and we really like it here.",
+      "reference": "We wonen al vijf jaar in deze buurt en we vinden het hier heel fijn.",
+      "direction": "en-nl",
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "the-tickets-sell-out-quickly-so",
+      "source": "The tickets sell out quickly, so you should book them as soon as possible.",
+      "reference": "De kaartjes raken snel uitverkocht, dus je moet ze zo snel mogelijk boeken.",
+      "direction": "en-nl",
+      "tags": [
+        "leisure"
+      ]
+    },
+    {
+      "id": "he-told-me-that-he-wants",
+      "source": "He told me that he wants to look for a new job next year.",
+      "reference": "Hij vertelde me dat hij volgend jaar een nieuwe baan wil zoeken.",
+      "direction": "en-nl",
+      "tags": [
+        "work"
+      ]
+    },
+    {
+      "id": "in-my-opinion-children-spend-too",
+      "source": "In my opinion, children spend too much time on their phones.",
+      "reference": "Volgens mij besteden kinderen te veel tijd aan hun telefoon.",
+      "direction": "en-nl",
+      "tags": [
+        "opinions",
+        "family"
+      ]
+    },
+    {
+      "id": "the-road-is-being-repaired-so",
+      "source": "The road is being repaired, so we have to take a different route.",
+      "reference": "De weg wordt gerepareerd, dus we moeten een andere route nemen.",
+      "direction": "en-nl",
+      "tags": [
+        "travel",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "i-forgot-to-buy-milk-even",
+      "source": "I forgot to buy milk, even though it was on my shopping list.",
+      "reference": "Ik ben vergeten melk te kopen, hoewel het op mijn boodschappenlijstje stond.",
+      "direction": "en-nl",
+      "tags": [
+        "daily-life",
+        "shopping"
+      ]
+    },
+    {
+      "id": "we-could-go-for-a-walk",
+      "source": "We could go for a walk first and have coffee afterwards.",
+      "reference": "We zouden eerst een wandeling kunnen maken en daarna koffie kunnen drinken.",
+      "direction": "en-nl",
+      "tags": [
+        "leisure",
+        "friendship"
+      ]
+    },
+    {
+      "id": "it-is-important-that-everyone-arrives",
+      "source": "It is important that everyone arrives on time for the meeting.",
+      "reference": "Het is belangrijk dat iedereen op tijd bij de vergadering is.",
+      "direction": "en-nl",
+      "tags": [
+        "work"
+      ]
+    },
+    {
+      "id": "if-you-had-called-me-earlier",
+      "source": "If you had called me earlier, I could have picked you up from the station.",
+      "reference": "Als je me eerder had gebeld, had ik je van het station kunnen ophalen.",
+      "direction": "en-nl",
+      "tags": [
+        "daily-life",
+        "travel"
+      ]
+    }
+  ]
+}

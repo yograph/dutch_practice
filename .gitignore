@@ -23,3 +23,6 @@ pnpm-debug.log*
 
 # typescript
 *.tsbuildinfo
+
+# Claude Code local session config
+.claude/

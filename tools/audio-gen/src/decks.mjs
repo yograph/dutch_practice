@@ -70,24 +70,27 @@ export async function loadManifest() {
   return manifest;
 }
 
-/** `bank` is relative to data/: never absolute, never escaping the directory. */
+/** Deck ids are lowercase slugs, per the data contract. */
+const DECK_ID_SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+
+/**
+ * Where a deck's words live, relative to data/. DERIVED from the deck id —
+ * `banks/<id>.tsv` — because the schema-2 manifest stopped carrying a `bank`
+ * path field (it was the id spelled twice; see docs/DATA_CONTRACT.md). The
+ * slug check is what keeps the joined path from ever escaping data/.
+ */
 function bankPathFor(entry) {
-  const bank = entry?.bank;
-  if (typeof bank !== "string" || bank === "") {
-    const hint =
-      typeof entry?.path === "string"
-        ? ` It has a schema-1 "path" (${entry.path}) instead; regenerate the manifest.`
-        : "";
-    throw new Error(`Deck "${entry?.id}" has no "bank" path.${hint}`);
+  const id = entry?.id;
+  if (typeof id !== "string" || id === "") {
+    throw new Error("Manifest deck entry has no id.");
   }
-  const segments = bank.split("/");
-  if (bank.startsWith("/") || segments.includes("..")) {
+  if (!DECK_ID_SLUG.test(id)) {
     throw new Error(
-      `Deck "${entry.id}" has an unsafe bank path "${bank}": ` +
-        "it must be relative to data/ and must not escape it.",
+      `Deck id ${JSON.stringify(id)} is not a lowercase slug, so a bank path ` +
+        "cannot safely be derived from it.",
     );
   }
-  return bank;
+  return `banks/${id}.tsv`;
 }
 
 /**

@@ -1,0 +1,73 @@
+id	front	back	tags
+# Season 2 — the 110th unit, New Age, Little Wing (Bad Luck and Trouble)
+de-eenheid	de eenheid	the unit	military
+de-majoor	de majoor	the major	military
+de-sergeant	de sergeant	the sergeant	military
+de-kameraad	de kameraad	the comrade	military,feelings
+de-loyaliteit	de loyaliteit	the loyalty	feelings
+het-bevel	het bevel	the order, the command	military
+de-missie	de missie	the mission	military
+het-hoofdkwartier	het hoofdkwartier	the headquarters	military
+de-helikopter	de helikopter	the helicopter	aviation
+de-piloot	de piloot	the pilot	aviation
+opstijgen	opstijgen	to take off (aircraft)	aviation
+neerstorten	neerstorten	to crash (aircraft)	aviation
+duwen	duwen	to push	violence
+de-raket	de raket	the missile, the rocket	military,technology
+het-geleidesysteem	het geleidesysteem	the guidance system	technology,military
+neerhalen	neerhalen	to shoot down, to take down	military,violence
+de-chip	de chip	the chip (electronics)	technology
+defect	defect	defective, faulty	technology
+de-ingenieur	de ingenieur	the engineer	technology
+het-defensiebedrijf	het defensiebedrijf	the defense contractor, the defense company	military,business
+de-overheidsopdracht	de overheidsopdracht	the government contract	business,money
+saboteren	saboteren	to sabotage	crime,technology
+lekken	lekken	to leak	crime
+de-diefstal	de diefstal	the theft	crime
+de-wapenhandel	de wapenhandel	the arms trade	crime,military
+de-koper	de koper	the buyer	money
+de-terrorist	de terrorist	the terrorist	crime,violence
+het-moordcommando	het moordcommando	the kill squad, the death squad	violence,crime
+het-doelwit	het doelwit	the target	violence
+het-kogelvrije-vest	het kogelvrije vest	the bulletproof vest	violence
+de-boksbeugel	de boksbeugel	the brass knuckles	violence
+de-stiletto	de stiletto	the switchblade	violence
+martelen	martelen	to torture	violence
+kapen	kapen	to hijack	crime
+het-onderzoek	het onderzoek	the investigation	investigation
+ondervragen	ondervragen	to interrogate, to question	investigation
+de-priv-detective	de privédetective	the private investigator	investigation
+de-observatiepost	de observatiepost	the stakeout post, the observation post	investigation
+de-bewakingscamera	de bewakingscamera	the surveillance camera	investigation,technology
+het-kenteken	het kenteken	the license plate (number)	investigation
+de-wegwerptelefoon	de wegwerptelefoon	the burner phone	investigation,technology
+de-schuilnaam	de schuilnaam	the alias, the cover name	investigation
+achterhalen	achterhalen	to track down, to find out	investigation
+het-patroon	het patroon	the pattern	investigation
+inbreken	inbreken	to break in	crime
+infiltreren	infiltreren	to infiltrate	investigation,military
+de-afleiding	de afleiding	the distraction, the diversion	investigation
+het-wachtwoord	het wachtwoord	the password	technology
+kraken	kraken	to hack, to crack (a system)	technology,crime
+de-beveiliging	de beveiliging	the security (measures, department)	business,technology
+de-geldautomaat	de geldautomaat	the ATM, the cash machine	money
+de-boekhouding	de boekhouding	the bookkeeping, the accounts	money
+de-fraude	de fraude	the fraud	crime,money
+verduisteren	verduisteren	to embezzle	crime,money
+het-smeergeld	het smeergeld	the bribe money, the kickback	crime,money
+de-overboeking	de overboeking	the bank transfer	money
+de-opdrachtgever	de opdrachtgever	the client, the person commissioning a job	business,crime
+het-casino	het casino	the casino	gambling
+gokken	gokken	to gamble	gambling
+de-inzet	de inzet	the stake, the bet	gambling,money
+de-fiche	de fiche	the casino chip	gambling
+de-speelautomaat	de speelautomaat	the slot machine	gambling
+de-uitsmijter	de uitsmijter	the bouncer	violence,gambling
+het-motel	het motel	the motel	travel
+de-weduwe	de weduwe	the widow	feelings
+de-re-nie	de reünie	the reunion	feelings
+de-vijand	de vijand	the enemy	military
+het-wantrouwen	het wantrouwen	the distrust, the mistrust	feelings
+meedogenloos	meedogenloos	ruthless, merciless	feelings,violence
+de-vergelding	de vergelding	the retribution, the payback	violence,feelings
+het-stoffelijk-overschot	het stoffelijk overschot	the (mortal) remains, the recovered body	investigation

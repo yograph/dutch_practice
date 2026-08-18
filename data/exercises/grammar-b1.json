@@ -1,0 +1,556 @@
+{
+  "schemaVersion": 2,
+  "exercises": [
+    {
+      "id": "dat-is-de-man-naast-ons",
+      "prompt": "Dat is de man ___ naast ons woont.",
+      "choices": [
+        "die",
+        "dat",
+        "waar",
+        "wie"
+      ],
+      "answerIndex": 0,
+      "explanation": "De man is a de-word, so the relative pronoun is die. Dat is only used for het-words.",
+      "tags": [
+        "relative-clauses",
+        "de-het"
+      ]
+    },
+    {
+      "id": "het-boek-ik-gisteren-heb-gekocht",
+      "prompt": "Het boek ___ ik gisteren heb gekocht, is heel spannend.",
+      "choices": [
+        "die",
+        "dat",
+        "wat",
+        "waar"
+      ],
+      "answerIndex": 1,
+      "explanation": "Het boek is a het-word, so the relative pronoun is dat. Wat is colloquial and not standard here.",
+      "tags": [
+        "relative-clauses",
+        "de-het"
+      ]
+    },
+    {
+      "id": "de-stad-ik-geboren-ben-ligt",
+      "prompt": "De stad ___ ik geboren ben, ligt in het oosten van het land.",
+      "choices": [
+        "die",
+        "dat",
+        "waar",
+        "wie"
+      ],
+      "answerIndex": 2,
+      "explanation": "For places, Dutch uses the relative adverb waar. Die and dat cannot express the meaning of where.",
+      "tags": [
+        "relative-clauses"
+      ]
+    },
+    {
+      "id": "de-vrouw-met-ik-heb-gesproken",
+      "prompt": "De vrouw met ___ ik heb gesproken, werkt bij de gemeente.",
+      "choices": [
+        "die",
+        "dat",
+        "waar",
+        "wie"
+      ],
+      "answerIndex": 3,
+      "explanation": "After a preposition, a person is referred to with wie: met wie. Die cannot follow a preposition.",
+      "tags": [
+        "relative-clauses"
+      ]
+    },
+    {
+      "id": "de-brief-gisteren-door-de-directeur",
+      "prompt": "De brief ___ gisteren door de directeur ondertekend.",
+      "choices": [
+        "wordt",
+        "werd",
+        "worden",
+        "geworden"
+      ],
+      "answerIndex": 1,
+      "explanation": "Gisteren requires the simple past passive: werd + past participle. Wordt is present tense.",
+      "tags": [
+        "passive-voice",
+        "simple-past"
+      ]
+    },
+    {
+      "id": "het-huis-vorig-jaar-verkocht",
+      "prompt": "Het huis ___ vorig jaar verkocht.",
+      "choices": [
+        "wordt",
+        "heeft",
+        "is",
+        "waren"
+      ],
+      "answerIndex": 2,
+      "explanation": "The perfect passive uses zijn, not hebben: het huis is verkocht means it has been sold.",
+      "tags": [
+        "passive-voice",
+        "perfect-tense"
+      ]
+    },
+    {
+      "id": "de-fiets-wordt-morgen-gerepareerd",
+      "prompt": "Which sentence is correct?",
+      "choices": [
+        "De fiets word morgen gerepareerd.",
+        "De fiets wordt morgen repareren.",
+        "De fiets werd morgen gerepareerd.",
+        "De fiets wordt morgen gerepareerd."
+      ],
+      "answerIndex": 3,
+      "explanation": "The present passive is wordt + past participle. Word lacks the -t, repareren is an infinitive, and past tense werd clashes with morgen.",
+      "tags": [
+        "passive-voice"
+      ]
+    },
+    {
+      "id": "gisteren-er-in-het-caf-veel",
+      "prompt": "Gisteren ___ er in het café veel gedanst.",
+      "choices": [
+        "wordt",
+        "worden",
+        "geworden",
+        "werd"
+      ],
+      "answerIndex": 3,
+      "explanation": "This is an impersonal passive with er, and gisteren needs the past tense: er werd veel gedanst.",
+      "tags": [
+        "passive-voice"
+      ]
+    },
+    {
+      "id": "als-ik-meer-tijd-had-ik",
+      "prompt": "Als ik meer tijd had, ___ ik vaker naar de sportschool gaan.",
+      "choices": [
+        "zou",
+        "zal",
+        "zult",
+        "zullen"
+      ],
+      "answerIndex": 0,
+      "explanation": "A hypothetical condition with a past-tense als-clause takes zou in the main clause.",
+      "tags": [
+        "conditional"
+      ]
+    },
+    {
+      "id": "u-misschien-het-raam-kunnen-sluiten",
+      "prompt": "___ u misschien het raam kunnen sluiten? Het is hier erg koud.",
+      "choices": [
+        "Zal",
+        "Moet",
+        "Zou",
+        "Ga"
+      ],
+      "answerIndex": 2,
+      "explanation": "Zou makes a polite request: Zou u ... kunnen ...? The other verbs do not form this polite pattern.",
+      "tags": [
+        "conditional"
+      ]
+    },
+    {
+      "id": "hij-zei-dat-hij-ons-helpen",
+      "prompt": "Hij zei dat hij ons ___ helpen als hij tijd had.",
+      "choices": [
+        "zal",
+        "zou",
+        "zult",
+        "zullen"
+      ],
+      "answerIndex": 1,
+      "explanation": "In reported speech after the past tense zei, the future shifts to zou. It agrees with hij in the singular.",
+      "tags": [
+        "conditional",
+        "indirect-speech"
+      ]
+    },
+    {
+      "id": "wat-jij-doen-als-je-een",
+      "prompt": "Wat ___ jij doen als je een miljoen euro won?",
+      "choices": [
+        "zal",
+        "zult",
+        "zouden",
+        "zou"
+      ],
+      "answerIndex": 3,
+      "explanation": "A hypothetical question with the past tense won uses zou. Zouden is plural, and with inverted jij the form zult is also wrong.",
+      "tags": [
+        "conditional"
+      ]
+    },
+    {
+      "id": "heb-je-al-over-mijn-voorstel",
+      "prompt": "Heb je al over mijn voorstel nagedacht? Ja, ik heb ___ nagedacht.",
+      "choices": [
+        "eraan",
+        "erover",
+        "ervan",
+        "erop"
+      ],
+      "answerIndex": 1,
+      "explanation": "Nadenken combines with over, so the er-word is erover. Eraan and ervan belong to other verbs.",
+      "tags": [
+        "er-prepositions"
+      ]
+    },
+    {
+      "id": "ik-heb-een-nieuw-plan-wat",
+      "prompt": "Ik heb een nieuw plan. Wat vind je ___?",
+      "choices": [
+        "erover",
+        "eraan",
+        "ervan",
+        "ermee"
+      ],
+      "answerIndex": 2,
+      "explanation": "Asking for an opinion uses vinden van: Wat vind je ervan? The other combinations do not go with vinden.",
+      "tags": [
+        "er-prepositions"
+      ]
+    },
+    {
+      "id": "vergeet-je-de-afspraak-niet-nee",
+      "prompt": "Vergeet je de afspraak niet? Nee, ik denk ___.",
+      "choices": [
+        "eraan",
+        "erover",
+        "erop",
+        "ervan"
+      ],
+      "answerIndex": 0,
+      "explanation": "Denken aan (to keep in mind) gives eraan. Erover would mean thinking something over or considering it.",
+      "tags": [
+        "er-prepositions"
+      ]
+    },
+    {
+      "id": "wacht-je-op-de-bus-ja",
+      "prompt": "Wacht je op de bus? Ja, ik wacht er al tien minuten ___.",
+      "choices": [
+        "aan",
+        "van",
+        "in",
+        "op"
+      ],
+      "answerIndex": 3,
+      "explanation": "Wachten combines with the preposition op. Together with er, the preposition splits off and moves to the end of the sentence: ik wacht er al tien minuten op.",
+      "tags": [
+        "er-prepositions"
+      ]
+    },
+    {
+      "id": "hij-weinig-geld-heeft-is-hij",
+      "prompt": "___ hij weinig geld heeft, is hij heel tevreden met zijn leven.",
+      "choices": [
+        "Hoewel",
+        "Zodat",
+        "Tenzij",
+        "Of"
+      ],
+      "answerIndex": 0,
+      "explanation": "Hoewel (although) expresses the contrast between having little money and being content. Zodat and tenzij make no sense here.",
+      "tags": [
+        "conjunctions"
+      ]
+    },
+    {
+      "id": "ik-ga-morgen-in-het-meer",
+      "prompt": "Ik ga morgen in het meer zwemmen, ___ het te koud is.",
+      "choices": [
+        "zodat",
+        "tenzij",
+        "want",
+        "of"
+      ],
+      "answerIndex": 1,
+      "explanation": "Tenzij means unless: I will swim unless it is too cold. Want would need main-clause word order.",
+      "tags": [
+        "conjunctions"
+      ]
+    },
+    {
+      "id": "hij-legde-de-regel-nog-een",
+      "prompt": "Hij legde de regel nog een keer uit, ___ iedereen het kon begrijpen.",
+      "choices": [
+        "want",
+        "dus",
+        "zodat",
+        "daarom"
+      ],
+      "answerIndex": 2,
+      "explanation": "Zodat (so that) introduces a result and sends the verb to the end. Want, dus and daarom require main-clause word order.",
+      "tags": [
+        "conjunctions",
+        "word-order"
+      ]
+    },
+    {
+      "id": "ik-aan-het-koken-was-ging",
+      "prompt": "___ ik aan het koken was, ging de telefoon.",
+      "choices": [
+        "Zodat",
+        "Tenzij",
+        "Hoewel",
+        "Terwijl"
+      ],
+      "answerIndex": 3,
+      "explanation": "Terwijl (while) links two simultaneous actions. Zodat and tenzij do not fit, and hoewel would give a strange contrast.",
+      "tags": [
+        "conjunctions"
+      ]
+    },
+    {
+      "id": "ze-vroeg-ik-zaterdag-tijd-had",
+      "prompt": "Ze vroeg ___ ik zaterdag tijd had.",
+      "choices": [
+        "dat",
+        "of",
+        "als",
+        "wat"
+      ],
+      "answerIndex": 1,
+      "explanation": "An indirect yes/no question uses of (whether). Als is not used to introduce indirect questions in standard Dutch.",
+      "tags": [
+        "indirect-speech"
+      ]
+    },
+    {
+      "id": "ze-zei-dat-ze-morgen-niet",
+      "prompt": "Which sentence is correct?",
+      "choices": [
+        "Ze zei dat ze komt morgen niet.",
+        "Ze zei dat komt ze morgen niet.",
+        "Ze zei dat ze morgen niet komt.",
+        "Ze zei dat ze morgen komt niet."
+      ],
+      "answerIndex": 2,
+      "explanation": "In a dat-clause the conjugated verb goes to the end: dat ze morgen niet komt.",
+      "tags": [
+        "indirect-speech",
+        "word-order"
+      ]
+    },
+    {
+      "id": "de-leraar-vroeg-waarom-ik-te",
+      "prompt": "De leraar vroeg waarom ik te laat ___.",
+      "choices": [
+        "was",
+        "is",
+        "waren",
+        "zijn"
+      ],
+      "answerIndex": 0,
+      "explanation": "After the past tense vroeg, the subclause verb also shifts to the past. Ik takes the singular form was.",
+      "tags": [
+        "indirect-speech"
+      ]
+    },
+    {
+      "id": "ik-nog-een-kopje-koffie-voor",
+      "prompt": "___ ik nog een kopje koffie voor je halen?",
+      "choices": [
+        "Gaat",
+        "Zal",
+        "Zullen",
+        "Gaan"
+      ],
+      "answerIndex": 1,
+      "explanation": "Offers and suggestions use Zal ik ...? The forms gaat, zullen and gaan do not agree with the subject ik.",
+      "tags": [
+        "future-tense"
+      ]
+    },
+    {
+      "id": "kijk-die-donkere-wolken-eens-het",
+      "prompt": "Kijk die donkere wolken eens! Het ___ zo regenen.",
+      "choices": [
+        "gaat",
+        "ga",
+        "gaan",
+        "zullen"
+      ],
+      "answerIndex": 0,
+      "explanation": "Gaan is used for predictions based on visible evidence, like dark clouds. Het takes the singular form gaat.",
+      "tags": [
+        "future-tense"
+      ]
+    },
+    {
+      "id": "we-er-morgen-zeker-zijn-dat",
+      "prompt": "We ___ er morgen zeker zijn, dat beloven we.",
+      "choices": [
+        "zal",
+        "gaat",
+        "zult",
+        "zullen"
+      ],
+      "answerIndex": 3,
+      "explanation": "Promises and firm commitments use zullen, and the subject we takes the plural form zullen.",
+      "tags": [
+        "future-tense"
+      ]
+    },
+    {
+      "id": "ik-weet-niet-of-hij-morgen",
+      "prompt": "Ik weet niet of hij morgen ___.",
+      "choices": [
+        "kan komen",
+        "komt kan",
+        "kan komt",
+        "komen komt"
+      ],
+      "answerIndex": 0,
+      "explanation": "In a subclause both verbs move to the end, with the conjugated modal before the infinitive: of hij kan komen.",
+      "tags": [
+        "word-order",
+        "subordinate-clauses"
+      ]
+    },
+    {
+      "id": "ze-zegt-dat-ze-een-huis",
+      "prompt": "Which sentence is correct?",
+      "choices": [
+        "Ze zegt dat ze wil een huis kopen.",
+        "Ze zegt dat wil ze een huis kopen.",
+        "Ze zegt dat ze wil kopen een huis.",
+        "Ze zegt dat ze een huis wil kopen."
+      ],
+      "answerIndex": 3,
+      "explanation": "In a dat-clause the verbs cluster at the end: wil kopen. The object een huis comes before the verb group.",
+      "tags": [
+        "word-order",
+        "subordinate-clauses"
+      ]
+    },
+    {
+      "id": "hij-vertelde-dat-hij-zijn-sleutels",
+      "prompt": "Hij vertelde dat hij zijn sleutels ___.",
+      "choices": [
+        "had verliezen",
+        "verloor had",
+        "had verloren",
+        "verliezen had"
+      ],
+      "answerIndex": 2,
+      "explanation": "In the subclause the auxiliary and the past participle form a cluster at the end: had verloren.",
+      "tags": [
+        "word-order",
+        "subordinate-clauses"
+      ]
+    },
+    {
+      "id": "ik-probeer-elke-dag-een-half",
+      "prompt": "Ik probeer elke dag een half uur ___.",
+      "choices": [
+        "sporten",
+        "te sporten",
+        "te sport",
+        "gesport"
+      ],
+      "answerIndex": 1,
+      "explanation": "Proberen requires te + infinitive: proberen te sporten. A bare infinitive is not possible here.",
+      "tags": [
+        "te-infinitive"
+      ]
+    },
+    {
+      "id": "je-hoeft-morgen-niet-komen",
+      "prompt": "Je hoeft morgen niet ___ komen.",
+      "choices": [
+        "te",
+        "om",
+        "moeten",
+        "gaan"
+      ],
+      "answerIndex": 0,
+      "explanation": "Hoeven always combines with te + infinitive in negative sentences: je hoeft niet te komen.",
+      "tags": [
+        "te-infinitive",
+        "negation"
+      ]
+    },
+    {
+      "id": "het-is-belangrijk-elke-dag-gezond",
+      "prompt": "Het is belangrijk ___ elke dag gezond te eten.",
+      "choices": [
+        "te",
+        "voor",
+        "dat",
+        "om"
+      ],
+      "answerIndex": 3,
+      "explanation": "Het is belangrijk introduces an om ... te + infinitive construction: om gezond te eten.",
+      "tags": [
+        "te-infinitive"
+      ]
+    },
+    {
+      "id": "woon-je-in-utrecht-of-ben",
+      "prompt": "Woon je ___ in Utrecht, of ben je verhuisd?",
+      "choices": [
+        "al",
+        "pas",
+        "nog",
+        "meer"
+      ],
+      "answerIndex": 2,
+      "explanation": "Nog means still: do you still live in Utrecht? Al (already) and pas (only just) contradict the second half, and meer needs a negation.",
+      "tags": [
+        "particles"
+      ]
+    },
+    {
+      "id": "het-was-slecht-weer-maar-we",
+      "prompt": "Het was slecht weer, maar we hebben ___ een leuke dag gehad.",
+      "choices": [
+        "al",
+        "toch",
+        "pas",
+        "nog"
+      ],
+      "answerIndex": 1,
+      "explanation": "Toch means nevertheless and marks the contrast with the bad weather. Nog would mean yet another day.",
+      "tags": [
+        "particles"
+      ]
+    },
+    {
+      "id": "hij-zei-dat-de-film-saai",
+      "prompt": "Hij zei dat de film saai was, maar ik vond hem ___ leuk.",
+      "choices": [
+        "wel",
+        "al",
+        "pas",
+        "of"
+      ],
+      "answerIndex": 0,
+      "explanation": "Wel contradicts a previous negative statement: he found it boring, but I did like it.",
+      "tags": [
+        "particles"
+      ]
+    },
+    {
+      "id": "nee-dank-je-geen-taart-voor",
+      "prompt": "Nee, dank je, geen taart voor mij. Ik heb ___ gegeten.",
+      "choices": [
+        "nog",
+        "toch",
+        "al",
+        "of"
+      ],
+      "answerIndex": 2,
+      "explanation": "Al means already: I have already eaten, so no cake. Nog and toch do not fit this refusal.",
+      "tags": [
+        "particles"
+      ]
+    }
+  ]
+}

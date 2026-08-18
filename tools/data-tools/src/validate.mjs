@@ -19,9 +19,14 @@ import { readJson } from "./json.mjs";
 import {
   bankAbsolutePath,
   bankRelativePath,
+  EXERCISE_KINDS,
+  exerciseAbsolutePath,
+  exerciseRelativePath,
   isSafeRelativePath,
   listBankFiles,
+  listExerciseFiles,
   loadBank,
+  loadExerciseSet,
   loadLibrary,
   REQUIRED_COLUMNS,
   SCHEMA_VERSION,
@@ -31,6 +36,7 @@ import {
   AUDIO_INDEX_PATH,
   BANKS_DIR,
   DATA_DIR,
+  EXERCISES_DIR,
   LIBRARY_PATH,
   MANIFEST_PATH,
   rel,
@@ -45,7 +51,7 @@ const problems = [];
 /** @type {string[]} */
 const warnings = [];
 
-/** @param {number} invariant 1-7, or 0 for structural / field-type problems */
+/** @param {number} invariant 1-8, or 0 for structural / field-type problems */
 function fail(invariant, message) {
   problems.push({ invariant, message });
 }
@@ -299,6 +305,224 @@ for (const name of listBankFiles()) {
   );
 }
 
+// --- exercise sets (invariant 8) --------------------------------------------
+
+/** A lowercase slug, the shape exercise ids and set ids must have. */
+const SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+
+const nonEmptyString = (value) => typeof value === "string" && value !== "";
+
+/**
+ * Warn (not fail) when learner-facing exercise text carries inline markup:
+ * exercise text is rendered as plain text by contract, so markup would show
+ * its delimiters literally — a typo, not corruption.
+ */
+function warnOnMarkup(at, field, value) {
+  if (typeof value === "string" && hasFormatting(value)) {
+    warn(`${at}: ${field} looks like inline markup; exercise text is plain`);
+  }
+}
+
+/** Per-kind item checks. Structural problems fail; style problems warn. */
+const EXERCISE_ITEM_CHECKS = {
+  grammar(at, item) {
+    if (!nonEmptyString(item.prompt))
+      fail(8, `${at}: prompt must be a non-empty string`);
+    if (!Array.isArray(item.choices) || item.choices.length < 2) {
+      fail(8, `${at}: choices must be an array of at least 2 options`);
+    } else {
+      if (!item.choices.every(nonEmptyString)) {
+        fail(8, `${at}: every choice must be a non-empty string`);
+      }
+      if (new Set(item.choices).size !== item.choices.length) {
+        fail(8, `${at}: choices must be distinct`);
+      }
+      if (
+        !Number.isInteger(item.answerIndex) ||
+        item.answerIndex < 0 ||
+        item.answerIndex >= item.choices.length
+      ) {
+        fail(
+          8,
+          `${at}: answerIndex ${JSON.stringify(item.answerIndex)} must be an integer index into choices`,
+        );
+      }
+    }
+    if (!nonEmptyString(item.explanation)) {
+      fail(8, `${at}: explanation must be a non-empty string`);
+    }
+    // Every learner-facing field, not just the prompt: choices render as
+    // buttons and the explanation as feedback, all plain text.
+    warnOnMarkup(at, "prompt", item.prompt);
+    warnOnMarkup(at, "explanation", item.explanation);
+    if (Array.isArray(item.choices)) {
+      item.choices.forEach((choice, index) => {
+        warnOnMarkup(at, `choices[${index}]`, choice);
+      });
+    }
+  },
+  translation(at, item) {
+    for (const field of ["source", "reference"]) {
+      if (!nonEmptyString(item[field])) {
+        fail(8, `${at}: ${field} must be a non-empty string`);
+      }
+      warnOnMarkup(at, field, item[field]);
+    }
+    if (item.direction !== "nl-en" && item.direction !== "en-nl") {
+      fail(
+        8,
+        `${at}: direction ${JSON.stringify(item.direction)} must be "nl-en" or "en-nl"`,
+      );
+    }
+  },
+  writing(at, item) {
+    for (const field of ["prompt", "instructions", "example"]) {
+      if (!nonEmptyString(item[field])) {
+        fail(8, `${at}: ${field} must be a non-empty string`);
+      }
+      warnOnMarkup(at, field, item[field]);
+    }
+  },
+};
+
+/** Exercise set ids claimed by the library, for the orphan sweep. */
+const claimedExerciseFiles = new Set();
+/** Loaded sets for the summary line. */
+const loadedExerciseSets = new Map();
+
+if (library && "exerciseSets" in library) {
+  if (!Array.isArray(library.exerciseSets)) {
+    fail(0, `${libraryWhere}: exerciseSets must be an array when present`);
+  } else {
+    const seenSetIds = new Map();
+    library.exerciseSets.forEach((set, index) => {
+      const at = `${libraryWhere}: exerciseSets[${index}]${set?.id ? ` (${set.id})` : ""}`;
+
+      if (!nonEmptyString(set?.id)) {
+        fail(0, `${at}: id must be a non-empty string`);
+        return;
+      }
+      if (!SLUG.test(set.id)) {
+        fail(0, `${at}: id "${set.id}" must be a lowercase slug`);
+      }
+      if (seenSetIds.has(set.id)) {
+        fail(
+          8,
+          `${libraryWhere}: duplicate exercise set id "${set.id}" at exerciseSets[${seenSetIds.get(set.id)}] and exerciseSets[${index}]`,
+        );
+        return;
+      }
+      seenSetIds.set(set.id, index);
+
+      if (!nonEmptyString(set.name)) {
+        fail(0, `${at}: name must be a non-empty string`);
+      }
+      if (!EXERCISE_KINDS.includes(set.kind)) {
+        fail(
+          0,
+          `${at}: kind ${JSON.stringify(set.kind)} must be one of ${EXERCISE_KINDS.join(", ")}`,
+        );
+      }
+      if (typeof set.color !== "string" || !HEX_COLOR.test(set.color)) {
+        fail(0, `${at}: color ${JSON.stringify(set.color)} must be #RRGGBB`);
+      }
+      if ("level" in set && !nonEmptyString(set.level)) {
+        fail(
+          0,
+          `${at}: level must be a non-empty string (omit the key instead)`,
+        );
+      }
+      if ("icon" in set && !nonEmptyString(set.icon)) {
+        fail(
+          0,
+          `${at}: icon must be a non-empty string (omit the key for the default)`,
+        );
+      }
+      // Derived fields must not be authored, same rule as decks.
+      for (const key of ["exerciseCount", "revision"]) {
+        if (key in set) {
+          fail(0, `${at}: "${key}" is derived and must not be authored here`);
+        }
+      }
+
+      claimedExerciseFiles.add(exerciseRelativePath(set.id));
+
+      // Invariant 8: the set's file exists at the derived path and is valid.
+      const where = `data/${exerciseRelativePath(set.id)}`;
+      if (!fs.existsSync(exerciseAbsolutePath(set.id))) {
+        fail(8, `${at}: no exercise file — expected ${where}`);
+        return;
+      }
+      let loaded;
+      try {
+        loaded = loadExerciseSet(set.id);
+      } catch (error) {
+        fail(8, `${where}: ${error.message}`);
+        return;
+      }
+      loadedExerciseSets.set(set.id, loaded);
+
+      if (loaded.json?.schemaVersion !== SCHEMA_VERSION) {
+        fail(
+          0,
+          `${where}: schemaVersion is ${JSON.stringify(loaded.json?.schemaVersion)}, expected ${SCHEMA_VERSION}`,
+        );
+      }
+      if (!Array.isArray(loaded.json?.exercises)) {
+        fail(8, `${where}: exercises must be an array`);
+        return;
+      }
+      if (loaded.json.exercises.length === 0) {
+        fail(8, `${where}: set has no exercises`);
+      }
+
+      // A legal kind with no checker would silently validate nothing, so the
+      // two registries drifting apart is itself a failure — not a skip.
+      const checkItem = EXERCISE_ITEM_CHECKS[set.kind];
+      if (!checkItem && EXERCISE_KINDS.includes(set.kind)) {
+        fail(
+          8,
+          `${where}: kind "${set.kind}" is in EXERCISE_KINDS but has no entry ` +
+            "in EXERCISE_ITEM_CHECKS — its items would not be checked at all",
+        );
+      }
+      const seenExerciseIds = new Map();
+      loaded.json.exercises.forEach((item, itemIndex) => {
+        const itemAt = `${where}: exercises[${itemIndex}]${item?.id ? ` (${item.id})` : ""}`;
+
+        if (!nonEmptyString(item?.id)) {
+          fail(8, `${itemAt}: id must be a non-empty string`);
+        } else if (!SLUG.test(item.id)) {
+          fail(8, `${itemAt}: id "${item.id}" must be a lowercase slug`);
+        } else if (seenExerciseIds.has(item.id)) {
+          fail(
+            8,
+            `${itemAt}: duplicate exercise id "${item.id}" (first seen at exercises[${seenExerciseIds.get(item.id)}])` +
+              " — ids are what a learner's progress is stored under",
+          );
+        } else {
+          seenExerciseIds.set(item.id, itemIndex);
+        }
+
+        if (!Array.isArray(item?.tags) || !item.tags.every(nonEmptyString)) {
+          fail(8, `${itemAt}: tags must be an array of non-empty strings`);
+        }
+        if (checkItem) checkItem(itemAt, item ?? {});
+      });
+    });
+  }
+}
+
+// Invariant 8, other direction: no exercise file that no set claims.
+for (const name of listExerciseFiles()) {
+  const relative = `exercises/${name}`;
+  if (claimedExerciseFiles.has(relative)) continue;
+  fail(
+    8,
+    `${rel(path.join(EXERCISES_DIR, name))}: orphan exercise file — no set in ${libraryWhere} has id "${path.basename(name, ".json")}"`,
+  );
+}
+
 // --- manifest.json (invariant 6) -------------------------------------------
 
 const manifestWhere = rel(MANIFEST_PATH);
@@ -369,6 +593,36 @@ if (committedManifest !== null) {
               `${manifestWhere}: deck "${deck.id}" still carries "${key}", which is no longer part of the manifest`,
             );
           }
+        }
+      }
+      // Same drill-down for exercise sets: the byte mismatch already failed,
+      // these lines just say which set is stale.
+      const committedSetsById = new Map(
+        (Array.isArray(parsed.exerciseSets) ? parsed.exerciseSets : []).map(
+          (set) => [set?.id, set],
+        ),
+      );
+      for (const set of manifest.exerciseSets ?? []) {
+        const found = committedSetsById.get(set.id);
+        if (!found) {
+          fail(6, `${manifestWhere}: exercise set "${set.id}" is missing`);
+          continue;
+        }
+        for (const key of ["exerciseCount", "revision"]) {
+          if (JSON.stringify(found[key]) !== JSON.stringify(set[key])) {
+            fail(
+              6,
+              `${manifestWhere}: exercise set "${set.id}" ${key} ${JSON.stringify(found[key])} != expected ${JSON.stringify(set[key])}`,
+            );
+          }
+        }
+      }
+      for (const id of committedSetsById.keys()) {
+        if (!(manifest.exerciseSets ?? []).some((set) => set.id === id)) {
+          fail(
+            6,
+            `${manifestWhere}: exercise set ${JSON.stringify(id)} is not in ${libraryWhere}`,
+          );
         }
       }
       if ("revision" in parsed) {
@@ -511,6 +765,7 @@ const INVARIANT_TITLES = {
   5: "5. Inline formatting balanced (warning only)",
   6: "6. manifest.json is a fresh regeneration of the authored files",
   7: "7. audio/index.json clips exist, locales known, keys stripped",
+  8: "8. Every exercise set has a valid file at exercises/<id>.json, and no file is unclaimed",
 };
 
 if (warnings.length > 0) {
@@ -537,10 +792,16 @@ const totalWords = [...loadedBanks.values()].reduce(
   (sum, bank) => sum + bank.words.length,
   0,
 );
+const totalExercises = [...loadedExerciseSets.values()].reduce(
+  (sum, set) =>
+    sum + (Array.isArray(set.json?.exercises) ? set.json.exercises.length : 0),
+  0,
+);
 console.log("data validation OK");
 console.log(
-  `  ${loadedBanks.size} deck(s), ${totalWords} words, ${clipCount} audio clip(s), ` +
-    `${warnings.length} warning(s)`,
+  `  ${loadedBanks.size} deck(s), ${totalWords} words, ` +
+    `${loadedExerciseSets.size} exercise set(s), ${totalExercises} exercises, ` +
+    `${clipCount} audio clip(s), ${warnings.length} warning(s)`,
 );
 for (const { id } of entries) {
   const bank = loadedBanks.get(id);
@@ -556,4 +817,14 @@ for (const { id } of entries) {
     );
   }
 }
-console.log("  all 7 contract invariants satisfied");
+for (const [id, set] of loadedExerciseSets) {
+  const entry = manifest?.exerciseSets?.find(
+    (candidate) => candidate.id === id,
+  );
+  console.log(
+    `  ${id}: ${Array.isArray(set.json?.exercises) ? set.json.exercises.length : 0} exercises, ` +
+      `revision ${set.revision} (${set.relative})` +
+      `${entry ? ` — ${entry.kind}${entry.level ? ` ${entry.level}` : ""}` : ""}`,
+  );
+}
+console.log("  all 8 contract invariants satisfied");

@@ -1,6 +1,7 @@
 import { z } from "zod";
 import type { Deck } from "@/types/deck";
 import type { DeckProgress, WordProgress } from "@/types/progress";
+import { safeGet, safeRemove, safeSet } from "./storage";
 
 /**
  * Learner progress, stored in localStorage. Pure and synchronous - no React,
@@ -40,36 +41,6 @@ const legacyProgressSchema = z.record(z.string(), z.number());
 
 function emptyProgress(deckId: string): DeckProgress {
   return { deckId, updatedAt: new Date(0).toISOString(), words: {} };
-}
-
-/**
- * Every localStorage touch goes through these two. `localStorage` is accessed
- * lazily rather than captured at module load, because in some browsers merely
- * reading `window.localStorage` throws.
- */
-function safeGet(key: string): string | null {
-  try {
-    return window.localStorage.getItem(key);
-  } catch {
-    return null;
-  }
-}
-
-function safeSet(key: string, value: string): void {
-  try {
-    window.localStorage.setItem(key, value);
-  } catch {
-    // Quota exceeded, or storage disabled. Progress for this session lives on
-    // in the query cache; there is nothing useful to tell the learner.
-  }
-}
-
-function safeRemove(key: string): void {
-  try {
-    window.localStorage.removeItem(key);
-  } catch {
-    // See safeSet.
-  }
 }
 
 /**

@@ -9,6 +9,8 @@
  * wants one object per loaded deck, and this is it.
  */
 
+import type { ExerciseSetSummary } from "./exercise";
+
 export interface LanguageInfo {
   label: string;
   locale: string;
@@ -65,10 +67,15 @@ export interface DeckSummary {
 /**
  * There is no aggregate `revision` here. Freshness is decided per deck, so an
  * all-decks hash was a field nothing ever read.
+ *
+ * `exerciseSets` is optional: a manifest generated before exercise sets
+ * existed (or from a library that lists none) simply has no key, and this
+ * client treats that as an empty list.
  */
 export interface Manifest {
   schemaVersion: number;
   decks: DeckSummary[];
+  exerciseSets?: ExerciseSetSummary[];
 }
 
 export interface AudioClip {

@@ -6,10 +6,12 @@ import type {
   Manifest,
   Word,
 } from "@/types/deck";
+import type { ExerciseSet, ExerciseSetSummary } from "@/types/exercise";
 import {
   audioIndexSchema,
   bankRowSchema,
   DATA_SCHEMA_VERSION,
+  exerciseFileSchemas,
   manifestSchema,
 } from "./schemas";
 
@@ -129,6 +131,83 @@ export function bankUrl(deckId: string): string {
 
 export function fetchAudioIndex(): Promise<AudioIndex> {
   return fetchJson(dataUrl("audio/index.json"), audioIndexSchema);
+}
+
+/**
+ * Where an exercise set's items live. Derived from the id, like a bank's path:
+ * the contract pins sets to `exercises/<id>.json`.
+ */
+export function exerciseFileUrl(setId: string): string {
+  return dataUrl(`exercises/${setId}.json`);
+}
+
+/** Progress is keyed on exercise ids, so two items sharing one id must not pass. */
+function checkExerciseIds(url: string, exercises: { id: string }[]): void {
+  const seen = new Map<string, number>();
+  exercises.forEach((exercise, index) => {
+    const first = seen.get(exercise.id);
+    if (first !== undefined) {
+      throw new DataValidationError(
+        url,
+        `duplicate exercise id "${exercise.id}" at exercises[${first}] and exercises[${index}]`,
+      );
+    }
+    seen.set(exercise.id, index);
+  });
+}
+
+/**
+ * An exercise set's items come from its JSON file; the set's kind comes from
+ * the summary, which is also what picks the item schema. A set at a given
+ * revision is immutable, exactly like a deck at a given revision.
+ *
+ * Assembled per kind rather than generically so the returned union member is
+ * proven by the compiler instead of asserted.
+ */
+export async function fetchExerciseSet(
+  summary: ExerciseSetSummary,
+): Promise<ExerciseSet> {
+  const url = exerciseFileUrl(summary.id);
+  const base = {
+    id: summary.id,
+    name: summary.name,
+    ...(summary.level === undefined ? {} : { level: summary.level }),
+    color: summary.color,
+    revision: summary.revision,
+  };
+
+  switch (summary.kind) {
+    case "grammar": {
+      const file = await fetchJson(url, exerciseFileSchemas.grammar);
+      checkExerciseIds(url, file.exercises);
+      return {
+        schemaVersion: file.schemaVersion,
+        ...base,
+        kind: "grammar",
+        exercises: file.exercises,
+      };
+    }
+    case "translation": {
+      const file = await fetchJson(url, exerciseFileSchemas.translation);
+      checkExerciseIds(url, file.exercises);
+      return {
+        schemaVersion: file.schemaVersion,
+        ...base,
+        kind: "translation",
+        exercises: file.exercises,
+      };
+    }
+    case "writing": {
+      const file = await fetchJson(url, exerciseFileSchemas.writing);
+      checkExerciseIds(url, file.exercises);
+      return {
+        schemaVersion: file.schemaVersion,
+        ...base,
+        kind: "writing",
+        exercises: file.exercises,
+      };
+    }
+  }
 }
 
 /**

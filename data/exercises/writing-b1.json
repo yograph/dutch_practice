@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "exercises": [
+    {
+      "id": "write-a-short-email-to-a",
+      "prompt": "Write a short email to a colleague explaining that you will be late for a meeting.",
+      "instructions": "Include the reason you are late, your expected arrival time, and an apology, in 5 to 7 sentences.",
+      "example": "Beste Sanne,\nHelaas kom ik vanmiddag iets later op de vergadering.\nMijn trein heeft vertraging omdat er een storing op het spoor is.\nIk verwacht dat ik rond kwart over twee op kantoor ben.\nZouden jullie alvast zonder mij willen beginnen?\nMijn excuses voor het ongemak.\nGroeten, Thomas",
+      "tags": [
+        "work",
+        "email"
+      ]
+    },
+    {
+      "id": "write-a-short-note-to-introduce",
+      "prompt": "Write a short note to introduce yourself to your new neighbors.",
+      "instructions": "Mention your name and where you moved from, say something about your household or work, and invite them for coffee, in 5 to 7 sentences.",
+      "example": "Beste buren,\nMijn naam is Lisa en ik ben vorige week in het huis op nummer 12 komen wonen.\nIk kom oorspronkelijk uit Groningen, maar ik werk nu in het centrum als verpleegkundige.\nIk woon hier samen met mijn vriend en onze kat.\nAls jullie zin hebben, komen jullie dan een keer koffie drinken?\nIk hoor het graag!\nGroetjes, Lisa",
+      "tags": [
+        "housing",
+        "introduction"
+      ]
+    },
+    {
+      "id": "give-your-opinion-on-working-from",
+      "prompt": "Give your opinion on working from home.",
+      "instructions": "State your opinion clearly, give two reasons or examples, and mention one disadvantage, in 6 to 8 sentences.",
+      "example": "Volgens mij heeft thuiswerken veel voordelen.\nJe verliest geen tijd in het verkeer en je kunt je pauzes zelf indelen.\nBovendien kun je je thuis vaak beter concentreren dan op een druk kantoor.\nToch zie ik ook een nadeel.\nAls je altijd thuis werkt, mis je het contact met je collega's.\nDaarom vind ik een combinatie het beste: drie dagen thuis en twee dagen op kantoor.\nZo heb je de voordelen van allebei.",
+      "tags": [
+        "opinions",
+        "work"
+      ]
+    },
+    {
+      "id": "write-a-message-to-a-friend",
+      "prompt": "Write a message to a friend suggesting a weekend trip together.",
+      "instructions": "Suggest a destination, propose a date, and ask about your friend's availability, in 5 to 7 sentences.",
+      "example": "Hoi Mark,\nIk zat te denken: zullen we volgende maand een weekend naar de Ardennen gaan?\nWe kunnen daar wandelen en misschien kanoën op de rivier.\nIk zag online een leuk huisje dat niet duur is.\nHet weekend van 14 juni zou mij goed uitkomen.\nKun jij dan, of heb je al plannen?\nLaat het me snel weten!",
+      "tags": [
+        "travel",
+        "friendship"
+      ]
+    },
+    {
+      "id": "describe-your-typical-working-day-from",
+      "prompt": "Describe your typical working day from morning to evening.",
+      "instructions": "Describe your morning, your work or study day, and your evening, in 6 to 8 sentences.",
+      "example": "Op een gewone werkdag sta ik om zeven uur op.\nNa het ontbijt fiets ik in twintig minuten naar mijn werk.\n's Ochtends beantwoord ik meestal e-mails en heb ik overleg met mijn team.\nTussen de middag eet ik een boterham met collega's in de kantine.\n's Middags werk ik verder aan mijn projecten.\nRond zes uur ben ik weer thuis en kook ik iets eenvoudigs.\n's Avonds sport ik of kijk ik een serie op de bank.\nMeestal lig ik rond elf uur in bed.",
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "write-a-complaint-message-to-a",
+      "prompt": "Write a complaint message to a webshop about an order that has not arrived.",
+      "instructions": "Mention what you ordered and when, describe the problem, and say what you want the shop to do, in 6 to 8 sentences.",
+      "example": "Geachte heer of mevrouw,\nOp 2 mei heb ik bij uw webshop een koffiezetapparaat besteld met bestelnummer 48291.\nVolgens uw website zou het pakket binnen drie dagen bezorgd worden.\nHet is nu twee weken later, maar ik heb nog niets ontvangen.\nOok heb ik geen bericht gekregen over een nieuwe bezorgdatum.\nIk wil graag weten waar mijn bestelling blijft.\nAls het pakket deze week niet komt, wil ik mijn geld terug.\nMet vriendelijke groet, Emma de Vries",
+      "tags": [
+        "shopping",
+        "complaints"
+      ]
+    },
+    {
+      "id": "describe-a-holiday-you-really-enjoyed",
+      "prompt": "Describe a holiday you really enjoyed.",
+      "instructions": "Say where and when you went, describe two things you did, and explain why it was special, in 6 to 8 sentences.",
+      "example": "Twee jaar geleden ben ik met mijn beste vriendin naar Portugal geweest.\nWe verbleven in een klein appartement in Lissabon, vlak bij het centrum.\nOverdag bezochten we musea en wandelden we door de oude wijken.\n's Avonds aten we vaak verse vis in kleine restaurants aan de haven.\nOp de laatste dag zijn we met de trein naar het strand gegaan.\nHet was mijn mooiste vakantie tot nu toe, omdat alles zo ontspannen was.\nIk zou er graag nog een keer naartoe gaan.",
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "give-your-opinion-on-the-use",
+      "prompt": "Give your opinion on the use of social media.",
+      "instructions": "State your opinion, support it with two arguments, and end with a conclusion or piece of advice, in 6 to 8 sentences.",
+      "example": "Ik vind dat sociale media zowel voordelen als nadelen hebben.\nAan de ene kant kun je gemakkelijk contact houden met vrienden die ver weg wonen.\nOok vind je er snel nieuws en handige informatie.\nAan de andere kant besteden veel mensen er te veel tijd aan.\nBovendien is niet alle informatie betrouwbaar.\nDaarom vind ik dat je bewust met sociale media moet omgaan.\nZet je telefoon bijvoorbeeld 's avonds een uur uit.",
+      "tags": [
+        "opinions",
+        "technology"
+      ]
+    },
+    {
+      "id": "write-an-invitation-to-friends-for",
+      "prompt": "Write an invitation to friends for your birthday party.",
+      "instructions": "Mention the date, time and place, say what you will do or eat, and ask people to reply, in 5 to 7 sentences.",
+      "example": "Lieve vrienden,\nOp zaterdag 21 september word ik dertig en dat wil ik graag met jullie vieren!\nHet feest begint om acht uur bij mij thuis in de tuin.\nEr is genoeg te eten en te drinken, en er wordt natuurlijk ook gedanst.\nWillen jullie voor 10 september laten weten of jullie komen?\nIk hoop dat iedereen erbij kan zijn!\nGroetjes, Nadia",
+      "tags": [
+        "celebrations",
+        "friendship"
+      ]
+    },
+    {
+      "id": "write-a-message-to-your-landlord",
+      "prompt": "Write a message to your landlord about a problem in your apartment.",
+      "instructions": "Describe the problem and when it started, explain why it needs to be fixed soon, and ask for a repair appointment, in 5 to 7 sentences.",
+      "example": "Geachte meneer Jansen,\nSinds afgelopen weekend werkt de verwarming in de woonkamer niet meer.\nIk heb de thermostaat al gecontroleerd, maar dat hielp niet.\nOmdat het 's avonds erg koud wordt, zou ik het fijn vinden als dit snel opgelost kan worden.\nZou u een monteur kunnen sturen?\nIk ben deze week elke dag na vijf uur thuis.\nMet vriendelijke groet, Daniel",
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "describe-what-you-would-do-if",
+      "prompt": "Describe what you would do if you won a large amount of money in the lottery.",
+      "instructions": "Use conditional forms with zou or zouden, name at least three things you would do, and explain one of your choices, in 6 to 8 sentences.",
+      "example": "Als ik de loterij zou winnen, zou ik eerst een wereldreis maken.\nIk zou landen bezoeken waar ik altijd al naartoe wilde, zoals Japan en Nieuw-Zeeland.\nDaarna zou ik een huis met een grote tuin kopen.\nOok zou ik een deel van het geld aan mijn familie geven.\nMijn ouders hebben mij altijd geholpen, dus dat verdienen ze.\nIk zou niet meteen stoppen met werken, omdat ik mijn werk leuk vind.\nMisschien zou ik wel minder uren gaan werken.",
+      "tags": [
+        "money",
+        "dreams"
+      ]
+    },
+    {
+      "id": "write-a-short-review-of-a",
+      "prompt": "Write a short review of a restaurant you recently visited.",
+      "instructions": "Describe what you ate, comment on the service and the price, and say whether you would recommend it, in 6 to 8 sentences.",
+      "example": "Vorige week heb ik met mijn collega's gegeten bij restaurant De Gouden Lepel.\nIk heb de vegetarische lasagne genomen en die smaakte uitstekend.\nOok de huisgemaakte tiramisu was heerlijk.\nDe bediening was vriendelijk, maar we moesten wel lang op het hoofdgerecht wachten.\nDe prijzen zijn normaal voor deze buurt: ongeveer twintig euro per hoofdgerecht.\nIk zou dit restaurant zeker aanraden, vooral voor een etentje met vrienden.\nReserveren is wel verstandig, omdat het er snel vol zit.",
+      "tags": [
+        "food",
+        "reviews"
+      ]
+    }
+  ]
+}

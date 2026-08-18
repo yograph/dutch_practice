@@ -9,6 +9,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 export const REPO_ROOT = path.resolve(here, "..", "..", "..");
 export const DATA_DIR = path.join(REPO_ROOT, "data");
 export const BANKS_DIR = path.join(DATA_DIR, "banks");
+export const EXERCISES_DIR = path.join(DATA_DIR, "exercises");
 export const AUDIO_DIR = path.join(DATA_DIR, "audio");
 export const LIBRARY_PATH = path.join(DATA_DIR, "library.json");
 export const MANIFEST_PATH = path.join(DATA_DIR, "manifest.json");

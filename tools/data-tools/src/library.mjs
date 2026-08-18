@@ -6,10 +6,13 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { readJson } from "./json.mjs";
-import { BANKS_DIR, DATA_DIR, LIBRARY_PATH } from "./paths.mjs";
+import { BANKS_DIR, DATA_DIR, EXERCISES_DIR, LIBRARY_PATH } from "./paths.mjs";
 import { parseTagCell, parseTsv } from "./tsv.mjs";
 
 export const SCHEMA_VERSION = 2;
+
+/** The exercise-set kinds the contract knows. */
+export const EXERCISE_KINDS = ["grammar", "translation", "writing"];
 
 /** Columns a bank must declare. Anything else is ignored. */
 export const REQUIRED_COLUMNS = ["id", "front", "back"];
@@ -56,6 +59,48 @@ export function isSafeRelativePath(value) {
     !value.startsWith("/") &&
     !value.split(/[\\/]/).includes("..")
   );
+}
+
+/**
+ * Where an exercise set's items live, relative to data/. Derived from the id,
+ * for the same reason a deck's bank path is: an authored path field pinned to
+ * exactly this value could only ever repeat the id or be wrong.
+ */
+export function exerciseRelativePath(id) {
+  return `exercises/${id}.json`;
+}
+
+/** Absolute path of an exercise set's file. */
+export function exerciseAbsolutePath(id) {
+  return path.join(DATA_DIR, exerciseRelativePath(id));
+}
+
+/** `exercises/<stem>.json` file names present on disk, sorted. */
+export function listExerciseFiles() {
+  if (!fs.existsSync(EXERCISES_DIR)) return [];
+  return fs
+    .readdirSync(EXERCISES_DIR)
+    .filter((name) => name.endsWith(".json"))
+    .sort();
+}
+
+/**
+ * Reads one exercise set's file, located from its id. As with banks, `revision`
+ * hashes the exact bytes, so any edit changes the cache key.
+ *
+ * @param {string} id exercise set id, e.g. "grammar-a1"
+ */
+export function loadExerciseSet(id) {
+  const relative = exerciseRelativePath(id);
+  const file = exerciseAbsolutePath(id);
+  const bytes = fs.readFileSync(file);
+  let json;
+  try {
+    json = JSON.parse(bytes.toString("utf8"));
+  } catch (error) {
+    throw new Error(`cannot parse data/${relative}: ${error.message}`);
+  }
+  return { id, relative, file, bytes, json, revision: revisionHash(bytes) };
 }
 
 /** `banks/<stem>.tsv` file names present on disk, sorted. */

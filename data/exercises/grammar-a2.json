@@ -1,0 +1,568 @@
+{
+  "schemaVersion": 2,
+  "exercises": [
+    {
+      "id": "wij-gisteren-naar-amsterdam-gereisd",
+      "prompt": "Wij ___ gisteren naar Amsterdam gereisd.",
+      "choices": [
+        "hebben",
+        "zijn",
+        "heeft",
+        "bent"
+      ],
+      "answerIndex": 1,
+      "explanation": "Verbs of movement toward a destination form the perfect tense with zijn, not hebben. With wij the form is zijn.",
+      "tags": [
+        "perfect-tense",
+        "hebben-zijn"
+      ]
+    },
+    {
+      "id": "ik-mijn-huiswerk-al-gemaakt",
+      "prompt": "Ik ___ mijn huiswerk al gemaakt.",
+      "choices": [
+        "ben",
+        "is",
+        "hebt",
+        "heb"
+      ],
+      "answerIndex": 3,
+      "explanation": "Maken is a transitive verb, so the perfect tense uses hebben. With ik the form is heb.",
+      "tags": [
+        "perfect-tense",
+        "hebben-zijn"
+      ]
+    },
+    {
+      "id": "hij-is-gisteren-thuis",
+      "prompt": "Hij is gisteren thuis ___.",
+      "choices": [
+        "geblijft",
+        "blijven",
+        "gebleven",
+        "gebleefd"
+      ],
+      "answerIndex": 2,
+      "explanation": "Blijven is irregular: its past participle is gebleven, and it takes zijn in the perfect tense.",
+      "tags": [
+        "perfect-tense",
+        "past-participle"
+      ]
+    },
+    {
+      "id": "mijn-zus-om-acht-uur-opgestaan",
+      "prompt": "Mijn zus ___ om acht uur opgestaan.",
+      "choices": [
+        "is",
+        "heeft",
+        "hebben",
+        "zijn"
+      ],
+      "answerIndex": 0,
+      "explanation": "Opstaan describes a change of position and takes zijn in the perfect tense. Mijn zus is singular, so the form is is.",
+      "tags": [
+        "perfect-tense",
+        "hebben-zijn"
+      ]
+    },
+    {
+      "id": "vroeger-ik-in-rotterdam",
+      "prompt": "Vroeger ___ ik in Rotterdam.",
+      "choices": [
+        "woont",
+        "woonden",
+        "woonde",
+        "woonte"
+      ],
+      "answerIndex": 2,
+      "explanation": "The simple past of wonen is woonde: the stem ends in n, which is not in 't kofschip, so the ending is -de. Singular ik takes woonde.",
+      "tags": [
+        "simple-past"
+      ]
+    },
+    {
+      "id": "gisteren-wij-naar-de-film",
+      "prompt": "Gisteren ___ wij naar de film.",
+      "choices": [
+        "ging",
+        "gingen",
+        "gaan",
+        "gaat"
+      ],
+      "answerIndex": 1,
+      "explanation": "Gaan has an irregular simple past: ging in the singular and gingen in the plural. With wij you need gingen.",
+      "tags": [
+        "simple-past",
+        "irregular-verbs"
+      ]
+    },
+    {
+      "id": "vorig-jaar-hij-veel-boeken",
+      "prompt": "Vorig jaar ___ hij veel boeken.",
+      "choices": [
+        "las",
+        "leesde",
+        "lazen",
+        "leest"
+      ],
+      "answerIndex": 0,
+      "explanation": "Lezen is a strong verb: its simple past is las in the singular and lazen in the plural. It never takes -de.",
+      "tags": [
+        "simple-past",
+        "irregular-verbs"
+      ]
+    },
+    {
+      "id": "ik-elke-dag-om-zeven-uur",
+      "prompt": "Ik ___ elke dag om zeven uur op.",
+      "choices": [
+        "sta op",
+        "opsta",
+        "sta",
+        "staat"
+      ],
+      "answerIndex": 2,
+      "explanation": "Opstaan is a separable verb: in a main clause the prefix op moves to the end of the sentence. Only the stem sta fills the gap because op is already at the end.",
+      "tags": [
+        "separable-verbs",
+        "word-order"
+      ]
+    },
+    {
+      "id": "ik-bel-je-morgen-op",
+      "prompt": "Which sentence is correct?",
+      "choices": [
+        "Ik opbel je morgen.",
+        "Ik bel je morgen op.",
+        "Ik bel op je morgen.",
+        "Morgen ik bel je op."
+      ],
+      "answerIndex": 1,
+      "explanation": "Opbellen is separable: the conjugated part bel stays in second position and the prefix op goes to the very end of the main clause.",
+      "tags": [
+        "separable-verbs",
+        "word-order"
+      ]
+    },
+    {
+      "id": "zij-heeft-haar-moeder-gisteren",
+      "prompt": "Zij heeft haar moeder gisteren ___.",
+      "choices": [
+        "gebeld op",
+        "geopbeld",
+        "opbelt",
+        "opgebeld"
+      ],
+      "answerIndex": 3,
+      "explanation": "The past participle of a separable verb puts ge between the prefix and the stem: op + ge + beld = opgebeld.",
+      "tags": [
+        "separable-verbs",
+        "perfect-tense"
+      ]
+    },
+    {
+      "id": "hij-zegt-dat-hij-morgen-komt",
+      "prompt": "Which sentence is correct?",
+      "choices": [
+        "Hij zegt dat hij morgen komt.",
+        "Hij zegt dat hij komt morgen.",
+        "Hij zegt dat komt hij morgen.",
+        "Hij zegt dat morgen komt hij."
+      ],
+      "answerIndex": 0,
+      "explanation": "After the conjunction dat, the conjugated verb moves to the end of the subclause: dat hij morgen komt.",
+      "tags": [
+        "word-order",
+        "subclauses"
+      ]
+    },
+    {
+      "id": "als-het-regent-we-binnen",
+      "prompt": "Als het regent, ___ we binnen.",
+      "choices": [
+        "blijft",
+        "bleven",
+        "we blijven",
+        "blijven"
+      ],
+      "answerIndex": 3,
+      "explanation": "When a sentence starts with an als-clause, the main clause begins with the verb (inversion). With we the present form is blijven.",
+      "tags": [
+        "word-order",
+        "subclauses"
+      ]
+    },
+    {
+      "id": "ik-kom-niet-omdat-ik-ziek",
+      "prompt": "Which sentence is correct?",
+      "choices": [
+        "Ik kom niet, omdat ik ben ziek.",
+        "Ik kom niet, omdat ben ik ziek.",
+        "Ik kom niet, omdat ik ziek ben.",
+        "Ik kom niet, omdat ziek ik ben."
+      ],
+      "answerIndex": 2,
+      "explanation": "Omdat introduces a subclause, so the conjugated verb ben goes to the end: omdat ik ziek ben.",
+      "tags": [
+        "word-order",
+        "subclauses"
+      ]
+    },
+    {
+      "id": "hij-zegt-dat-hij-geen-tijd",
+      "prompt": "Hij zegt dat hij geen tijd ___.",
+      "choices": [
+        "heb",
+        "heeft",
+        "hebt",
+        "hebben"
+      ],
+      "answerIndex": 1,
+      "explanation": "In a dat-clause the conjugated verb stands at the end. The subject hij takes the form heeft.",
+      "tags": [
+        "word-order",
+        "subclauses"
+      ]
+    },
+    {
+      "id": "deze-fiets-is-dan-die-fiets",
+      "prompt": "Deze fiets is ___ dan die fiets.",
+      "choices": [
+        "duur",
+        "duurst",
+        "meer duur",
+        "duurder"
+      ],
+      "answerIndex": 3,
+      "explanation": "The comparative in Dutch is formed with -er: duur becomes duurder. Dutch does not use meer with short adjectives.",
+      "tags": [
+        "comparative"
+      ]
+    },
+    {
+      "id": "amsterdam-is-de-stad-van-nederland",
+      "prompt": "Amsterdam is de ___ stad van Nederland.",
+      "choices": [
+        "groter",
+        "grootste",
+        "grootst",
+        "groot"
+      ],
+      "answerIndex": 1,
+      "explanation": "The superlative is formed with -st: grootst. Before a noun after de it also gets the adjective ending -e: de grootste stad.",
+      "tags": [
+        "superlative",
+        "adjective-endings"
+      ]
+    },
+    {
+      "id": "dit-boek-is-dan-dat-boek",
+      "prompt": "Dit boek is ___ dan dat boek.",
+      "choices": [
+        "beter",
+        "goeder",
+        "best",
+        "meer goed"
+      ],
+      "answerIndex": 0,
+      "explanation": "Goed has an irregular comparative: beter. The form goeder does not exist in standard Dutch.",
+      "tags": [
+        "comparative",
+        "irregular-forms"
+      ]
+    },
+    {
+      "id": "ik-zie-een-huis",
+      "prompt": "Ik zie een ___ huis.",
+      "choices": [
+        "mooie",
+        "mooien",
+        "mooi",
+        "moois"
+      ],
+      "answerIndex": 2,
+      "explanation": "After een, an adjective before a het-word gets no -e: een mooi huis. Huis is a het-word.",
+      "tags": [
+        "adjective-endings",
+        "de-het"
+      ]
+    },
+    {
+      "id": "de-auto-staat-voor-de-deur",
+      "prompt": "De ___ auto staat voor de deur.",
+      "choices": [
+        "rood",
+        "rode",
+        "roden",
+        "rodere"
+      ],
+      "answerIndex": 1,
+      "explanation": "After the definite article de, the adjective always gets -e: de rode auto. Note the spelling change from rood to rode.",
+      "tags": [
+        "adjective-endings"
+      ]
+    },
+    {
+      "id": "wij-drinken-koffie",
+      "prompt": "Wij drinken ___ koffie.",
+      "choices": [
+        "warm",
+        "warmen",
+        "warme",
+        "warms"
+      ],
+      "answerIndex": 2,
+      "explanation": "Koffie is a de-word, and adjectives before de-words get -e even without an article: warme koffie.",
+      "tags": [
+        "adjective-endings",
+        "de-het"
+      ]
+    },
+    {
+      "id": "het-meisje-speelt-buiten",
+      "prompt": "Het ___ meisje speelt buiten.",
+      "choices": [
+        "klein",
+        "kleintje",
+        "kleinen",
+        "kleine"
+      ],
+      "answerIndex": 3,
+      "explanation": "After the definite article het, the adjective gets -e even before a het-word: het kleine meisje. Only een + het-word drops the -e.",
+      "tags": [
+        "adjective-endings",
+        "de-het"
+      ]
+    },
+    {
+      "id": "ik-ga-naar-de-winkel-brood",
+      "prompt": "Ik ga naar de winkel ___ brood te kopen.",
+      "choices": [
+        "voor",
+        "te",
+        "om",
+        "dat"
+      ],
+      "answerIndex": 2,
+      "explanation": "Purpose is expressed with om ... te + infinitive: om brood te kopen. Voor cannot introduce this construction.",
+      "tags": [
+        "om-te-infinitive"
+      ]
+    },
+    {
+      "id": "zij-belt-haar-vriendin-om-samen",
+      "prompt": "Zij belt haar vriendin om samen ___ eten.",
+      "choices": [
+        "om",
+        "te",
+        "voor",
+        "en"
+      ],
+      "answerIndex": 1,
+      "explanation": "In the om ... te construction, te stands directly before the infinitive at the end: om samen te eten.",
+      "tags": [
+        "om-te-infinitive"
+      ]
+    },
+    {
+      "id": "hij-spaart-geld-om-een-auto",
+      "prompt": "Which sentence is correct?",
+      "choices": [
+        "Hij spaart geld om een auto te kopen.",
+        "Hij spaart geld om te een auto kopen.",
+        "Hij spaart geld voor een auto te kopen.",
+        "Hij spaart geld om een auto kopen."
+      ],
+      "answerIndex": 0,
+      "explanation": "The purpose clause needs both om and te: om comes first, the object follows, and te + infinitive stand together at the end.",
+      "tags": [
+        "om-te-infinitive",
+        "word-order"
+      ]
+    },
+    {
+      "id": "ik-voel-vandaag-niet-zo-goed",
+      "prompt": "Ik voel ___ vandaag niet zo goed.",
+      "choices": [
+        "zich",
+        "je",
+        "ons",
+        "me"
+      ],
+      "answerIndex": 3,
+      "explanation": "Zich voelen is reflexive, and the reflexive pronoun must match the subject: ik voel me. Zich is only used for the third person (hij, zij, ze) and u.",
+      "tags": [
+        "reflexive-verbs"
+      ]
+    },
+    {
+      "id": "hij-kleedt-elke-ochtend-snel-aan",
+      "prompt": "Hij kleedt ___ elke ochtend snel aan.",
+      "choices": [
+        "hem",
+        "zich",
+        "zijn",
+        "haar"
+      ],
+      "answerIndex": 1,
+      "explanation": "Zich aankleden is reflexive: with hij the reflexive pronoun is zich, not the object pronoun hem.",
+      "tags": [
+        "reflexive-verbs"
+      ]
+    },
+    {
+      "id": "wij-wassen-elke-ochtend",
+      "prompt": "Wij wassen ___ elke ochtend.",
+      "choices": [
+        "ons",
+        "zich",
+        "we",
+        "onze"
+      ],
+      "answerIndex": 0,
+      "explanation": "With the subject wij, the reflexive pronoun is ons: wij wassen ons. Zich belongs only to the third person and u.",
+      "tags": [
+        "reflexive-verbs"
+      ]
+    },
+    {
+      "id": "de-deur-dicht-alsjeblieft",
+      "prompt": "___ de deur dicht, alsjeblieft!",
+      "choices": [
+        "Doet",
+        "Doen",
+        "Deed",
+        "Doe"
+      ],
+      "answerIndex": 3,
+      "explanation": "The informal imperative is simply the verb stem: doe. It has no -t and no subject.",
+      "tags": [
+        "imperative"
+      ]
+    },
+    {
+      "id": "je-jas-aan-het-is-koud",
+      "prompt": "___ je jas aan, het is koud buiten!",
+      "choices": [
+        "Trek",
+        "Trekt",
+        "Trekken",
+        "Trok"
+      ],
+      "answerIndex": 0,
+      "explanation": "The imperative uses the bare stem: trek. The prefix of the separable verb aantrekken goes to the end of the clause.",
+      "tags": [
+        "imperative",
+        "separable-verbs"
+      ]
+    },
+    {
+      "id": "kinderen-eens-rustig",
+      "prompt": "Kinderen, ___ eens rustig!",
+      "choices": [
+        "Ben",
+        "Zijn",
+        "Wees",
+        "Is"
+      ],
+      "answerIndex": 2,
+      "explanation": "The verb zijn has an irregular imperative: wees. It is used for both one person and a group.",
+      "tags": [
+        "imperative",
+        "irregular-verbs"
+      ]
+    },
+    {
+      "id": "kijk-wat-een-lief",
+      "prompt": "Kijk, wat een lief ___!",
+      "choices": [
+        "hondetje",
+        "hondtje",
+        "hondje",
+        "honden"
+      ],
+      "answerIndex": 2,
+      "explanation": "The diminutive of de hond is het hondje, formed with -je. All diminutives are het-words, which is why lief has no -e after een.",
+      "tags": [
+        "diminutives",
+        "de-het"
+      ]
+    },
+    {
+      "id": "wil-je-een-thee",
+      "prompt": "Wil je een ___ thee?",
+      "choices": [
+        "kopje",
+        "koppetje",
+        "kopjes",
+        "kopie"
+      ],
+      "answerIndex": 0,
+      "explanation": "De kop becomes het kopje with the diminutive ending -je. Een kopje thee is the standard way to offer tea.",
+      "tags": [
+        "diminutives"
+      ]
+    },
+    {
+      "id": "zij-woont-in-een-klein-in",
+      "prompt": "Zij woont in een klein ___ in de stad.",
+      "choices": [
+        "huistje",
+        "huizeje",
+        "huisjes",
+        "huisje"
+      ],
+      "answerIndex": 3,
+      "explanation": "Het huis takes the diminutive ending -je: het huisje. The singular is needed here, and there is no extra t or z.",
+      "tags": [
+        "diminutives"
+      ]
+    },
+    {
+      "id": "morgen-ik-mijn-oma-bezoeken",
+      "prompt": "Morgen ___ ik mijn oma bezoeken.",
+      "choices": [
+        "gaat",
+        "ga",
+        "gaan",
+        "ging"
+      ],
+      "answerIndex": 1,
+      "explanation": "The future with gaan + infinitive needs gaan conjugated for the subject: ik ga. The main verb bezoeken stays an infinitive at the end.",
+      "tags": [
+        "gaan-future"
+      ]
+    },
+    {
+      "id": "volgende-week-het-regenen-denk-ik",
+      "prompt": "Volgende week ___ het regenen, denk ik.",
+      "choices": [
+        "gaat",
+        "ga",
+        "gaan",
+        "gingen"
+      ],
+      "answerIndex": 0,
+      "explanation": "For predictions Dutch uses gaan + infinitive. The subject het takes the singular form gaat: het gaat regenen.",
+      "tags": [
+        "gaan-future"
+      ]
+    },
+    {
+      "id": "wij-gaan-volgend-jaar-in-utrecht",
+      "prompt": "Which sentence is correct?",
+      "choices": [
+        "Wij gaan wonen volgend jaar in Utrecht.",
+        "Wij wonen gaan volgend jaar in Utrecht.",
+        "Wij gaan volgend jaar in Utrecht woont.",
+        "Wij gaan volgend jaar in Utrecht wonen."
+      ],
+      "answerIndex": 3,
+      "explanation": "In the gaan-future, gaan is conjugated in second position and the infinitive wonen goes to the very end of the sentence, after time and place.",
+      "tags": [
+        "gaan-future",
+        "word-order"
+      ]
+    }
+  ]
+}

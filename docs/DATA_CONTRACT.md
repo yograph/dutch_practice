@@ -22,10 +22,12 @@ and the duplication cannot drift.
 
 ```
 data/
-├── library.json             # AUTHORED  deck metadata, the single source
+├── library.json             # AUTHORED  deck + exercise-set metadata, the single source
 ├── banks/
 │   └── <deckId>.tsv         # AUTHORED  one word per line
-├── manifest.json            # GENERATED library + banks, with derived fields
+├── exercises/
+│   └── <setId>.json         # AUTHORED  one exercise set (grammar/translation/writing)
+├── manifest.json            # GENERATED library + banks + sets, with derived fields
 └── audio/
     ├── index.json           # GENERATED spoken-text -> clip lookup
     └── <locale>/<sha1>.ogg  # Opus-in-Ogg, mono, speech-tuned bitrate
@@ -70,6 +72,84 @@ No `revision`, no `wordCount`, no `tags`: all three are derived.
 There is also no `bank` path field. A deck's words live at `banks/<id>.tsv`,
 derived from `id` wherever the path is needed. An explicit field pinned to that
 exact value carried no information and could only ever be wrong.
+
+### `exerciseSets` (optional)
+
+`library.json` may also list exercise sets — grammar questions, translations
+and writing prompts — under a top-level `exerciseSets` array:
+
+```json
+{
+  "exerciseSets": [
+    {
+      "id": "grammar-a1",
+      "name": "Grammar A1",
+      "kind": "grammar",
+      "level": "A1",
+      "color": "#D97706",
+      "icon": "graduation-cap"
+    }
+  ]
+}
+```
+
+- `id` — lowercase slug; must equal the set file's stem (`exercises/<id>.json`,
+  derived, never authored as a path — same reasoning as banks).
+- `kind` — `grammar`, `translation` or `writing`. Decides the shape of the
+  set's items and which practice UI runs them.
+- `level` — **optional** free-text label ("A1"), shown as a subtitle.
+- `color`, `icon` — as for decks.
+
+No `exerciseCount`, no `revision`: both derived, exactly like a deck's
+`wordCount`/`revision`.
+
+## `exercises/<setId>.json` (authored)
+
+```json
+{
+  "schemaVersion": 2,
+  "exercises": [
+    {
+      "id": "ik-naar-school",
+      "prompt": "Ik ___ naar school.",
+      "choices": ["ga", "gaat", "gaan", "gaas"],
+      "answerIndex": 0,
+      "explanation": "First person singular takes the verb stem: ik ga.",
+      "tags": ["present-tense"]
+    }
+  ]
+}
+```
+
+Item shape depends on the set's `kind` (which lives in `library.json` only, so
+it cannot drift):
+
+- **grammar** — `id`, `prompt`, `choices` (2+ distinct options, exactly one
+  correct), `answerIndex` (0-based, must index into `choices`), `explanation`,
+  `tags`.
+- **translation** — `id`, `source`, `reference`, `direction` (`nl-en` when the
+  source is Dutch, `en-nl` when it is English), `tags`.
+- **writing** — `id`, `prompt`, `instructions`, `example` (a model answer,
+  may contain newlines), `tags`.
+
+Rules shared by every kind:
+
+- `id` is a **stable, unique-within-the-set** lowercase slug, and the key the
+  learner's progress is stored under. Unlike word ids it is not derived from
+  any text field — exercises get reworded in place. **Never reassign one.**
+- `tags` may be empty but must be present.
+- Exercise text renders as **plain text**: the inline-markdown subset that
+  cards support does not apply here, and markup-looking text draws a validator
+  warning.
+
+## Manifest `exerciseSets` (generated)
+
+When the library lists exercise sets, the manifest carries them after `decks`,
+each entry being the authored fields plus derived `exerciseCount` and
+`revision` (first 12 hex of sha256 of the set file's exact bytes — the cache
+key, same mechanism as decks). When the library lists none, the key is absent
+entirely, so a library without sets produces byte-identical output to one
+predating the field.
 
 ## `banks/<deckId>.tsv` (authored)
 
@@ -273,8 +353,12 @@ display order; only the hash input is sorted.
 5. Inline formatting in `front`/`back` parses with balanced delimiters. Unbalanced
    markup is a **warning**, not an error — it still renders as literal text, so it
    is a likely typo rather than corruption.
-6. `manifest.json` is byte-identical to a fresh regeneration from `library.json`
-   and the banks.
+6. `manifest.json` is byte-identical to a fresh regeneration from `library.json`,
+   the banks and the exercise sets.
 7. Every `audio/index.json` clip path exists on disk with the recorded byte size;
    every clip key's locale is used by some deck; and no clip key contains
    formatting markup (it must be stripped text).
+8. Every `library.exerciseSets[]` entry has a valid file at
+   `exercises/<id>.json` (schema version, item shape per kind, unique slug ids,
+   `answerIndex` in range), and every file in `exercises/` is claimed by
+   exactly one entry.

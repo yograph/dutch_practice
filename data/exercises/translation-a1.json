@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 2,
+  "exercises": [
+    {
+      "id": "ik-woon-in-een-klein-huis",
+      "source": "Ik woon in een klein huis.",
+      "reference": "I live in a small house.",
+      "direction": "nl-en",
+      "tags": [
+        "home",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "de-winkel-is-vandaag-open",
+      "source": "De winkel is vandaag open.",
+      "reference": "The shop is open today.",
+      "direction": "nl-en",
+      "tags": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "wij-eten-om-zes-uur",
+      "source": "Wij eten om zes uur.",
+      "reference": "We eat at six o'clock.",
+      "direction": "nl-en",
+      "tags": [
+        "food",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "mijn-broer-werkt-in-een-restaurant",
+      "source": "Mijn broer werkt in een restaurant.",
+      "reference": "My brother works in a restaurant.",
+      "direction": "nl-en",
+      "tags": [
+        "family",
+        "work"
+      ]
+    },
+    {
+      "id": "het-weer-is-mooi-vandaag",
+      "source": "Het weer is mooi vandaag.",
+      "reference": "The weather is nice today.",
+      "direction": "nl-en",
+      "tags": [
+        "weather"
+      ]
+    },
+    {
+      "id": "ik-drink-graag-koffie-met-melk",
+      "source": "Ik drink graag koffie met melk.",
+      "reference": "I like to drink coffee with milk.",
+      "direction": "nl-en",
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "de-trein-komt-om-tien-uur",
+      "source": "De trein komt om tien uur.",
+      "reference": "The train comes at ten o'clock.",
+      "direction": "nl-en",
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "zij-heeft-een-rode-fiets",
+      "source": "Zij heeft een rode fiets.",
+      "reference": "She has a red bike.",
+      "direction": "nl-en",
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "wij-gaan-morgen-naar-de-markt",
+      "source": "Wij gaan morgen naar de markt.",
+      "reference": "We are going to the market tomorrow.",
+      "direction": "nl-en",
+      "tags": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "de-kinderen-spelen-in-het-park",
+      "source": "De kinderen spelen in het park.",
+      "reference": "The children are playing in the park.",
+      "direction": "nl-en",
+      "tags": [
+        "family",
+        "free-time"
+      ]
+    },
+    {
+      "id": "ik-spreek-een-beetje-nederlands",
+      "source": "Ik spreek een beetje Nederlands.",
+      "reference": "I speak a little Dutch.",
+      "direction": "nl-en",
+      "tags": [
+        "language"
+      ]
+    },
+    {
+      "id": "het-boek-ligt-op-de-tafel",
+      "source": "Het boek ligt op de tafel.",
+      "reference": "The book is on the table.",
+      "direction": "nl-en",
+      "tags": [
+        "home"
+      ]
+    },
+    {
+      "id": "mijn-moeder-kookt-vanavond-soep",
+      "source": "Mijn moeder kookt vanavond soep.",
+      "reference": "My mother is cooking soup tonight.",
+      "direction": "nl-en",
+      "tags": [
+        "family",
+        "food"
+      ]
+    },
+    {
+      "id": "de-school-begint-om-half-negen",
+      "source": "De school begint om half negen.",
+      "reference": "School starts at half past eight.",
+      "direction": "nl-en",
+      "tags": [
+        "school"
+      ]
+    },
+    {
+      "id": "ik-ga-vandaag-met-de-bus",
+      "source": "Ik ga vandaag met de bus.",
+      "reference": "I am taking the bus today.",
+      "direction": "nl-en",
+      "tags": [
+        "travel",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "i-have-two-sisters-and-one",
+      "source": "I have two sisters and one brother.",
+      "reference": "Ik heb twee zussen en één broer.",
+      "direction": "en-nl",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "the-cat-sleeps-on-the-chair",
+      "source": "The cat sleeps on the chair.",
+      "reference": "De kat slaapt op de stoel.",
+      "direction": "en-nl",
+      "tags": [
+        "animals",
+        "home"
+      ]
+    },
+    {
+      "id": "we-drink-tea-in-the-morning",
+      "source": "We drink tea in the morning.",
+      "reference": "Wij drinken thee in de ochtend.",
+      "direction": "en-nl",
+      "tags": [
+        "food",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "my-father-works-in-an-office",
+      "source": "My father works in an office.",
+      "reference": "Mijn vader werkt op een kantoor.",
+      "direction": "en-nl",
+      "tags": [
+        "family",
+        "work"
+      ]
+    },
+    {
+      "id": "the-bread-costs-two-euros",
+      "source": "The bread costs two euros.",
+      "reference": "Het brood kost twee euro.",
+      "direction": "en-nl",
+      "tags": [
+        "shopping",
+        "food"
+      ]
+    },
+    {
+      "id": "i-go-to-work-by-bike",
+      "source": "I go to work by bike.",
+      "reference": "Ik ga met de fiets naar het werk.",
+      "direction": "en-nl",
+      "tags": [
+        "work",
+        "travel"
+      ]
+    },
+    {
+      "id": "she-lives-in-amsterdam-with-her",
+      "source": "She lives in Amsterdam with her friend.",
+      "reference": "Zij woont in Amsterdam met haar vriendin.",
+      "direction": "en-nl",
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "the-restaurant-is-closed-on-monday",
+      "source": "The restaurant is closed on Monday.",
+      "reference": "Het restaurant is op maandag dicht.",
+      "direction": "en-nl",
+      "tags": [
+        "food",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "i-would-like-a-glass-of",
+      "source": "I would like a glass of water.",
+      "reference": "Ik wil graag een glas water.",
+      "direction": "en-nl",
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "the-children-go-to-school-at",
+      "source": "The children go to school at eight.",
+      "reference": "De kinderen gaan om acht uur naar school.",
+      "direction": "en-nl",
+      "tags": [
+        "school",
+        "family"
+      ]
+    },
+    {
+      "id": "it-is-cold-outside-today",
+      "source": "It is cold outside today.",
+      "reference": "Het is vandaag koud buiten.",
+      "direction": "en-nl",
+      "tags": [
+        "weather"
+      ]
+    },
+    {
+      "id": "we-watch-television-in-the-evening",
+      "source": "We watch television in the evening.",
+      "reference": "Wij kijken 's avonds televisie.",
+      "direction": "en-nl",
+      "tags": [
+        "free-time",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "my-house-has-a-small-garden",
+      "source": "My house has a small garden.",
+      "reference": "Mijn huis heeft een kleine tuin.",
+      "direction": "en-nl",
+      "tags": [
+        "home"
+      ]
+    },
+    {
+      "id": "the-train-to-utrecht-leaves-at",
+      "source": "The train to Utrecht leaves at nine.",
+      "reference": "De trein naar Utrecht vertrekt om negen uur.",
+      "direction": "en-nl",
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "i-buy-apples-at-the-market",
+      "source": "I buy apples at the market.",
+      "reference": "Ik koop appels op de markt.",
+      "direction": "en-nl",
+      "tags": [
+        "shopping",
+        "food"
+      ]
+    }
+  ]
+}

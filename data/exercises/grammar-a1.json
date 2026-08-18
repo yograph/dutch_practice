@@ -1,0 +1,553 @@
+{
+  "schemaVersion": 2,
+  "exercises": [
+    {
+      "id": "morgen-ga-ik-naar-school",
+      "prompt": "Which sentence is correct?",
+      "choices": [
+        "Morgen ik ga naar school.",
+        "Morgen ga ik naar school.",
+        "Morgen ik naar school ga.",
+        "Morgen naar school ik ga."
+      ],
+      "answerIndex": 1,
+      "explanation": "The conjugated verb must be in second position. When 'morgen' comes first, the verb follows immediately and the subject moves after it.",
+      "tags": [
+        "word-order"
+      ]
+    },
+    {
+      "id": "morgen-naar-amsterdam",
+      "prompt": "Morgen ___ naar Amsterdam.",
+      "choices": [
+        "ik ga",
+        "ik gaan",
+        "gaan ik",
+        "ga ik"
+      ],
+      "answerIndex": 3,
+      "explanation": "After a fronted time word the verb stays in second position, so subject and verb invert: 'Morgen ga ik'.",
+      "tags": [
+        "word-order"
+      ]
+    },
+    {
+      "id": "vandaag-eet-hij-brood",
+      "prompt": "Which sentence is correct?",
+      "choices": [
+        "Vandaag hij eet brood.",
+        "Vandaag hij brood eet.",
+        "Vandaag eet hij brood.",
+        "Vandaag brood hij eet."
+      ],
+      "answerIndex": 2,
+      "explanation": "Dutch main clauses are verb-second. With 'vandaag' in first position, the verb 'eet' must come next, before the subject.",
+      "tags": [
+        "word-order"
+      ]
+    },
+    {
+      "id": "om-negen-uur",
+      "prompt": "Om negen uur ___ .",
+      "choices": [
+        "de les begint",
+        "begint de les",
+        "beginnen de les",
+        "de les beginnen"
+      ],
+      "answerIndex": 1,
+      "explanation": "The time phrase fills first position, so the verb comes second and the subject follows: 'Om negen uur begint de les'. 'De les' is singular, so 'begint'.",
+      "tags": [
+        "word-order",
+        "present-tense"
+      ]
+    },
+    {
+      "id": "ik-student",
+      "prompt": "Ik ___ student.",
+      "choices": [
+        "ben",
+        "bent",
+        "is",
+        "zijn"
+      ],
+      "answerIndex": 0,
+      "explanation": "The verb 'zijn' with 'ik' is 'ben'. 'Bent' goes with 'jij' and 'is' with 'hij/zij/het'.",
+      "tags": [
+        "present-tense"
+      ]
+    },
+    {
+      "id": "jij-een-fiets",
+      "prompt": "Jij ___ een fiets.",
+      "choices": [
+        "hebt",
+        "heb",
+        "heeft",
+        "hebben"
+      ],
+      "answerIndex": 0,
+      "explanation": "With 'jij' the verb 'hebben' takes the form 'hebt'. 'Heb' is for 'ik' and 'heeft' for 'hij/zij/het'.",
+      "tags": [
+        "present-tense"
+      ]
+    },
+    {
+      "id": "hij-in-amsterdam",
+      "prompt": "Hij ___ in Amsterdam.",
+      "choices": [
+        "woon",
+        "wonen",
+        "woont",
+        "woond"
+      ],
+      "answerIndex": 2,
+      "explanation": "Regular verbs add -t in the third person singular: hij woont. The stem 'woon' is only for 'ik'.",
+      "tags": [
+        "present-tense"
+      ]
+    },
+    {
+      "id": "jij-moe",
+      "prompt": "___ jij moe?",
+      "choices": [
+        "Bent",
+        "Zijn",
+        "Is",
+        "Ben"
+      ],
+      "answerIndex": 3,
+      "explanation": "When the verb comes before 'jij', it loses its -t: 'Ben jij moe?'. This happens in questions with inversion.",
+      "tags": [
+        "present-tense",
+        "question-formation"
+      ]
+    },
+    {
+      "id": "ik-zie-huis",
+      "prompt": "Ik zie ___ huis.",
+      "choices": [
+        "het",
+        "de",
+        "die",
+        "deze"
+      ],
+      "answerIndex": 0,
+      "explanation": "'Huis' is a het-word: het huis. 'Die' and 'deze' are only used with de-words; het-words take 'dat' and 'dit'.",
+      "tags": [
+        "de-het"
+      ]
+    },
+    {
+      "id": "boek-ligt-op-de-tafel",
+      "prompt": "___ boek ligt op de tafel.",
+      "choices": [
+        "Deze",
+        "De",
+        "Die",
+        "Het"
+      ],
+      "answerIndex": 3,
+      "explanation": "'Boek' is a het-word: het boek. 'De', 'deze' and 'die' are used with de-words.",
+      "tags": [
+        "de-het"
+      ]
+    },
+    {
+      "id": "het-meisje",
+      "prompt": "Which is correct?",
+      "choices": [
+        "de meisje",
+        "het vrouw",
+        "het meisje",
+        "het man"
+      ],
+      "answerIndex": 2,
+      "explanation": "All diminutives ending in -je are het-words, so it is 'het meisje'. 'Vrouw' and 'man' are de-words.",
+      "tags": [
+        "de-het"
+      ]
+    },
+    {
+      "id": "ik-heb-twee",
+      "prompt": "Ik heb twee ___ .",
+      "choices": [
+        "autos",
+        "autoos",
+        "auto",
+        "auto's"
+      ],
+      "answerIndex": 3,
+      "explanation": "Nouns ending in a long vowel like -o take an apostrophe before the plural -s: auto's. After 'twee' the noun must be plural.",
+      "tags": [
+        "plurals"
+      ]
+    },
+    {
+      "id": "er-zijn-drie-in-de-klas",
+      "prompt": "Er zijn drie ___ in de klas.",
+      "choices": [
+        "kinden",
+        "kinders",
+        "kinderen",
+        "kindes"
+      ],
+      "answerIndex": 2,
+      "explanation": "'Het kind' has an irregular plural: kinderen. 'Kinders' is not standard Dutch.",
+      "tags": [
+        "plurals"
+      ]
+    },
+    {
+      "id": "ik-zie-twee",
+      "prompt": "Ik zie twee ___ .",
+      "choices": [
+        "boeken",
+        "boeks",
+        "boekken",
+        "boeke"
+      ],
+      "answerIndex": 0,
+      "explanation": "Most Dutch nouns form the plural with -en: boek becomes boeken. The consonant is only doubled after a short vowel, and 'oe' is a long vowel, so the k stays single.",
+      "tags": [
+        "plurals"
+      ]
+    },
+    {
+      "id": "ik-heb-auto",
+      "prompt": "Ik heb ___ auto.",
+      "choices": [
+        "niet",
+        "geen",
+        "nee",
+        "niets"
+      ],
+      "answerIndex": 1,
+      "explanation": "'Geen' negates an indefinite noun (een auto becomes geen auto). 'Niet' is used to negate verbs, adjectives and definite nouns.",
+      "tags": [
+        "negation"
+      ]
+    },
+    {
+      "id": "hij-werkt-vandaag",
+      "prompt": "Hij werkt vandaag ___ .",
+      "choices": [
+        "geen",
+        "niets",
+        "niet",
+        "nee"
+      ],
+      "answerIndex": 2,
+      "explanation": "'Niet' negates the verb here; there is no indefinite noun to negate, so 'geen' is impossible.",
+      "tags": [
+        "negation"
+      ]
+    },
+    {
+      "id": "wij-drinken-koffie",
+      "prompt": "Wij drinken ___ koffie.",
+      "choices": [
+        "niet",
+        "niets",
+        "nee",
+        "geen"
+      ],
+      "answerIndex": 3,
+      "explanation": "'Koffie' is an indefinite mass noun, so it is negated with 'geen': wij drinken geen koffie.",
+      "tags": [
+        "negation"
+      ]
+    },
+    {
+      "id": "ik-zie-de-man-niet",
+      "prompt": "Which sentence is correct?",
+      "choices": [
+        "Ik zie de man niet.",
+        "Ik niet zie de man.",
+        "Ik zie niet de man.",
+        "Ik zie de man geen."
+      ],
+      "answerIndex": 0,
+      "explanation": "'Niet' comes after a definite object like 'de man'. 'Geen' is only used with indefinite nouns.",
+      "tags": [
+        "negation",
+        "word-order"
+      ]
+    },
+    {
+      "id": "woon-je",
+      "prompt": "___ woon je?",
+      "choices": [
+        "Wat",
+        "Waar",
+        "Wie",
+        "Hoe"
+      ],
+      "answerIndex": 1,
+      "explanation": "'Waar' asks about a place: Waar woon je? means Where do you live?",
+      "tags": [
+        "question-formation"
+      ]
+    },
+    {
+      "id": "kom-jij-uit-nederland",
+      "prompt": "Which question is correct?",
+      "choices": [
+        "Komt jij uit Nederland?",
+        "Jij kom uit Nederland?",
+        "Kom jij uit Nederland?",
+        "Komt uit jij Nederland?"
+      ],
+      "answerIndex": 2,
+      "explanation": "Yes/no questions start with the verb, and before 'jij' the verb drops its -t: 'Kom jij uit Nederland?'.",
+      "tags": [
+        "question-formation"
+      ]
+    },
+    {
+      "id": "heet-jij",
+      "prompt": "___ heet jij?",
+      "choices": [
+        "Wat",
+        "Wanneer",
+        "Waar",
+        "Hoe"
+      ],
+      "answerIndex": 3,
+      "explanation": "Dutch asks for a name with 'hoe': Hoe heet jij? (also: Hoe heet je?) literally means How are you called?",
+      "tags": [
+        "question-formation"
+      ]
+    },
+    {
+      "id": "ik-goed-zwemmen",
+      "prompt": "Ik ___ goed zwemmen.",
+      "choices": [
+        "kunnen",
+        "kan",
+        "kunt",
+        "kun"
+      ],
+      "answerIndex": 1,
+      "explanation": "The modal verb 'kunnen' with 'ik' is 'kan'. 'Kunt' or 'kun' go with 'jij'.",
+      "tags": [
+        "modal-verbs"
+      ]
+    },
+    {
+      "id": "ik-hier-zitten",
+      "prompt": "___ ik hier zitten?",
+      "choices": [
+        "Mogen",
+        "Magt",
+        "Moogt",
+        "Mag"
+      ],
+      "answerIndex": 3,
+      "explanation": "The modal verb 'mogen' (to be allowed to) with 'ik' is 'mag': Mag ik hier zitten?",
+      "tags": [
+        "modal-verbs",
+        "question-formation"
+      ]
+    },
+    {
+      "id": "hij-wil-een-boek",
+      "prompt": "Hij wil een boek ___ .",
+      "choices": [
+        "lezen",
+        "leest",
+        "lees",
+        "gelezen"
+      ],
+      "answerIndex": 0,
+      "explanation": "After a modal verb like 'willen', the second verb goes to the end of the sentence as an infinitive: lezen.",
+      "tags": [
+        "modal-verbs",
+        "word-order"
+      ]
+    },
+    {
+      "id": "ik-heb-een-boek-dit-is",
+      "prompt": "Ik heb een boek. Dit is ___ boek.",
+      "choices": [
+        "mij",
+        "mijn",
+        "ik",
+        "me"
+      ],
+      "answerIndex": 1,
+      "explanation": "'Mijn' is the possessive form (my). 'Mij' is the object pronoun (me) and cannot be used before a noun.",
+      "tags": [
+        "possessives"
+      ]
+    },
+    {
+      "id": "dit-is-jan-fiets-is-rood",
+      "prompt": "Dit is Jan. ___ fiets is rood.",
+      "choices": [
+        "Hij",
+        "Hem",
+        "Zijn",
+        "Haar"
+      ],
+      "answerIndex": 2,
+      "explanation": "'Zijn' means his and refers back to Jan. 'Haar' means her, and 'hij' and 'hem' are personal pronouns, not possessives.",
+      "tags": [
+        "possessives"
+      ]
+    },
+    {
+      "id": "wij-hebben-een-hond-hond-heet",
+      "prompt": "Wij hebben een hond. ___ hond heet Max.",
+      "choices": [
+        "Ons",
+        "Wij",
+        "Jullie",
+        "Onze"
+      ],
+      "answerIndex": 3,
+      "explanation": "Before a de-word like 'de hond' the possessive is 'onze'. 'Ons' is only used before het-words.",
+      "tags": [
+        "possessives",
+        "de-het"
+      ]
+    },
+    {
+      "id": "een-kat-in-de-tuin",
+      "prompt": "___ een kat in de tuin.",
+      "choices": [
+        "Er zijn",
+        "Er is",
+        "Er heeft",
+        "Er hebben"
+      ],
+      "answerIndex": 1,
+      "explanation": "With a singular noun ('een kat') you use 'er is'. 'Er zijn' is for plurals, and 'hebben' is never used in this construction.",
+      "tags": [
+        "er-is-er-zijn"
+      ]
+    },
+    {
+      "id": "er-veel-mensen-op-straat",
+      "prompt": "Er ___ veel mensen op straat.",
+      "choices": [
+        "is",
+        "heeft",
+        "zijn",
+        "hebben"
+      ],
+      "answerIndex": 2,
+      "explanation": "'Veel mensen' is plural, so the verb must be plural: er zijn.",
+      "tags": [
+        "er-is-er-zijn"
+      ]
+    },
+    {
+      "id": "er-is-geen-melk",
+      "prompt": "Which sentence is correct?",
+      "choices": [
+        "Er is geen melk.",
+        "Er zijn geen melk.",
+        "Er geen melk is.",
+        "Geen melk er is."
+      ],
+      "answerIndex": 0,
+      "explanation": "'Melk' is a singular mass noun, so it takes 'er is'. The verb must also stay in second position.",
+      "tags": [
+        "er-is-er-zijn",
+        "negation"
+      ]
+    },
+    {
+      "id": "ik-ga-school",
+      "prompt": "Ik ga ___ school.",
+      "choices": [
+        "in",
+        "op",
+        "naar",
+        "aan"
+      ],
+      "answerIndex": 2,
+      "explanation": "Movement toward a place uses 'naar': ik ga naar school (I am going to school).",
+      "tags": [
+        "prepositions"
+      ]
+    },
+    {
+      "id": "hij-woont-amsterdam",
+      "prompt": "Hij woont ___ Amsterdam.",
+      "choices": [
+        "in",
+        "naar",
+        "om",
+        "van"
+      ],
+      "answerIndex": 0,
+      "explanation": "For living in a city you use 'in': hij woont in Amsterdam. 'Naar' expresses movement, not location.",
+      "tags": [
+        "prepositions"
+      ]
+    },
+    {
+      "id": "de-melk-staat-de-koelkast",
+      "prompt": "De melk staat ___ de koelkast.",
+      "choices": [
+        "aan",
+        "naar",
+        "uit",
+        "in"
+      ],
+      "answerIndex": 3,
+      "explanation": "Something inside the fridge is 'in de koelkast'. 'Aan', 'naar' and 'uit' do not fit with 'staat' here.",
+      "tags": [
+        "prepositions"
+      ]
+    },
+    {
+      "id": "ben-moe",
+      "prompt": "___ ben moe.",
+      "choices": [
+        "Jij",
+        "Wij",
+        "Ik",
+        "Hij"
+      ],
+      "answerIndex": 2,
+      "explanation": "The form 'ben' only goes with 'ik'. 'Jij' would need 'bent', 'hij' needs 'is' and 'wij' needs 'zijn'.",
+      "tags": [
+        "pronouns",
+        "present-tense"
+      ]
+    },
+    {
+      "id": "daar-is-jan-ik-zie",
+      "prompt": "Daar is Jan. Ik zie ___ .",
+      "choices": [
+        "hij",
+        "hem",
+        "zij",
+        "wij"
+      ],
+      "answerIndex": 1,
+      "explanation": "As the object of the sentence, 'hij' changes to 'hem': ik zie hem (I see him).",
+      "tags": [
+        "pronouns"
+      ]
+    },
+    {
+      "id": "dat-is-anna-is-mijn-zus",
+      "prompt": "Dat is Anna. ___ is mijn zus.",
+      "choices": [
+        "Ze",
+        "Haar",
+        "Hem",
+        "Hij"
+      ],
+      "answerIndex": 0,
+      "explanation": "The subject pronoun for a woman is 'ze' (or 'zij'). 'Haar' is the object or possessive form and cannot be the subject.",
+      "tags": [
+        "pronouns"
+      ]
+    }
+  ]
+}

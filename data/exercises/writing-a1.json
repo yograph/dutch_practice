@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "exercises": [
+    {
+      "id": "introduce-yourself-in-dutch",
+      "prompt": "Introduce yourself in Dutch.",
+      "instructions": "Include your name, your age, and where you live; write 4 sentences.",
+      "example": "Hallo, ik heet Yousef.\nIk ben dertig jaar oud.\nIk woon in Amsterdam.\nIk leer Nederlands.",
+      "tags": [
+        "introductions"
+      ]
+    },
+    {
+      "id": "write-a-short-message-to-a",
+      "prompt": "Write a short message to a friend about your weekend plans.",
+      "instructions": "Include a greeting, one thing you do on Saturday, and one thing you do on Sunday; write 5 sentences.",
+      "example": "Hoi Anna!\nZaterdag ga ik naar de markt.\nIk koop groente en fruit.\nZondag speel ik voetbal in het park.\nTot snel!",
+      "tags": [
+        "friends",
+        "free-time"
+      ]
+    },
+    {
+      "id": "describe-your-family",
+      "prompt": "Describe your family.",
+      "instructions": "Say how many people are in your family, name them, and say what one person does; write 5 sentences.",
+      "example": "Mijn familie is klein.\nIk heb een vader, een moeder en een zus.\nMijn vader werkt in een winkel.\nMijn moeder is lerares.\nMijn zus is vijftien jaar oud.",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "describe-your-house-or-apartment",
+      "prompt": "Describe your house or apartment.",
+      "instructions": "Include where it is, how many rooms it has, and your favorite room; write 5 sentences.",
+      "example": "Ik woon in een appartement in Rotterdam.\nHet heeft drie kamers en een keuken.\nMijn slaapkamer is klein maar mooi.\nIk zit graag in de woonkamer.\nDaar kijk ik televisie.",
+      "tags": [
+        "home"
+      ]
+    },
+    {
+      "id": "write-about-your-daily-routine",
+      "prompt": "Write about your daily routine.",
+      "instructions": "Include when you get up, what you eat, and what you do during the day; write 5 sentences.",
+      "example": "Ik sta om zeven uur op.\nIk eet brood met kaas.\nOm acht uur ga ik naar mijn werk.\nIk werk tot vijf uur.\nDaarna kook ik en kijk ik televisie.",
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "write-a-short-message-asking-a",
+      "prompt": "Write a short message asking a family member to buy groceries.",
+      "instructions": "Include a greeting, three items from the shop, and when you need them; write 4 sentences.",
+      "example": "Hoi mama!\nKun je naar de winkel gaan?\nWij hebben melk, brood en eieren nodig.\nIk kook vanavond om zes uur.",
+      "tags": [
+        "shopping",
+        "family"
+      ]
+    },
+    {
+      "id": "describe-your-favorite-food",
+      "prompt": "Describe your favorite food.",
+      "instructions": "Say what it is, when you eat it, and why you like it; write 4 sentences.",
+      "example": "Mijn lievelingseten is pasta.\nIk eet het vaak op vrijdag.\nIk kook de pasta met tomaten en kaas.\nHet is lekker en heel makkelijk.",
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "write-a-postcard-to-a-family",
+      "prompt": "Write a postcard to a family member from your vacation.",
+      "instructions": "Include where you are, what the weather is like, and one activity you do; write 5 sentences.",
+      "example": "Lieve oma,\nIk ben op vakantie in Spanje.\nHet weer is warm en zonnig.\nVandaag ga ik naar het strand.\nTot volgende week!",
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "introduce-a-friend-of-yours",
+      "prompt": "Introduce a friend of yours.",
+      "instructions": "Include their name, where they live, and what they like doing; write 4 sentences.",
+      "example": "Dit is mijn vriend Tom.\nHij woont in Utrecht.\nHij werkt in een café.\nHij houdt van muziek en fietsen.",
+      "tags": [
+        "friends",
+        "introductions"
+      ]
+    },
+    {
+      "id": "write-about-what-you-do-in",
+      "prompt": "Write about what you do in your free time.",
+      "instructions": "Name two hobbies and say when you do them; write 4 sentences.",
+      "example": "In mijn vrije tijd lees ik graag.\nIk lees elke avond een boek.\nOok speel ik voetbal.\nElke zaterdag speel ik met mijn vrienden in het park.",
+      "tags": [
+        "free-time",
+        "hobbies"
+      ]
+    },
+    {
+      "id": "write-a-short-email-to-your",
+      "prompt": "Write a short email to your teacher saying you are sick and cannot come to class.",
+      "instructions": "Include a greeting, the reason you cannot come, and when you will be back; write 5 sentences.",
+      "example": "Beste meneer Jansen,\nIk ben vandaag ziek.\nIk kan niet naar de les komen.\nMorgen ben ik weer op school.\nGroeten, Sara",
+      "tags": [
+        "school"
+      ]
+    },
+    {
+      "id": "give-your-opinion-about-the-city",
+      "prompt": "Give your opinion about the city or town where you live.",
+      "instructions": "Name one thing you like and one thing you do not like; write 4 sentences.",
+      "example": "Ik woon in Leiden.\nIk vind de stad mooi.\nEr zijn veel winkels en cafés.\nMaar ik vind het soms te druk.",
+      "tags": [
+        "opinions",
+        "daily-life"
+      ]
+    }
+  ]
+}

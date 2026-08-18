@@ -7,11 +7,13 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import type { AudioIndex, Deck, DeckSummary, Manifest } from "@/types/deck";
+import type { ExerciseSet, ExerciseSetSummary } from "@/types/exercise";
 import { DATA_SCHEMA_VERSION } from "./schemas";
 import {
   DataFetchError,
   fetchAudioIndex,
   fetchDeck,
+  fetchExerciseSet,
   fetchManifest,
 } from "./source";
 
@@ -29,11 +31,14 @@ export const dataKeys = {
   manifest: ["data", "manifest"] as const,
   deck: (deckId: string, revision: string) =>
     ["data", "deck", deckId, revision] as const,
+  exerciseSet: (setId: string, revision: string) =>
+    ["data", "exercise-set", setId, revision] as const,
   audioIndex: ["data", "audio-index"] as const,
 };
 
-/** Key prefix used to sweep deck caches in `useSyncData`. */
+/** Key prefixes used to sweep stale caches in `useSyncData`. */
 const DECK_KEY_PREFIX = ["data", "deck"] as const;
+const EXERCISE_SET_KEY_PREFIX = ["data", "exercise-set"] as const;
 
 /**
  * Key for a deck we cannot resolve yet (or at all). Kept out of
@@ -41,6 +46,10 @@ const DECK_KEY_PREFIX = ["data", "deck"] as const;
  */
 const unresolvedDeckKey = (deckId: string) =>
   ["data", "deck", deckId, "__unresolved__"] as const;
+
+/** Same idea for an exercise set the manifest does not (yet) name. */
+const unresolvedExerciseSetKey = (setId: string) =>
+  ["data", "exercise-set", setId, "__unresolved__"] as const;
 
 const EMPTY_AUDIO_INDEX: AudioIndex = {
   schemaVersion: DATA_SCHEMA_VERSION,
@@ -71,6 +80,20 @@ export function deckQueryOptions(summary: DeckSummary): UseQueryOptions<Deck> {
   return {
     queryKey: dataKeys.deck(summary.id, summary.revision),
     queryFn: () => fetchDeck(summary),
+    staleTime: Number.POSITIVE_INFINITY,
+  };
+}
+
+/**
+ * An exercise set at a given revision is immutable, exactly like a deck: the
+ * revision is the hash of its file.
+ */
+export function exerciseSetQueryOptions(
+  summary: ExerciseSetSummary,
+): UseQueryOptions<ExerciseSet> {
+  return {
+    queryKey: dataKeys.exerciseSet(summary.id, summary.revision),
+    queryFn: () => fetchExerciseSet(summary),
     staleTime: Number.POSITIVE_INFINITY,
   };
 }
@@ -139,6 +162,35 @@ export function useDeck(deckId: string): UseQueryResult<Deck> {
   return useQuery(options);
 }
 
+/**
+ * Resolves the set's summary from the manifest, then fetches the set — the
+ * exact mirror of `useDeck`, including the disabled-while-unresolved state and
+ * the error once the manifest has settled without producing a summary.
+ */
+export function useExerciseSet(setId: string): UseQueryResult<ExerciseSet> {
+  const manifest = useManifest();
+  const summary = manifest.data?.exerciseSets?.find((set) => set.id === setId);
+
+  const manifestSettled = manifest.isSuccess || manifest.isError;
+  const manifestError = manifest.error;
+
+  const options: UseQueryOptions<ExerciseSet> = summary
+    ? exerciseSetQueryOptions(summary)
+    : {
+        queryKey: unresolvedExerciseSetKey(setId),
+        queryFn: () =>
+          Promise.reject(
+            manifestError ??
+              new Error(`Exercise set "${setId}" is not in the manifest.`),
+          ),
+        enabled: manifestSettled,
+        retry: false,
+        gcTime: 0,
+      };
+
+  return useQuery(options);
+}
+
 export function useAudioIndex(): UseQueryResult<AudioIndex> {
   return useQuery(audioIndexQueryOptions());
 }
@@ -167,6 +219,9 @@ export function useSyncData(): UseMutationResult<
       const currentRevisions = new Map(
         manifest.decks.map((deck) => [deck.id, deck.revision]),
       );
+      const currentSetRevisions = new Map(
+        (manifest.exerciseSets ?? []).map((set) => [set.id, set.revision]),
+      );
 
       for (const query of queryClient
         .getQueryCache()
@@ -175,6 +230,18 @@ export function useSyncData(): UseMutationResult<
         if (
           typeof deckId !== "string" ||
           currentRevisions.get(deckId) !== revision
+        ) {
+          queryClient.removeQueries({ queryKey: query.queryKey, exact: true });
+        }
+      }
+
+      for (const query of queryClient
+        .getQueryCache()
+        .findAll({ queryKey: EXERCISE_SET_KEY_PREFIX })) {
+        const [, , setId, revision] = query.queryKey as readonly unknown[];
+        if (
+          typeof setId !== "string" ||
+          currentSetRevisions.get(setId) !== revision
         ) {
           queryClient.removeQueries({ queryKey: query.queryKey, exact: true });
         }

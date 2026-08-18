@@ -1,0 +1,349 @@
+id	front	back	tags
+# Pronouns & possessives
+ik	ik	I	pronouns
+jij	jij	you (informal)	pronouns
+je	je	you, your (unstressed)	pronouns
+u	u	you (formal)	pronouns
+hij	hij	he	pronouns
+zij	zij	she	pronouns
+ze	ze	she, they (unstressed)	pronouns
+wij	wij	we	pronouns
+jullie	jullie	you (plural)	pronouns
+zij-2	zij	they	pronouns
+mijn	mijn	my	pronouns
+jouw	jouw	your (informal)	pronouns
+uw	uw	your (formal)	pronouns
+zijn	zijn	his	pronouns
+haar	haar	her	pronouns
+ons	ons	our (het-words)	pronouns
+onze	onze	our (de-words)	pronouns
+hun	hun	their	pronouns
+dit	dit	this (het-words)	pronouns
+dat	dat	that (het-words)	pronouns
+deze	deze	this, these (de-words)	pronouns
+die	die	that, those (de-words)	pronouns
+
+# Core verbs
+zijn-2	zijn	to be	verbs
+hebben	hebben	to have	verbs
+gaan	gaan	to go	verbs
+komen	komen	to come	verbs
+doen	doen	to do	verbs
+maken	maken	to make	verbs
+zien	zien	to see	verbs
+horen	horen	to hear	verbs
+spreken	spreken	to speak	verbs
+praten	praten	to talk	verbs
+zeggen	zeggen	to say	verbs
+eten	eten	to eat	verbs
+drinken	drinken	to drink	verbs
+slapen	slapen	to sleep	verbs
+wonen	wonen	to live (reside)	verbs
+leven	leven	to live (be alive)	verbs
+werken	werken	to work	verbs
+leren	leren	to learn	verbs
+lezen	lezen	to read	verbs
+schrijven	schrijven	to write	verbs
+luisteren	luisteren	to listen	verbs
+kijken	kijken	to look, to watch	verbs
+lopen	lopen	to walk	verbs
+fietsen	fietsen	to cycle	verbs
+rijden	rijden	to drive, to ride	verbs
+kopen	kopen	to buy	verbs
+betalen	betalen	to pay	verbs
+kosten	kosten	to cost	verbs
+geven	geven	to give	verbs
+nemen	nemen	to take	verbs
+vinden	vinden	to find, to think (opinion)	verbs
+weten	weten	to know (a fact)	verbs
+kennen	kennen	to know (a person, place)	verbs
+begrijpen	begrijpen	to understand	verbs
+verstaan	verstaan	to understand (hear clearly)	verbs
+helpen	helpen	to help	verbs
+vragen	vragen	to ask	verbs
+antwoorden	antwoorden	to answer	verbs
+beginnen	beginnen	to begin	verbs
+stoppen	stoppen	to stop	verbs
+staan	staan	to stand	verbs
+zitten	zitten	to sit	verbs
+liggen	liggen	to lie (down)	verbs
+blijven	blijven	to stay	verbs
+worden	worden	to become	verbs
+willen	willen	to want	verbs
+kunnen	kunnen	can, to be able to	verbs
+moeten	moeten	must, to have to	verbs
+mogen	mogen	may, to be allowed to	verbs
+zullen	zullen	shall, will	verbs
+houden-van	houden van	to love, to like	verbs
+spelen	spelen	to play	verbs
+zwemmen	zwemmen	to swim	verbs
+reizen	reizen	to travel	verbs
+vliegen	vliegen	to fly	verbs
+wachten	wachten	to wait	verbs
+zoeken	zoeken	to look for	verbs
+proberen	proberen	to try	verbs
+gebruiken	gebruiken	to use	verbs
+nodig-hebben	nodig hebben	to need	verbs
+bellen	bellen	to call (by phone)	verbs
+ontmoeten	ontmoeten	to meet	verbs
+heten	heten	to be called	verbs
+voelen	voelen	to feel	verbs
+denken	denken	to think	verbs
+geloven	geloven	to believe	verbs
+hopen	hopen	to hope	verbs
+
+# Numbers
+nul	nul	zero	numbers
+n	één	one	numbers
+twee	twee	two	numbers
+drie	drie	three	numbers
+vier	vier	four	numbers
+vijf	vijf	five	numbers
+zes	zes	six	numbers
+zeven	zeven	seven	numbers
+acht	acht	eight	numbers
+negen	negen	nine	numbers
+tien	tien	ten	numbers
+elf	elf	eleven	numbers
+twaalf	twaalf	twelve	numbers
+dertien	dertien	thirteen	numbers
+veertien	veertien	fourteen	numbers
+vijftien	vijftien	fifteen	numbers
+zestien	zestien	sixteen	numbers
+zeventien	zeventien	seventeen	numbers
+achttien	achttien	eighteen	numbers
+negentien	negentien	nineteen	numbers
+twintig	twintig	twenty	numbers
+dertig	dertig	thirty	numbers
+veertig	veertig	forty	numbers
+vijftig	vijftig	fifty	numbers
+zestig	zestig	sixty	numbers
+zeventig	zeventig	seventy	numbers
+tachtig	tachtig	eighty	numbers
+negentig	negentig	ninety	numbers
+honderd	honderd	hundred	numbers
+duizend	duizend	thousand	numbers
+
+# Time
+de-dag	de dag	the day	time
+de-week	de week	the week	time
+de-maand	de maand	the month	time
+het-jaar	het jaar	the year	time
+het-uur	het uur	the hour	time
+de-minuut	de minuut	the minute	time
+vandaag	vandaag	today	time
+gisteren	gisteren	yesterday	time
+morgen	morgen	tomorrow	time
+de-ochtend	de ochtend	the morning	time
+de-middag	de middag	the afternoon	time
+de-avond	de avond	the evening	time
+de-nacht	de nacht	the night	time
+maandag	maandag	Monday	time
+dinsdag	dinsdag	Tuesday	time
+woensdag	woensdag	Wednesday	time
+donderdag	donderdag	Thursday	time
+vrijdag	vrijdag	Friday	time
+zaterdag	zaterdag	Saturday	time
+zondag	zondag	Sunday	time
+het-weekend	het weekend	the weekend	time
+nu	nu	now	time
+later	later	later	time
+vroeg	vroeg	early	time
+laat	laat	late	time
+altijd	altijd	always	time
+vaak	vaak	often	time
+soms	soms	sometimes	time
+nooit	nooit	never	time
+
+# Family & people
+de-familie	de familie	the family	family
+de-vader	de vader	the father	family
+de-moeder	de moeder	the mother	family
+de-ouders	de ouders	the parents	family
+de-zoon	de zoon	the son	family
+de-dochter	de dochter	the daughter	family
+de-broer	de broer	the brother	family
+de-zus	de zus	the sister	family
+de-opa	de opa	the grandpa	family
+de-oma	de oma	the grandma	family
+het-kind	het kind	the child	family
+de-baby	de baby	the baby	family
+de-man	de man	the man, the husband	family
+de-vrouw	de vrouw	the woman, the wife	family
+de-vriend	de vriend	the friend (m), boyfriend	family
+de-vriendin	de vriendin	the friend (f), girlfriend	family
+de-mensen	de mensen	the people	family
+
+# Food & drink
+het-eten	het eten	the food	food
+het-water	het water	the water	food
+de-koffie	de koffie	the coffee	food
+de-thee	de thee	the tea	food
+de-melk	de melk	the milk	food
+het-bier	het bier	the beer	food
+de-wijn	de wijn	the wine	food
+het-sap	het sap	the juice	food
+het-brood	het brood	the bread	food
+de-kaas	de kaas	the cheese	food
+het-ei	het ei	the egg	food
+de-appel	de appel	the apple	food
+de-banaan	de banaan	the banana	food
+de-groente	de groente	the vegetables	food
+het-fruit	het fruit	the fruit	food
+het-vlees	het vlees	the meat	food
+de-vis	de vis	the fish	food
+de-kip	de kip	the chicken	food
+de-rijst	de rijst	the rice	food
+de-aardappel	de aardappel	the potato	food
+de-soep	de soep	the soup	food
+de-suiker	de suiker	the sugar	food
+het-zout	het zout	the salt	food
+het-ontbijt	het ontbijt	the breakfast	food
+de-lunch	de lunch	the lunch	food
+het-avondeten	het avondeten	the dinner	food
+lekker	lekker	tasty	food
+honger-hebben	honger hebben	to be hungry	food
+dorst-hebben	dorst hebben	to be thirsty	food
+
+# House
+het-huis	het huis	the house	house
+de-kamer	de kamer	the room	house
+de-keuken	de keuken	the kitchen	house
+de-badkamer	de badkamer	the bathroom	house
+de-slaapkamer	de slaapkamer	the bedroom	house
+de-woonkamer	de woonkamer	the living room	house
+de-deur	de deur	the door	house
+het-raam	het raam	the window	house
+de-tafel	de tafel	the table	house
+de-stoel	de stoel	the chair	house
+het-bed	het bed	the bed	house
+de-tuin	de tuin	the garden	house
+de-sleutel	de sleutel	the key	house
+
+# City & transport
+de-stad	de stad	the city	city
+het-dorp	het dorp	the village	city
+de-straat	de straat	the street	city
+de-winkel	de winkel	the shop	city
+de-markt	de markt	the market	city
+het-station	het station	the station	city
+de-trein	de trein	the train	city
+de-bus	de bus	the bus	city
+de-auto	de auto	the car	city
+de-fiets	de fiets	the bicycle	city
+het-vliegtuig	het vliegtuig	the airplane	city
+het-ziekenhuis	het ziekenhuis	the hospital	city
+de-school	de school	the school	city
+het-werk	het werk	the work	city
+het-geld	het geld	the money	city
+links	links	left	directions
+rechts	rechts	right	directions
+rechtdoor	rechtdoor	straight ahead	directions
+dichtbij	dichtbij	nearby	directions
+ver	ver	far	directions
+
+# Adjectives
+groot	groot	big	adjectives
+klein	klein	small	adjectives
+nieuw	nieuw	new	adjectives
+oud	oud	old	adjectives
+jong	jong	young	adjectives
+mooi	mooi	beautiful	adjectives
+lelijk	lelijk	ugly	adjectives
+duur	duur	expensive	adjectives
+goedkoop	goedkoop	cheap	adjectives
+warm	warm	warm	adjectives
+koud	koud	cold	adjectives
+heet	heet	hot	adjectives
+snel	snel	fast	adjectives
+langzaam	langzaam	slow	adjectives
+makkelijk	makkelijk	easy	adjectives
+moeilijk	moeilijk	difficult	adjectives
+leuk	leuk	nice, fun	adjectives
+blij	blij	happy	adjectives
+verdrietig	verdrietig	sad	adjectives
+moe	moe	tired	adjectives
+ziek	ziek	sick	adjectives
+gezond	gezond	healthy	adjectives
+druk	druk	busy	adjectives
+open	open	open	adjectives
+dicht	dicht	closed	adjectives
+vol	vol	full	adjectives
+leeg	leeg	empty	adjectives
+lang	lang	long, tall	adjectives
+kort	kort	short	adjectives
+
+# Colors
+rood	rood	red	colors
+blauw	blauw	blue	colors
+groen	groen	green	colors
+geel	geel	yellow	colors
+zwart	zwart	black	colors
+wit	wit	white	colors
+oranje	oranje	orange	colors
+paars	paars	purple	colors
+grijs	grijs	grey	colors
+bruin	bruin	brown	colors
+roze	roze	pink	colors
+
+# Question words
+wie	wie	who	questions
+wat	wat	what	questions
+waar	waar	where	questions
+wanneer	wanneer	when	questions
+waarom	waarom	why	questions
+hoe	hoe	how	questions
+hoeveel	hoeveel	how much, how many	questions
+welke	welke	which	questions
+
+# Small words
+en	en	and	function-words
+of	of	or	function-words
+maar	maar	but	function-words
+want	want	because (coordinating)	function-words
+omdat	omdat	because (subordinating)	function-words
+niet	niet	not	function-words
+geen	geen	no, not a	function-words
+ook	ook	also	function-words
+heel	heel	very	function-words
+erg	erg	very	function-words
+hier	hier	here	function-words
+daar	daar	there	function-words
+met	met	with	function-words
+zonder	zonder	without	function-words
+voor	voor	for, before	function-words
+na	na	after	function-words
+in	in	in	function-words
+op	op	on	function-words
+onder	onder	under	function-words
+boven	boven	above	function-words
+naast	naast	next to	function-words
+tussen	tussen	between	function-words
+van	van	of, from	function-words
+naar	naar	to	function-words
+bij	bij	at, near	function-words
+over	over	about, over	function-words
+misschien	misschien	maybe	function-words
+natuurlijk	natuurlijk	of course	function-words
+alles	alles	everything	function-words
+iets	iets	something	function-words
+niets	niets	nothing	function-words
+iemand	iemand	someone	function-words
+niemand	niemand	nobody	function-words
+veel	veel	much, many	function-words
+weinig	weinig	little, few	function-words
+meer	meer	more	function-words
+minder	minder	less	function-words
+
+# Weather & politeness
+het-weer	het weer	the weather	weather
+de-zon	de zon	the sun	weather
+de-regen	de regen	the rain	weather
+de-sneeuw	de sneeuw	the snow	weather
+de-wind	de wind	the wind	weather
+regenen	regenen	to rain	weather
+sorry	sorry	sorry	politeness
+pardon	pardon	excuse me	politeness
+graag	graag	gladly, with pleasure	politeness
+welkom	welkom	welcome	politeness
+gefeliciteerd	gefeliciteerd	congratulations	politeness

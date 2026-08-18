@@ -35,6 +35,206 @@
       },
       "wordCount": 111,
       "revision": "6fae008e74f0"
+    },
+    {
+      "id": "dutch-a1",
+      "name": "Dutch A1",
+      "color": "#16A34A",
+      "icon": "book-open",
+      "languages": {
+        "front": {
+          "label": "Dutch",
+          "locale": "nl-NL"
+        },
+        "back": {
+          "label": "English",
+          "locale": "en-US"
+        }
+      },
+      "wordCount": 323,
+      "revision": "7f76d0d9f6ee"
+    },
+    {
+      "id": "dutch-a2",
+      "name": "Dutch A2",
+      "color": "#2563EB",
+      "icon": "graduation-cap",
+      "languages": {
+        "front": {
+          "label": "Dutch",
+          "locale": "nl-NL"
+        },
+        "back": {
+          "label": "English",
+          "locale": "en-US"
+        }
+      },
+      "wordCount": 222,
+      "revision": "1bf5a075662d"
+    },
+    {
+      "id": "dutch-b1",
+      "name": "Dutch B1",
+      "color": "#7C3AED",
+      "icon": "mountain",
+      "languages": {
+        "front": {
+          "label": "Dutch",
+          "locale": "nl-NL"
+        },
+        "back": {
+          "label": "English",
+          "locale": "en-US"
+        }
+      },
+      "wordCount": 248,
+      "revision": "fabf24c8eb45"
+    },
+    {
+      "id": "reacher-s1",
+      "name": "Reacher S1",
+      "color": "#B45309",
+      "icon": "compass",
+      "languages": {
+        "front": {
+          "label": "Dutch",
+          "locale": "nl-NL"
+        },
+        "back": {
+          "label": "English",
+          "locale": "en-US"
+        }
+      },
+      "wordCount": 220,
+      "revision": "f5444015596a"
+    },
+    {
+      "id": "reacher-s2",
+      "name": "Reacher S2",
+      "color": "#9A3412",
+      "icon": "map",
+      "languages": {
+        "front": {
+          "label": "Dutch",
+          "locale": "nl-NL"
+        },
+        "back": {
+          "label": "English",
+          "locale": "en-US"
+        }
+      },
+      "wordCount": 71,
+      "revision": "c314cb0749f6"
+    },
+    {
+      "id": "reacher-s3",
+      "name": "Reacher S3",
+      "color": "#7C2D12",
+      "icon": "ship",
+      "languages": {
+        "front": {
+          "label": "Dutch",
+          "locale": "nl-NL"
+        },
+        "back": {
+          "label": "English",
+          "locale": "en-US"
+        }
+      },
+      "wordCount": 71,
+      "revision": "9a9ebf2878df"
+    }
+  ],
+  "exerciseSets": [
+    {
+      "id": "grammar-a1",
+      "name": "Grammar A1",
+      "kind": "grammar",
+      "level": "A1",
+      "color": "#D97706",
+      "icon": "graduation-cap",
+      "exerciseCount": 36,
+      "revision": "b0f6337d3e09"
+    },
+    {
+      "id": "grammar-a2",
+      "name": "Grammar A2",
+      "kind": "grammar",
+      "level": "A2",
+      "color": "#D97706",
+      "icon": "graduation-cap",
+      "exerciseCount": 36,
+      "revision": "ce87f39c6135"
+    },
+    {
+      "id": "grammar-b1",
+      "name": "Grammar B1",
+      "kind": "grammar",
+      "level": "B1",
+      "color": "#D97706",
+      "icon": "graduation-cap",
+      "exerciseCount": 36,
+      "revision": "730256afbbf4"
+    },
+    {
+      "id": "translation-a1",
+      "name": "Translation A1",
+      "kind": "translation",
+      "level": "A1",
+      "color": "#0D9488",
+      "icon": "languages",
+      "exerciseCount": 30,
+      "revision": "0101973a197b"
+    },
+    {
+      "id": "translation-a2",
+      "name": "Translation A2",
+      "kind": "translation",
+      "level": "A2",
+      "color": "#0D9488",
+      "icon": "languages",
+      "exerciseCount": 30,
+      "revision": "6815c23fdd94"
+    },
+    {
+      "id": "translation-b1",
+      "name": "Translation B1",
+      "kind": "translation",
+      "level": "B1",
+      "color": "#0D9488",
+      "icon": "languages",
+      "exerciseCount": 30,
+      "revision": "3acd7b179f45"
+    },
+    {
+      "id": "writing-a1",
+      "name": "Writing A1",
+      "kind": "writing",
+      "level": "A1",
+      "color": "#4F46E5",
+      "icon": "book-open",
+      "exerciseCount": 12,
+      "revision": "b4ca45eac519"
+    },
+    {
+      "id": "writing-a2",
+      "name": "Writing A2",
+      "kind": "writing",
+      "level": "A2",
+      "color": "#4F46E5",
+      "icon": "book-open",
+      "exerciseCount": 12,
+      "revision": "3f2720ff1d17"
+    },
+    {
+      "id": "writing-b1",
+      "name": "Writing B1",
+      "kind": "writing",
+      "level": "B1",
+      "color": "#4F46E5",
+      "icon": "book-open",
+      "exerciseCount": 12,
+      "revision": "865725f1f994"
     }
   ]
 }

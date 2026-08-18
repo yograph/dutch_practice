@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 2,
+  "exercises": [
+    {
+      "id": "gisteren-ben-ik-met-mijn-zus",
+      "source": "Gisteren ben ik met mijn zus naar de markt gelopen.",
+      "reference": "Yesterday I walked to the market with my sister.",
+      "direction": "nl-en",
+      "tags": [
+        "daily-life",
+        "family"
+      ]
+    },
+    {
+      "id": "ik-kan-niet-komen-omdat-ik",
+      "source": "Ik kan niet komen omdat ik ziek ben.",
+      "reference": "I cannot come because I am sick.",
+      "direction": "nl-en",
+      "tags": [
+        "health",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "we-hebben-vorige-week-een-nieuwe",
+      "source": "We hebben vorige week een nieuwe koelkast gekocht.",
+      "reference": "We bought a new fridge last week.",
+      "direction": "nl-en",
+      "tags": [
+        "shopping",
+        "home"
+      ]
+    },
+    {
+      "id": "toen-ik-jong-was-woonde-ik",
+      "source": "Toen ik jong was, woonde ik in een klein dorp.",
+      "reference": "When I was young, I lived in a small village.",
+      "direction": "nl-en",
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "mijn-broer-werkt-al-drie-jaar",
+      "source": "Mijn broer werkt al drie jaar bij een bank.",
+      "reference": "My brother has been working at a bank for three years.",
+      "direction": "nl-en",
+      "tags": [
+        "work",
+        "family"
+      ]
+    },
+    {
+      "id": "als-het-morgen-regent-blijven-we",
+      "source": "Als het morgen regent, blijven we thuis.",
+      "reference": "If it rains tomorrow, we will stay at home.",
+      "direction": "nl-en",
+      "tags": [
+        "weather",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "ik-heb-de-trein-gemist-dus",
+      "source": "Ik heb de trein gemist, dus ik was te laat op mijn werk.",
+      "reference": "I missed the train, so I was late for work.",
+      "direction": "nl-en",
+      "tags": [
+        "travel",
+        "work"
+      ]
+    },
+    {
+      "id": "kun-je-me-bellen-als-je",
+      "source": "Kun je me bellen als je klaar bent met eten?",
+      "reference": "Can you call me when you have finished eating?",
+      "direction": "nl-en",
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "vorige-zomer-zijn-we-met-de",
+      "source": "Vorige zomer zijn we met de auto naar Frankrijk gereden.",
+      "reference": "Last summer we drove to France by car.",
+      "direction": "nl-en",
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "ik-vind-het-leuk-om-in",
+      "source": "Ik vind het leuk om in het weekend te koken.",
+      "reference": "I like to cook at the weekend.",
+      "direction": "nl-en",
+      "tags": [
+        "hobbies",
+        "food"
+      ]
+    },
+    {
+      "id": "de-dokter-zei-dat-ik-meer",
+      "source": "De dokter zei dat ik meer moet bewegen.",
+      "reference": "The doctor said that I have to exercise more.",
+      "direction": "nl-en",
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "id": "hoeveel-kost-een-kaartje-voor-het",
+      "source": "Hoeveel kost een kaartje voor het museum?",
+      "reference": "How much does a ticket for the museum cost?",
+      "direction": "nl-en",
+      "tags": [
+        "free-time",
+        "travel"
+      ]
+    },
+    {
+      "id": "we-hebben-gisteravond-op-de-bank",
+      "source": "We hebben gisteravond op de bank naar een film gekeken.",
+      "reference": "Last night we watched a film on the couch.",
+      "direction": "nl-en",
+      "tags": [
+        "free-time",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "mijn-dochter-heeft-vandaag-haar-eerste",
+      "source": "Mijn dochter heeft vandaag haar eerste zwemles gehad.",
+      "reference": "My daughter had her first swimming lesson today.",
+      "direction": "nl-en",
+      "tags": [
+        "family",
+        "sport"
+      ]
+    },
+    {
+      "id": "ik-moet-nog-boodschappen-doen-voor",
+      "source": "Ik moet nog boodschappen doen voor het avondeten.",
+      "reference": "I still have to do the shopping for dinner.",
+      "direction": "nl-en",
+      "tags": [
+        "shopping",
+        "food"
+      ]
+    },
+    {
+      "id": "i-have-been-living-in-amsterdam",
+      "source": "I have been living in Amsterdam for two years.",
+      "reference": "Ik woon al twee jaar in Amsterdam.",
+      "direction": "en-nl",
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "we-are-going-to-visit-my",
+      "source": "We are going to visit my grandmother on Sunday.",
+      "reference": "We gaan zondag op bezoek bij mijn oma.",
+      "direction": "en-nl",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "he-forgot-his-keys-yesterday",
+      "source": "He forgot his keys yesterday.",
+      "reference": "Hij is gisteren zijn sleutels vergeten.",
+      "direction": "en-nl",
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "could-you-please-close-the-window",
+      "source": "Could you please close the window? It is cold.",
+      "reference": "Kun je alsjeblieft het raam dichtdoen? Het is koud.",
+      "direction": "en-nl",
+      "tags": [
+        "home",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "i-think-the-weather-will-be",
+      "source": "I think the weather will be better tomorrow.",
+      "reference": "Ik denk dat het weer morgen beter wordt.",
+      "direction": "en-nl",
+      "tags": [
+        "weather",
+        "opinions"
+      ]
+    },
+    {
+      "id": "we-ate-at-a-nice-restaurant",
+      "source": "We ate at a nice restaurant last Friday.",
+      "reference": "We hebben afgelopen vrijdag in een leuk restaurant gegeten.",
+      "direction": "en-nl",
+      "tags": [
+        "food",
+        "free-time"
+      ]
+    },
+    {
+      "id": "my-colleague-is-on-holiday-until",
+      "source": "My colleague is on holiday until next week.",
+      "reference": "Mijn collega is tot volgende week op vakantie.",
+      "direction": "en-nl",
+      "tags": [
+        "work",
+        "travel"
+      ]
+    },
+    {
+      "id": "i-want-to-learn-dutch-because",
+      "source": "I want to learn Dutch because I live in the Netherlands.",
+      "reference": "Ik wil Nederlands leren omdat ik in Nederland woon.",
+      "direction": "en-nl",
+      "tags": [
+        "language-learning"
+      ]
+    },
+    {
+      "id": "she-takes-the-bus-to-school",
+      "source": "She takes the bus to school every morning.",
+      "reference": "Ze neemt elke ochtend de bus naar school.",
+      "direction": "en-nl",
+      "tags": [
+        "daily-life",
+        "school"
+      ]
+    },
+    {
+      "id": "we-have-to-clean-the-house",
+      "source": "We have to clean the house before the guests arrive.",
+      "reference": "We moeten het huis schoonmaken voordat de gasten komen.",
+      "direction": "en-nl",
+      "tags": [
+        "home"
+      ]
+    },
+    {
+      "id": "have-you-seen-my-phone-i",
+      "source": "Have you seen my phone? I cannot find it.",
+      "reference": "Heb je mijn telefoon gezien? Ik kan hem niet vinden.",
+      "direction": "en-nl",
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "the-supermarket-is-closed-on-sunday",
+      "source": "The supermarket is closed on Sunday mornings.",
+      "reference": "De supermarkt is op zondagochtend gesloten.",
+      "direction": "en-nl",
+      "tags": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "i-hurt-my-knee-when-i",
+      "source": "I hurt my knee when I was playing football.",
+      "reference": "Ik heb mijn knie bezeerd toen ik aan het voetballen was.",
+      "direction": "en-nl",
+      "tags": [
+        "health",
+        "sport"
+      ]
+    },
+    {
+      "id": "shall-we-drink-coffee-in-the",
+      "source": "Shall we drink coffee in the city centre tomorrow?",
+      "reference": "Zullen we morgen koffie drinken in het centrum?",
+      "direction": "en-nl",
+      "tags": [
+        "free-time",
+        "friends"
+      ]
+    },
+    {
+      "id": "he-has-worked-in-the-garden",
+      "source": "He has worked in the garden all day.",
+      "reference": "Hij heeft de hele dag in de tuin gewerkt.",
+      "direction": "en-nl",
+      "tags": [
+        "home",
+        "daily-life"
+      ]
+    }
+  ]
+}
