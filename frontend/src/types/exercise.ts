@@ -24,6 +24,48 @@ export interface GrammarExercise {
   tags: string[];
 }
 
+/**
+ * Grammar lessons: the explanation a grammar set's exercises drill. A lesson is
+ * an ordered list of blocks rather than one markdown string, so the renderer
+ * stays a closed set of React components with no HTML anywhere — the same
+ * stance as card text. Every string inside a block may carry the card markup
+ * subset (`**bold**`, `*italic*`, `__underline__`); `title` and `summary` are
+ * plain.
+ *
+ * An exercise belongs to the lesson whose `id` appears in its `tags`.
+ */
+export interface LessonExample {
+  /** Dutch sentence. Voiced with the Dutch locale. */
+  nl: string;
+  en: string;
+  note?: string;
+}
+
+export type LessonBlock =
+  | { type: "heading"; text: string }
+  | { type: "text"; text: string }
+  | { type: "rule"; text: string }
+  | { type: "tip"; text: string }
+  | { type: "list"; items: string[] }
+  | {
+      type: "table";
+      caption?: string;
+      headers: string[];
+      rows: string[][];
+    }
+  | { type: "examples"; items: LessonExample[] }
+  | { type: "mistake"; wrong: string; right: string; why: string };
+
+export type LessonBlockType = LessonBlock["type"];
+
+export interface GrammarLesson {
+  id: string;
+  title: string;
+  /** One sentence: what the learner can do after the lesson. */
+  summary: string;
+  blocks: LessonBlock[];
+}
+
 /** A sentence to translate; the learner self-checks against `reference`. */
 export interface TranslationExercise {
   id: string;
@@ -55,6 +97,12 @@ export interface ExerciseSetSummary {
   /** Content hash of the set file (12 hex chars). Doubles as the cache key. */
   revision: string;
   exerciseCount: number;
+  /**
+   * Grammar sets only, and only when the set file carries lessons: present
+   * means the set is a course, shown with its lessons rather than as a bare
+   * quiz.
+   */
+  lessonCount?: number;
   icon?: string;
 }
 
@@ -69,6 +117,8 @@ interface ExerciseSetBase {
 
 export interface GrammarSet extends ExerciseSetBase {
   kind: "grammar";
+  /** Empty when the set file has none: the set is then a plain quiz. */
+  lessons: GrammarLesson[];
   exercises: GrammarExercise[];
 }
 

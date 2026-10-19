@@ -12,6 +12,8 @@ import type {
 import type {
   ExerciseSetSummary,
   GrammarExercise,
+  GrammarLesson,
+  LessonBlock,
   TranslationExercise,
   WritingExercise,
 } from "@/types/exercise";
@@ -179,6 +181,70 @@ export const writingExerciseSchema = z.object({
 });
 
 /**
+ * Lesson blocks. A discriminated union on `type`, so an unknown block type
+ * fails the set at the boundary instead of rendering as a blank gap. Text
+ * fields are checked for presence only; their inline markup can never be
+ * invalid (unbalanced delimiters render literally, as on cards).
+ */
+const textBlock = <T extends "heading" | "text" | "rule" | "tip">(type: T) =>
+  z.object({ type: z.literal(type), text: nonEmptyText });
+
+const lessonBlockSchema = z
+  .discriminatedUnion("type", [
+    textBlock("heading"),
+    textBlock("text"),
+    textBlock("rule"),
+    textBlock("tip"),
+    z.object({ type: z.literal("list"), items: z.array(nonEmptyText).min(1) }),
+    z.object({
+      type: z.literal("table"),
+      caption: nonEmptyText.optional(),
+      headers: z.array(nonEmptyText).min(1),
+      rows: z.array(z.array(z.string())).min(1),
+    }),
+    z.object({
+      type: z.literal("examples"),
+      items: z
+        .array(
+          z.object({
+            nl: nonEmptyText,
+            en: nonEmptyText,
+            note: nonEmptyText.optional(),
+          }),
+        )
+        .min(1),
+    }),
+    z.object({
+      type: z.literal("mistake"),
+      wrong: nonEmptyText,
+      right: nonEmptyText,
+      why: nonEmptyText,
+    }),
+  ])
+  // Checked on the union because zod's discriminated union only takes plain
+  // objects. A short row would shift every cell after the gap into the wrong
+  // column.
+  .superRefine((block, ctx) => {
+    if (
+      block.type === "table" &&
+      !block.rows.every((row) => row.length === block.headers.length)
+    ) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "every table row must have one cell per header",
+        path: ["rows"],
+      });
+    }
+  });
+
+export const grammarLessonSchema = z.object({
+  id: slugId,
+  title: nonEmptyText,
+  summary: nonEmptyText,
+  blocks: z.array(lessonBlockSchema).min(1),
+});
+
+/**
  * The shape of `exercises/<id>.json`, by set kind. The kind itself lives in
  * `library.json` (and so in the manifest entry), never in the file, so the
  * caller picks the schema from the summary it already holds.
@@ -186,6 +252,9 @@ export const writingExerciseSchema = z.object({
 export const exerciseFileSchemas = {
   grammar: z.object({
     schemaVersion,
+    // Optional in the file, always an array in the app: a set without lessons
+    // is the plain quiz it was before lessons existed.
+    lessons: z.array(grammarLessonSchema).default([]),
     exercises: z.array(grammarExerciseSchema),
   }),
   translation: z.object({
@@ -206,6 +275,7 @@ const exerciseSetSummarySchema = z.object({
   color: hexColor,
   revision: contentRevision,
   exerciseCount: z.number().int().nonnegative(),
+  lessonCount: z.number().int().positive().optional(),
   // Same stance as a deck's icon: any string, unknown names fall back.
   icon: nonEmptyText.optional(),
 });
@@ -288,6 +358,12 @@ export type TranslationExerciseSchemaMatches = Expect<
 >;
 export type WritingExerciseSchemaMatches = Expect<
   Mutual<z.output<typeof writingExerciseSchema>, WritingExercise>
+>;
+export type LessonBlockSchemaMatches = Expect<
+  Mutual<z.output<typeof lessonBlockSchema>, LessonBlock>
+>;
+export type GrammarLessonSchemaMatches = Expect<
+  Mutual<z.output<typeof grammarLessonSchema>, GrammarLesson>
 >;
 export type ExerciseSetSummarySchemaMatches = Expect<
   Mutual<z.output<typeof exerciseSetSummarySchema>, ExerciseSetSummary>

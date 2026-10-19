@@ -81,6 +81,38 @@
       }
     },
     {
+      "id": "dutch-strong-verbs",
+      "name": "Strong & irregular verbs",
+      "color": "#DB2777",
+      "icon": "zap",
+      "languages": {
+        "front": {
+          "label": "Dutch",
+          "locale": "nl-NL"
+        },
+        "back": {
+          "label": "English",
+          "locale": "en-US"
+        }
+      }
+    },
+    {
+      "id": "dutch-fixed-prepositions",
+      "name": "Fixed prepositions",
+      "color": "#4D7C0F",
+      "icon": "link",
+      "languages": {
+        "front": {
+          "label": "Dutch",
+          "locale": "nl-NL"
+        },
+        "back": {
+          "label": "English",
+          "locale": "en-US"
+        }
+      }
+    },
+    {
       "id": "reacher-s1",
       "name": "Reacher S1",
       "color": "#B45309",
@@ -135,7 +167,7 @@
       "name": "Grammar A1",
       "kind": "grammar",
       "level": "A1",
-      "color": "#D97706",
+      "color": "#B45309",
       "icon": "graduation-cap"
     },
     {
@@ -143,7 +175,7 @@
       "name": "Grammar A2",
       "kind": "grammar",
       "level": "A2",
-      "color": "#D97706",
+      "color": "#C2410C",
       "icon": "graduation-cap"
     },
     {
@@ -151,7 +183,23 @@
       "name": "Grammar B1",
       "kind": "grammar",
       "level": "B1",
-      "color": "#D97706",
+      "color": "#B91C1C",
+      "icon": "graduation-cap"
+    },
+    {
+      "id": "grammar-b2",
+      "name": "Grammar B2",
+      "kind": "grammar",
+      "level": "B2",
+      "color": "#BE185D",
+      "icon": "graduation-cap"
+    },
+    {
+      "id": "grammar-c1",
+      "name": "Grammar C1",
+      "kind": "grammar",
+      "level": "C1",
+      "color": "#7E22CE",
       "icon": "graduation-cap"
     },
     {

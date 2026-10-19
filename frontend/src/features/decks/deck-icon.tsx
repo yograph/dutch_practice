@@ -8,6 +8,7 @@ import {
   HeartIcon,
   HouseIcon,
   LanguagesIcon,
+  LinkIcon,
   LuggageIcon,
   MapIcon,
   MessageCircleIcon,
@@ -21,6 +22,7 @@ import {
   TreePalmIcon,
   UsersIcon,
   UtensilsIcon,
+  ZapIcon,
 } from "lucide-react";
 import type { ComponentType, SVGProps } from "react";
 
@@ -41,6 +43,7 @@ const DECK_ICONS = {
   heart: HeartIcon,
   house: HouseIcon,
   languages: LanguagesIcon,
+  link: LinkIcon,
   luggage: LuggageIcon,
   map: MapIcon,
   "message-circle": MessageCircleIcon,
@@ -54,6 +57,7 @@ const DECK_ICONS = {
   "tree-palm": TreePalmIcon,
   users: UsersIcon,
   utensils: UtensilsIcon,
+  zap: ZapIcon,
 } satisfies Record<string, ComponentType<SVGProps<SVGSVGElement>>>;
 
 export type DeckIconName = keyof typeof DECK_ICONS;

@@ -1,10 +1,11 @@
 import { getRouteApi, Link, useNavigate } from "@tanstack/react-router";
-import { ChevronLeftIcon } from "lucide-react";
+import { BookOpenIcon, ChevronLeftIcon } from "lucide-react";
 import { useEffect, useMemo, useRef } from "react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { lessonExercises } from "@/features/grammar/lesson-progress";
 import {
   PracticeHeader,
   PracticeHeaderSkeleton,
@@ -16,6 +17,7 @@ import {
   countCorrect,
   countCorrectEntries,
 } from "@/lib/progress/practice-store";
+import type { ExerciseSet } from "@/types/exercise";
 
 const routeApi = getRouteApi("/practice/$setId");
 
@@ -24,9 +26,14 @@ const routeApi = getRouteApi("/practice/$setId");
  * is no separate "start" step — a set has no direction or tag options to pick,
  * so the first exercise (always one that still needs work) renders as soon as
  * the set arrives.
+ *
+ * With `?lesson=`, the round is one grammar lesson's exercises: the same
+ * session over a narrowed copy of the set, so progress lands in the level's
+ * store exactly as a whole-level round's would.
  */
 export function PracticePage() {
   const { setId } = routeApi.useParams();
+  const { lesson: lessonId } = routeApi.useSearch();
   const navigate = useNavigate();
 
   const manifest = useManifest();
@@ -59,55 +66,129 @@ export function PracticePage() {
     void navigate({ to: "/", replace: true });
   }, [isMissing, set.isError, navigate]);
 
+  // A lesson id the set does not have degrades to the whole set, the way an
+  // unknown tag filter does on a deck page.
+  const lesson =
+    lessonId && set.data?.kind === "grammar"
+      ? (set.data.lessons.find((entry) => entry.id === lessonId) ?? null)
+      : null;
+  const isCourse = (summary?.lessonCount ?? 0) > 0;
+
+  const practiceSet = useMemo((): ExerciseSet | undefined => {
+    if (!set.data || !lesson || set.data.kind !== "grammar") return set.data;
+    return {
+      ...set.data,
+      name: lesson.title,
+      exercises: lessonExercises(set.data, lesson.id),
+    };
+  }, [set.data, lesson]);
+
   // Same two-source pattern as the deck page: the exact count once the set is
   // loaded, and until then the stored-entry count clamped to the manifest's.
   const correct = useMemo(() => {
     if (!progress.data) return 0;
-    if (set.data) return countCorrect(set.data, progress.data);
+    if (practiceSet) return countCorrect(practiceSet, progress.data);
     return Math.min(
       countCorrectEntries(progress.data),
       summary?.exerciseCount ?? 0,
     );
-  }, [set.data, progress.data, summary?.exerciseCount]);
+  }, [practiceSet, progress.data, summary?.exerciseCount]);
+
+  /** Lesson rounds go back to the lesson; course rounds to the level. */
+  const back = lesson
+    ? ({
+        to: "/grammar/$setId/$lessonId",
+        params: { setId, lessonId: lesson.id },
+        label: "Back to the lesson",
+        crumb: lesson.title,
+      } as const)
+    : isCourse
+      ? ({
+          to: "/grammar/$setId",
+          params: { setId },
+          label: "Back to the lessons",
+          crumb: summary?.name ?? "Lessons",
+        } as const)
+      : null;
 
   return (
     <div className="flex flex-col gap-6">
       <div className="-ml-2 flex items-center gap-1">
-        <Button asChild variant="ghost" size="icon-lg" aria-label="Overview">
-          <Link to="/">
-            <ChevronLeftIcon />
-          </Link>
-        </Button>
-        <Link
-          to="/"
-          className="rounded-md text-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
-        >
-          Practice
-        </Link>
+        {back ? (
+          <>
+            <Button
+              asChild
+              variant="ghost"
+              size="icon-lg"
+              aria-label={back.label}
+            >
+              <Link to={back.to} params={back.params}>
+                <ChevronLeftIcon />
+              </Link>
+            </Button>
+            <Link
+              to={back.to}
+              params={back.params}
+              className="truncate rounded-md text-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
+            >
+              {back.crumb}
+            </Link>
+          </>
+        ) : (
+          <>
+            <Button
+              asChild
+              variant="ghost"
+              size="icon-lg"
+              aria-label="Overview"
+            >
+              <Link to="/">
+                <ChevronLeftIcon />
+              </Link>
+            </Button>
+            <Link
+              to="/"
+              className="rounded-md text-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
+            >
+              Practice
+            </Link>
+          </>
+        )}
       </div>
 
-      {summary ? (
+      {summary && (!lessonId || set.data) ? (
         <PracticeHeader
-          name={summary.name}
+          name={lesson ? lesson.title : summary.name}
           icon={summary.icon}
           color={summary.color}
-          kind={summary.kind}
+          kind={lesson ? "lesson" : summary.kind}
           level={summary.level}
-          exerciseCount={summary.exerciseCount}
+          exerciseCount={practiceSet?.exercises.length ?? summary.exerciseCount}
           correct={correct}
         />
       ) : (
         <PracticeHeaderSkeleton />
       )}
 
-      {set.data && progress.data ? (
+      {practiceSet && progress.data ? (
         // Keyed by set identity: the session snapshots a queue of indices into
-        // set.exercises, so a different set (or revision) must remount it
-        // rather than have stale indices applied to a new array.
+        // set.exercises, so a different set (or revision, or lesson) must
+        // remount it rather than have stale indices applied to a new array.
         <PracticeSession
-          key={`${set.data.id}:${set.data.revision}`}
-          set={set.data}
+          key={`${practiceSet.id}:${practiceSet.revision}:${lesson?.id ?? ""}`}
+          set={practiceSet}
           progress={progress.data}
+          isPartial={lesson !== null}
+          backAction={
+            back ? (
+              <Button asChild variant="outline" size="lg" className="h-11">
+                <Link to={back.to} params={back.params}>
+                  <BookOpenIcon />
+                  {back.label}
+                </Link>
+              </Button>
+            ) : undefined
+          }
         />
       ) : (
         <PracticeSessionSkeleton />

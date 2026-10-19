@@ -96,6 +96,11 @@ export function buildManifest() {
       exerciseCount: Array.isArray(loaded.json?.exercises)
         ? loaded.json.exercises.length
         : 0,
+      // Only a grammar set that carries lessons is a course; spread in so a
+      // set without them keeps its exact bytes (invariant 6).
+      ...(Array.isArray(loaded.json?.lessons) && loaded.json.lessons.length > 0
+        ? { lessonCount: loaded.json.lessons.length }
+        : {}),
       revision: loaded.revision,
     };
   });
@@ -131,8 +136,10 @@ function main() {
     );
   }
   for (const entry of manifest.exerciseSets ?? []) {
+    const lessons =
+      entry.lessonCount === undefined ? "" : `${entry.lessonCount} lessons, `;
     console.log(
-      `  ${entry.id}: ${entry.exerciseCount} exercises, revision ${entry.revision}` +
+      `  ${entry.id}: ${lessons}${entry.exerciseCount} exercises, revision ${entry.revision}` +
         ` (${exerciseRelativePath(entry.id)})`,
     );
   }

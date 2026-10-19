@@ -11,6 +11,7 @@ import {
   createEmptyPracticeProgress,
   rateExerciseProgress,
   readPracticeProgress,
+  withoutExercises,
   writePracticeProgress,
 } from "./practice-store";
 
@@ -76,8 +77,14 @@ export function useRateExercise(
   });
 }
 
+/**
+ * Resets a set's progress — or, given `onlyExerciseIds`, just those
+ * exercises', which is how a lesson's round resets the lesson and not the
+ * whole level it belongs to.
+ */
 export function useResetPracticeProgress(
   setId: string,
+  onlyExerciseIds?: readonly string[],
 ): UseMutationResult<PracticeProgress, Error, void> {
   const queryClient = useQueryClient();
   const key = practiceKeys.set(setId);
@@ -85,6 +92,15 @@ export function useResetPracticeProgress(
   return useMutation<PracticeProgress, Error, void>({
     networkMode: "always",
     mutationFn: async () => {
+      if (onlyExerciseIds) {
+        const current =
+          queryClient.getQueryData<PracticeProgress>(key) ??
+          readPracticeProgress(setId);
+        const next = withoutExercises(current, onlyExerciseIds);
+        writePracticeProgress(next);
+        queryClient.setQueryData(key, next);
+        return next;
+      }
       clearPracticeProgress(setId);
       const empty = createEmptyPracticeProgress(setId);
       queryClient.setQueryData(key, empty);

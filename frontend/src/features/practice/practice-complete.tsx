@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { HomeIcon, RotateCcwIcon, TrashIcon } from "lucide-react";
+import type { ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
 import { ScoreRing } from "@/features/study/score-ring";
@@ -11,6 +12,12 @@ interface PracticeCompleteProps {
   isResetting: boolean;
   onPracticeAgain: () => void;
   onResetProgress: () => void;
+  /**
+   * Where "back" goes when the round was started from somewhere other than
+   * the overview (a lesson, a course level). A rendered button, so this
+   * component stays free of route knowledge.
+   */
+  backAction?: ReactNode;
 }
 
 export function PracticeComplete({
@@ -19,6 +26,7 @@ export function PracticeComplete({
   isResetting,
   onPracticeAgain,
   onResetProgress,
+  backAction,
 }: PracticeCompleteProps) {
   const perfect = total > 0 && correct >= total;
 
@@ -40,12 +48,14 @@ export function PracticeComplete({
           <RotateCcwIcon />
           Practice again
         </Button>
-        <Button asChild variant="outline" size="lg" className="h-11">
-          <Link to="/">
-            <HomeIcon />
-            Back to overview
-          </Link>
-        </Button>
+        {backAction ?? (
+          <Button asChild variant="outline" size="lg" className="h-11">
+            <Link to="/">
+              <HomeIcon />
+              Back to overview
+            </Link>
+          </Button>
+        )}
         <Button
           variant="destructive"
           size="lg"

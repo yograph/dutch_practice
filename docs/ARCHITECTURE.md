@@ -13,7 +13,9 @@ routes/            URL shape, search-param validation, page composition
    ↓
 features/          domain UI, grouped by the thing it serves
    ├── decks/      browsing, previewing and configuring a deck
-   └── study/      running a study session
+   ├── study/      running a study session
+   ├── practice/   running a practice set (grammar, translation, writing)
+   └── grammar/    the grammar course: levels, lesson pages, lesson progress
    ↓
 components/        rich-text.tsx, plus ui/ design-system primitives
                    (domain-free, vendored from shadcn)
@@ -282,12 +284,16 @@ and otherwise no-ops — a missing clip is never an error surfaced to the learne
 
 ## `routes/` — URL as state
 
-Code-based TanStack Router route tree (no codegen). Two routes:
+Code-based TanStack Router route tree (no codegen). The routes (the deck rows
+predate the per-deck pages; `router.tsx` is the authority):
 
 | Path    | Search params                                                                         |
 | ------- | ------------------------------------------------------------------------------------- |
 | `/`     | none                                                                                  |
 | `/deck` | `deckId: string`, `tags?: string[]`, `direction: StudyDirection` (default front-to-back) |
+| `/practice/$setId` | `lesson?: string` — narrows the round to one grammar lesson |
+| `/grammar/$setId` | none — a course level and its lessons |
+| `/grammar/$setId/$lessonId` | none — one lesson |
 
 Search params are validated with zod in `validateSearch`, so a hand-edited URL
 produces a typed default rather than a runtime crash. Study options live in the

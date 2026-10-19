@@ -159,6 +159,16 @@ function checkExerciseIds(url: string, exercises: { id: string }[]): void {
   });
 }
 
+function checkLessonIds(url: string, lessons: { id: string }[]): void {
+  const seen = new Set<string>();
+  for (const lesson of lessons) {
+    if (seen.has(lesson.id)) {
+      throw new DataValidationError(url, `duplicate lesson id "${lesson.id}"`);
+    }
+    seen.add(lesson.id);
+  }
+}
+
 /**
  * An exercise set's items come from its JSON file; the set's kind comes from
  * the summary, which is also what picks the item schema. A set at a given
@@ -183,10 +193,14 @@ export async function fetchExerciseSet(
     case "grammar": {
       const file = await fetchJson(url, exerciseFileSchemas.grammar);
       checkExerciseIds(url, file.exercises);
+      // Lesson ids are route params and the link between a lesson and its
+      // exercises, so they need the same uniqueness as exercise ids.
+      checkLessonIds(url, file.lessons);
       return {
         schemaVersion: file.schemaVersion,
         ...base,
         kind: "grammar",
+        lessons: file.lessons,
         exercises: file.exercises,
       };
     }

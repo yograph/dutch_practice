@@ -91,6 +91,42 @@
       "revision": "fabf24c8eb45"
     },
     {
+      "id": "dutch-strong-verbs",
+      "name": "Strong & irregular verbs",
+      "color": "#DB2777",
+      "icon": "zap",
+      "languages": {
+        "front": {
+          "label": "Dutch",
+          "locale": "nl-NL"
+        },
+        "back": {
+          "label": "English",
+          "locale": "en-US"
+        }
+      },
+      "wordCount": 183,
+      "revision": "ba65a7309d17"
+    },
+    {
+      "id": "dutch-fixed-prepositions",
+      "name": "Fixed prepositions",
+      "color": "#4D7C0F",
+      "icon": "link",
+      "languages": {
+        "front": {
+          "label": "Dutch",
+          "locale": "nl-NL"
+        },
+        "back": {
+          "label": "English",
+          "locale": "en-US"
+        }
+      },
+      "wordCount": 169,
+      "revision": "5a5c63cfdc11"
+    },
+    {
       "id": "reacher-s1",
       "name": "Reacher S1",
       "color": "#B45309",
@@ -151,30 +187,55 @@
       "name": "Grammar A1",
       "kind": "grammar",
       "level": "A1",
-      "color": "#D97706",
+      "color": "#B45309",
       "icon": "graduation-cap",
-      "exerciseCount": 36,
-      "revision": "b0f6337d3e09"
+      "exerciseCount": 165,
+      "lessonCount": 17,
+      "revision": "a83432aee5f4"
     },
     {
       "id": "grammar-a2",
       "name": "Grammar A2",
       "kind": "grammar",
       "level": "A2",
-      "color": "#D97706",
+      "color": "#C2410C",
       "icon": "graduation-cap",
-      "exerciseCount": 36,
-      "revision": "ce87f39c6135"
+      "exerciseCount": 160,
+      "lessonCount": 18,
+      "revision": "5fa9c1c27aa2"
     },
     {
       "id": "grammar-b1",
       "name": "Grammar B1",
       "kind": "grammar",
       "level": "B1",
-      "color": "#D97706",
+      "color": "#B91C1C",
       "icon": "graduation-cap",
-      "exerciseCount": 36,
-      "revision": "730256afbbf4"
+      "exerciseCount": 165,
+      "lessonCount": 19,
+      "revision": "a828ee4d5d9a"
+    },
+    {
+      "id": "grammar-b2",
+      "name": "Grammar B2",
+      "kind": "grammar",
+      "level": "B2",
+      "color": "#BE185D",
+      "icon": "graduation-cap",
+      "exerciseCount": 154,
+      "lessonCount": 18,
+      "revision": "9bc65e0de895"
+    },
+    {
+      "id": "grammar-c1",
+      "name": "Grammar C1",
+      "kind": "grammar",
+      "level": "C1",
+      "color": "#7E22CE",
+      "icon": "graduation-cap",
+      "exerciseCount": 136,
+      "lessonCount": 17,
+      "revision": "5c1aa91b1ace"
     },
     {
       "id": "translation-a1",

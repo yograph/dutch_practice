@@ -3,11 +3,15 @@ import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { DeckGrid, DeckGridSkeleton } from "@/features/decks/deck-grid";
+import { CourseGrid } from "@/features/grammar/course-grid";
 import { PracticeGrid } from "@/features/practice/practice-grid";
 import { useManifest, useSyncData } from "@/lib/data/queries";
 import { cn } from "@/lib/utils";
 
-/** The overview: decks, then practice sets. Renders entirely from the manifest. */
+/**
+ * The overview: decks, the grammar course, then the remaining practice sets.
+ * Renders entirely from the manifest.
+ */
 export function OverviewPage() {
   const manifest = useManifest();
   const sync = useSyncData();
@@ -23,7 +27,14 @@ export function OverviewPage() {
   };
 
   const decks = manifest.data?.decks;
-  const exerciseSets = manifest.data?.exerciseSets;
+  // A grammar set that carries lessons is a course level, shown in its own
+  // section; everything else stays a plain practice set.
+  const courseSets = manifest.data?.exerciseSets?.filter(
+    (set) => (set.lessonCount ?? 0) > 0,
+  );
+  const exerciseSets = manifest.data?.exerciseSets?.filter(
+    (set) => !set.lessonCount,
+  );
 
   return (
     <div className="flex flex-col gap-6">
@@ -63,6 +74,20 @@ export function OverviewPage() {
           onRetry={handleSync}
         />
       )}
+
+      {courseSets && courseSets.length > 0 ? (
+        <>
+          <header className="mt-4 flex flex-col gap-1">
+            <h2 className="font-heading text-2xl font-semibold tracking-tight">
+              Grammar course
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              Every grammar topic from A1 to C1, with lessons and exercises.
+            </p>
+          </header>
+          <CourseGrid sets={courseSets} />
+        </>
+      ) : null}
 
       {/* Practice appears only when the manifest lists sets: a data payload
           without them renders exactly the overview it always did. */}

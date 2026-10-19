@@ -82,6 +82,20 @@ export function rateExerciseProgress(
 }
 
 /**
+ * Pure partial reset: drops the given exercises' entries and keeps the rest.
+ * What resetting one lesson means, since a lesson's exercises live in its
+ * level's progress.
+ */
+export function withoutExercises(
+  progress: PracticeProgress,
+  exerciseIds: readonly string[],
+): PracticeProgress {
+  const exercises = { ...progress.exercises };
+  for (const id of exerciseIds) delete exercises[id];
+  return { ...progress, updatedAt: new Date().toISOString(), exercises };
+}
+
+/**
  * How many stored entries are marked correct, without needing the set itself —
  * the overview tile's number, clamped by callers to `exerciseCount` since ids
  * of since-removed exercises can linger in storage.

@@ -1,0 +1,174 @@
+id	front	back	tags
+# Verbs
+denken-aan	denken **aan**	to think of	verb,a2
+twijfelen-aan	twijfelen **aan**	to doubt	verb,b1
+deelnemen-aan	deelnemen **aan**	to take part in, to participate in	verb,b1
+bijdragen-aan	bijdragen **aan**	to contribute to	verb,b2
+lijden-aan	lijden **aan**	to suffer from (an illness)	verb,b2
+werken-aan	werken **aan**	to work on	verb,b1
+wennen-aan	wennen **aan**	to get used to	verb,b1
+herinneren-aan	herinneren **aan**	to remind of	verb,b1
+voldoen-aan	voldoen **aan**	to meet, to satisfy (requirements)	verb,b2
+een-hekel-hebben-aan	een hekel hebben **aan**	to hate, to dislike	verb,b1
+wachten-op	wachten **op**	to wait for	verb,a2
+hopen-op	hopen **op**	to hope for	verb,b1
+letten-op	letten **op**	to pay attention to	verb,b1
+passen-op	passen **op**	to look after, to watch out for	verb,b1
+lijken-op	lijken **op**	to look like, to resemble	verb,a2
+rekenen-op	rekenen **op**	to count on	verb,b2
+reageren-op	reageren **op**	to react to, to respond to	verb,b1
+antwoorden-op	antwoorden **op**	to answer, to reply to	verb,b1
+stemmen-op	stemmen **op**	to vote for (a party or candidate)	verb,b1
+wijzen-op	wijzen **op**	to point out, to indicate	verb,b2
+neerkomen-op	neerkomen **op**	to come down to, to amount to	verb,c1
+denken-over	denken **over**	to think about, to have an opinion on	verb,b1
+nadenken-over	nadenken **over**	to think about, to reflect on	verb,b1
+praten-over	praten **over**	to talk about	verb,a2
+vertellen-over	vertellen **over**	to tell about	verb,a2
+klagen-over	klagen **over**	to complain about	verb,b1
+gaan-over	gaan **over**	to be about	verb,a2
+beschikken-over	beschikken **over**	to have at one's disposal	verb,b2
+houden-van	houden **van**	to love, to like	verb,a2
+afhangen-van	afhangen **van**	to depend on	verb,b1
+genieten-van	genieten **van**	to enjoy	verb,b1
+dromen-van	dromen **van**	to dream of	verb,b1
+schrikken-van	schrikken **van**	to be startled by, to be shocked by	verb,b1
+profiteren-van	profiteren **van**	to benefit from, to take advantage of	verb,b2
+gebruikmaken-van	gebruikmaken **van**	to make use of	verb,b2
+overtuigen-van	overtuigen **van**	to convince of	verb,b2
+beschuldigen-van	beschuldigen **van**	to accuse of	verb,b2
+uitgaan-van	uitgaan **van**	to assume, to take as a starting point	verb,b2
+afzien-van	afzien **van**	to refrain from, to give up	verb,c1
+zorgen-voor	zorgen **voor**	to take care of, to ensure	verb,b1
+kiezen-voor	kiezen **voor**	to choose, to opt for	verb,b1
+betalen-voor	betalen **voor**	to pay for	verb,a2
+bedanken-voor	bedanken **voor**	to thank for	verb,a2
+waarschuwen-voor	waarschuwen **voor**	to warn about, to warn against	verb,b1
+slagen-voor	slagen **voor**	to pass (an exam)	verb,b1
+zakken-voor	zakken **voor**	to fail (an exam)	verb,b1
+stemmen-voor	stemmen **voor**	to vote in favour of	verb,b2
+uitkijken-voor	uitkijken **voor**	to watch out for	verb,b1
+kijken-naar	kijken **naar**	to look at, to watch	verb,a2
+luisteren-naar	luisteren **naar**	to listen to	verb,a2
+zoeken-naar	zoeken **naar**	to search for, to look for	verb,b1
+vragen-naar	vragen **naar**	to ask about, to ask after	verb,b1
+verlangen-naar	verlangen **naar**	to long for	verb,b2
+streven-naar	streven **naar**	to strive for	verb,b2
+uitkijken-naar	uitkijken **naar**	to look forward to	verb,b1
+solliciteren-naar	solliciteren **naar**	to apply for (a job)	verb,b1
+verwijzen-naar	verwijzen **naar**	to refer to	verb,b2
+wijzen-naar	wijzen **naar**	to point at	verb,b1
+beginnen-met	beginnen **met**	to start (doing), to begin with	verb,a2
+stoppen-met	stoppen **met**	to stop (doing), to quit	verb,a2
+trouwen-met	trouwen **met**	to marry	verb,b1
+feliciteren-met	feliciteren **met**	to congratulate on	verb,a2
+omgaan-met	omgaan **met**	to deal with, to handle	verb,b1
+rekening-houden-met	rekening houden **met**	to take into account	verb,b1
+vergelijken-met	vergelijken **met**	to compare with	verb,b1
+het-eens-zijn-met	het eens zijn **met**	to agree with	verb,b1
+geloven-in	geloven **in**	to believe in	verb,b1
+zin-hebben-in	zin hebben **in**	to feel like, to look forward to	verb,a2
+slagen-in	slagen **in**	to succeed in	verb,b2
+veranderen-in	veranderen **in**	to change into, to turn into	verb,b1
+vragen-om	vragen **om**	to ask for	verb,b1
+lachen-om	lachen **om**	to laugh at, to laugh about	verb,b1
+geven-om	geven **om**	to care about	verb,b1
+het-gaat-om	het gaat **om**	it is about, what matters is	verb,b1
+leiden-tot	leiden **tot**	to lead to	verb,b1
+behoren-tot	behoren **tot**	to belong to, to be among	verb,b2
+overgaan-tot	overgaan **tot**	to proceed to	verb,c1
+bestaan-uit	bestaan **uit**	to consist of	verb,b1
+blijken-uit	blijken **uit**	to be evident from	verb,b2
+voortkomen-uit	voortkomen **uit**	to arise from, to stem from	verb,c1
+passen-bij	passen **bij**	to suit, to go with, to match	verb,b1
+horen-bij	horen **bij**	to belong to, to go with	verb,b1
+betrekken-bij	betrekken **bij**	to involve in	verb,b2
+lijden-onder	lijden **onder**	to suffer from (circumstances), to suffer under	verb,b2
+vechten-tegen	vechten **tegen**	to fight against	verb,b1
+beschermen-tegen	beschermen **tegen**	to protect against, to protect from	verb,b1
+protesteren-tegen	protesteren **tegen**	to protest against	verb,b1
+kunnen-tegen	kunnen **tegen**	to be able to stand, to be able to handle	verb,b1
+opzien-tegen	opzien **tegen**	to dread	verb,b2
+# Reflexive verbs
+zich-ergeren-aan	zich ergeren **aan**	to be annoyed by	reflexive-verb,b1
+zich-houden-aan	zich houden **aan**	to stick to, to comply with	reflexive-verb,b1
+zich-aanpassen-aan	zich aanpassen **aan**	to adapt to	reflexive-verb,b2
+zich-hechten-aan	zich hechten **aan**	to become attached to	reflexive-verb,b2
+zich-verheugen-op	zich verheugen **op**	to look forward to	reflexive-verb,b2
+zich-voorbereiden-op	zich voorbereiden **op**	to prepare for	reflexive-verb,b1
+zich-concentreren-op	zich concentreren **op**	to concentrate on	reflexive-verb,b1
+zich-richten-op	zich richten **op**	to focus on, to aim at	reflexive-verb,b2
+zich-beroepen-op	zich beroepen **op**	to invoke, to appeal to	reflexive-verb,c1
+zich-zorgen-maken-over	zich zorgen maken **over**	to worry about	reflexive-verb,b1
+zich-verbazen-over	zich verbazen **over**	to be amazed at, to be surprised at	reflexive-verb,b2
+zich-ontfermen-over	zich ontfermen **over**	to take pity on, to take care of	reflexive-verb,c1
+zich-ontdoen-van	zich ontdoen **van**	to get rid of	reflexive-verb,c1
+zich-interesseren-voor	zich interesseren **voor**	to be interested in	reflexive-verb,b1
+zich-aanmelden-voor	zich aanmelden **voor**	to sign up for, to register for	reflexive-verb,b1
+zich-schamen-voor	zich schamen **voor**	to be ashamed of	reflexive-verb,b2
+zich-inzetten-voor	zich inzetten **voor**	to work for, to commit oneself to	reflexive-verb,b2
+zich-verontschuldigen-voor	zich verontschuldigen **voor**	to apologize for	reflexive-verb,b2
+zich-bemoeien-met	zich bemoeien **met**	to interfere with, to meddle in	reflexive-verb,b2
+zich-bezighouden-met	zich bezighouden **met**	to deal with, to occupy oneself with	reflexive-verb,b2
+zich-vergissen-in	zich vergissen **in**	to be wrong about, to be mistaken about	reflexive-verb,b2
+zich-verdiepen-in	zich verdiepen **in**	to delve into, to study in depth	reflexive-verb,c1
+zich-beperken-tot	zich beperken **tot**	to limit oneself to	reflexive-verb,c1
+zich-aansluiten-bij	zich aansluiten **bij**	to join	reflexive-verb,b2
+zich-neerleggen-bij	zich neerleggen **bij**	to accept, to resign oneself to	reflexive-verb,c1
+zich-verzetten-tegen	zich verzetten **tegen**	to resist, to oppose	reflexive-verb,c1
+# Adjectives
+trots-op	trots **op**	proud of	adjective,a2
+boos-op	boos **op**	angry with (someone)	adjective,a2
+verliefd-op	verliefd **op**	in love with	adjective,a2
+jaloers-op	jaloers **op**	jealous of	adjective,b1
+gek-op	gek **op**	crazy about, very fond of	adjective,a2
+gesteld-op	gesteld **op**	fond of, keen on	adjective,c1
+gebaseerd-op	gebaseerd **op**	based on	adjective,b1
+boos-over	boos **over**	angry about (something)	adjective,b1
+tevreden-over	tevreden **over**	satisfied with, pleased about	adjective,b1
+bezorgd-over	bezorgd **over**	worried about	adjective,b1
+verbaasd-over	verbaasd **over**	surprised at	adjective,b1
+bang-voor	bang **voor**	afraid of	adjective,a2
+verantwoordelijk-voor	verantwoordelijk **voor**	responsible for	adjective,b1
+geschikt-voor	geschikt **voor**	suitable for	adjective,b1
+dankbaar-voor	dankbaar **voor**	grateful for	adjective,b1
+klaar-voor	klaar **voor**	ready for	adjective,a2
+klaar-met	klaar **met**	done with, finished with	adjective,a2
+blij-met	blij **met**	happy with, pleased with	adjective,a2
+bezig-met	bezig **met**	busy with, working on	adjective,a2
+getrouwd-met	getrouwd **met**	married to	adjective,a2
+ge-nteresseerd-in	geïnteresseerd **in**	interested in	adjective,b1
+goed-in	goed **in**	good at	adjective,a2
+teleurgesteld-in	teleurgesteld **in**	disappointed in (someone)	adjective,b1
+afhankelijk-van	afhankelijk **van**	dependent on	adjective,b1
+overtuigd-van	overtuigd **van**	convinced of	adjective,b2
+bewust-van	bewust **van**	aware of	adjective,b2
+onder-de-indruk-van	onder de indruk **van**	impressed by	adjective,b2
+benieuwd-naar	benieuwd **naar**	curious about, eager to know	adjective,b1
+gewend-aan	gewend **aan**	used to	adjective,b1
+schuldig-aan	schuldig **aan**	guilty of	adjective,b2
+bekend-om	bekend **om**	known for, famous for	adjective,b1
+opgewassen-tegen	opgewassen **tegen**	equal to, able to cope with	adjective,c1
+# Nouns
+de-behoefte-aan	de behoefte **aan**	the need for	noun,b2
+het-gebrek-aan	het gebrek **aan**	the lack of	noun,b2
+het-antwoord-op	het antwoord **op**	the answer to	noun,a2
+de-reactie-op	de reactie **op**	the reaction to, the response to	noun,b1
+de-invloed-op	de invloed **op**	the influence on	noun,b2
+de-kans-op	de kans **op**	the chance of	noun,b1
+het-recht-op	het recht **op**	the right to	noun,b2
+de-discussie-over	de discussie **over**	the discussion about	noun,b1
+de-mening-over	de mening **over**	the opinion about	noun,b1
+de-oorzaak-van	de oorzaak **van**	the cause of	noun,b1
+de-oplossing-voor	de oplossing **voor**	the solution to	noun,b1
+de-reden-voor	de reden **voor**	the reason for	noun,b1
+de-angst-voor	de angst **voor**	the fear of	noun,b1
+de-belangstelling-voor	de belangstelling **voor**	the interest in (formal)	noun,b2
+de-vraag-naar	de vraag **naar**	the demand for	noun,b2
+de-relatie-met	de relatie **met**	the relationship with	noun,b1
+de-ervaring-met	de ervaring **met**	the experience with	noun,b1
+de-interesse-in	de interesse **in**	the interest in	noun,b1
+het-vertrouwen-in	het vertrouwen **in**	trust in, confidence in	noun,b2
+de-toegang-tot	de toegang **tot**	access to	noun,b2
+de-aanleiding-tot	de aanleiding **tot**	the occasion for, the cause of	noun,c1
+het-verschil-tussen	het verschil **tussen**	the difference between	noun,b1

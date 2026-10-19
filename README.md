@@ -94,6 +94,18 @@ workflow generates clips for any words that do not have one yet and commits them
 back. Deleting `data/audio/` and re-running the workflow repopulates it from
 scratch.
 
+## The grammar course
+
+`data/exercises/grammar-{a1,a2,b1,b2,c1}.json` are grammar sets that also
+carry `lessons`, which makes each one a level of the **Grammar course**: A1 to
+C1, every topic as a lesson page (rule, tables, examples with audio, common
+mistakes, tips) followed by a practice round of that lesson's exercises. Each
+exercise names its lesson in `tags`. The format is in
+[`docs/DATA_CONTRACT.md`](docs/DATA_CONTRACT.md#grammar-lessons-optional-grammar-sets-only);
+`pnpm data:validate` checks it. Two supporting decks,
+`dutch-strong-verbs` and `dutch-fixed-prepositions`, drill verb principal
+parts and fixed prepositions as flashcards.
+
 ## How progress is stored
 
 Per-device, in `localStorage`, under `flashcards:progress:v1:<deckId>` — one

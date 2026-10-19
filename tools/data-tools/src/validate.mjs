@@ -51,7 +51,7 @@ const problems = [];
 /** @type {string[]} */
 const warnings = [];
 
-/** @param {number} invariant 1-8, or 0 for structural / field-type problems */
+/** @param {number} invariant 1-9, or 0 for structural / field-type problems */
 function fail(invariant, message) {
   problems.push({ invariant, message });
 }
@@ -385,6 +385,152 @@ const EXERCISE_ITEM_CHECKS = {
   },
 };
 
+// --- grammar lessons (invariant 9) -----------------------------------------
+
+/** Required string fields per lesson block type; `caption` is the one optional. */
+const LESSON_BLOCK_FIELDS = {
+  heading: ["text"],
+  text: ["text"],
+  rule: ["text"],
+  tip: ["text"],
+  list: ["items"],
+  table: ["headers", "rows"],
+  examples: ["items"],
+  mistake: ["wrong", "right", "why"],
+};
+
+/** Lesson text may carry card markup; unbalanced markup warns, as on cards. */
+function warnOnBadMarkup(at, value) {
+  for (const message of validateInline(value)) warn(`${at}: ${message}`);
+}
+
+/**
+ * A grammar set's lessons, and the link to its exercises: every exercise
+ * drills exactly one lesson (named in its tags), and every lesson has at
+ * least one exercise. Both directions matter — an exercise tied to no lesson
+ * is invisible from the course, and a lesson with none has no practice.
+ */
+function checkLessons(where, lessons, exercises) {
+  const lessonIds = new Map();
+  lessons.forEach((lesson, index) => {
+    const at = `${where}: lessons[${index}]${lesson?.id ? ` (${lesson.id})` : ""}`;
+    if (!nonEmptyString(lesson?.id) || !SLUG.test(lesson.id)) {
+      fail(9, `${at}: id must be a lowercase slug`);
+    } else if (lessonIds.has(lesson.id)) {
+      fail(
+        9,
+        `${at}: duplicate lesson id (first at lessons[${lessonIds.get(lesson.id)}])`,
+      );
+    } else {
+      lessonIds.set(lesson.id, index);
+    }
+    for (const field of ["title", "summary"]) {
+      if (!nonEmptyString(lesson?.[field])) {
+        fail(9, `${at}: ${field} must be a non-empty string`);
+      } else if (hasFormatting(lesson[field])) {
+        warn(`${at}: ${field} looks like inline markup; it is plain text`);
+      }
+    }
+    if (!Array.isArray(lesson?.blocks) || lesson.blocks.length === 0) {
+      fail(9, `${at}: blocks must be a non-empty array`);
+      return;
+    }
+    lesson.blocks.forEach((block, blockIndex) => {
+      const blockAt = `${at} blocks[${blockIndex}]`;
+      const fields = LESSON_BLOCK_FIELDS[block?.type];
+      if (!fields) {
+        fail(
+          9,
+          `${blockAt}: unknown block type ${JSON.stringify(block?.type)}`,
+        );
+        return;
+      }
+      if (block.type === "list") {
+        if (
+          !Array.isArray(block.items) ||
+          block.items.length === 0 ||
+          !block.items.every(nonEmptyString)
+        ) {
+          fail(9, `${blockAt}: items must be a non-empty array of strings`);
+        } else {
+          for (const item of block.items) warnOnBadMarkup(blockAt, item);
+        }
+      } else if (block.type === "table") {
+        if ("caption" in block && !nonEmptyString(block.caption)) {
+          fail(9, `${blockAt}: caption must be non-empty when present`);
+        }
+        if (
+          !Array.isArray(block.headers) ||
+          block.headers.length === 0 ||
+          !block.headers.every(nonEmptyString)
+        ) {
+          fail(9, `${blockAt}: headers must be a non-empty array of strings`);
+        } else if (!Array.isArray(block.rows) || block.rows.length === 0) {
+          fail(9, `${blockAt}: rows must be a non-empty array`);
+        } else {
+          block.rows.forEach((row, rowIndex) => {
+            if (
+              !Array.isArray(row) ||
+              row.length !== block.headers.length ||
+              !row.every((cell) => typeof cell === "string")
+            ) {
+              fail(
+                9,
+                `${blockAt}: row ${rowIndex} must be ${block.headers.length} strings, one per header`,
+              );
+            } else {
+              for (const cell of row) warnOnBadMarkup(blockAt, cell);
+            }
+          });
+        }
+      } else if (block.type === "examples") {
+        if (!Array.isArray(block.items) || block.items.length === 0) {
+          fail(9, `${blockAt}: items must be a non-empty array`);
+        } else {
+          block.items.forEach((item, itemIndex) => {
+            if (!nonEmptyString(item?.nl) || !nonEmptyString(item?.en)) {
+              fail(9, `${blockAt} item ${itemIndex}: nl and en are required`);
+            }
+            if (item && "note" in item && !nonEmptyString(item.note)) {
+              fail(
+                9,
+                `${blockAt} item ${itemIndex}: note must be non-empty when present`,
+              );
+            }
+            for (const key of ["nl", "en", "note"]) {
+              if (nonEmptyString(item?.[key]))
+                warnOnBadMarkup(blockAt, item[key]);
+            }
+          });
+        }
+      } else {
+        for (const field of fields) {
+          if (!nonEmptyString(block[field])) {
+            fail(9, `${blockAt}: ${field} must be a non-empty string`);
+          } else warnOnBadMarkup(blockAt, block[field]);
+        }
+      }
+    });
+  });
+
+  const exerciseCounts = new Map([...lessonIds.keys()].map((id) => [id, 0]));
+  exercises.forEach((item, itemIndex) => {
+    if (!Array.isArray(item?.tags)) return; // reported under invariant 8
+    const linked = item.tags.filter((tag) => lessonIds.has(tag));
+    if (linked.length !== 1) {
+      fail(
+        9,
+        `${where}: exercises[${itemIndex}]${item?.id ? ` (${item.id})` : ""} must name exactly one lesson id in its tags (names ${linked.length})`,
+      );
+      return;
+    }
+    exerciseCounts.set(linked[0], exerciseCounts.get(linked[0]) + 1);
+  });
+  for (const [id, count] of exerciseCounts) {
+    if (count === 0) fail(9, `${where}: lesson "${id}" has no exercises`);
+  }
+}
+
 /** Exercise set ids claimed by the library, for the orphan sweep. */
 const claimedExerciseFiles = new Set();
 /** Loaded sets for the summary line. */
@@ -509,6 +655,16 @@ if (library && "exerciseSets" in library) {
         }
         if (checkItem) checkItem(itemAt, item ?? {});
       });
+
+      if (loaded.json && "lessons" in loaded.json) {
+        if (set.kind !== "grammar") {
+          fail(9, `${where}: only grammar sets may carry lessons`);
+        } else if (!Array.isArray(loaded.json.lessons)) {
+          fail(9, `${where}: lessons must be an array when present`);
+        } else {
+          checkLessons(where, loaded.json.lessons, loaded.json.exercises);
+        }
+      }
     });
   }
 }
@@ -608,7 +764,7 @@ if (committedManifest !== null) {
           fail(6, `${manifestWhere}: exercise set "${set.id}" is missing`);
           continue;
         }
-        for (const key of ["exerciseCount", "revision"]) {
+        for (const key of ["exerciseCount", "lessonCount", "revision"]) {
           if (JSON.stringify(found[key]) !== JSON.stringify(set[key])) {
             fail(
               6,
@@ -766,6 +922,7 @@ const INVARIANT_TITLES = {
   6: "6. manifest.json is a fresh regeneration of the authored files",
   7: "7. audio/index.json clips exist, locales known, keys stripped",
   8: "8. Every exercise set has a valid file at exercises/<id>.json, and no file is unclaimed",
+  9: "9. Grammar lessons are well-formed, and every exercise drills exactly one lesson",
 };
 
 if (warnings.length > 0) {
@@ -821,10 +978,13 @@ for (const [id, set] of loadedExerciseSets) {
   const entry = manifest?.exerciseSets?.find(
     (candidate) => candidate.id === id,
   );
+  const lessons = Array.isArray(set.json?.lessons)
+    ? `${set.json.lessons.length} lessons, `
+    : "";
   console.log(
-    `  ${id}: ${Array.isArray(set.json?.exercises) ? set.json.exercises.length : 0} exercises, ` +
+    `  ${id}: ${lessons}${Array.isArray(set.json?.exercises) ? set.json.exercises.length : 0} exercises, ` +
       `revision ${set.revision} (${set.relative})` +
       `${entry ? ` — ${entry.kind}${entry.level ? ` ${entry.level}` : ""}` : ""}`,
   );
 }
-console.log("  all 8 contract invariants satisfied");
+console.log("  all 9 contract invariants satisfied");

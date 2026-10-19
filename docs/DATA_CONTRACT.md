@@ -26,7 +26,8 @@ data/
 ├── banks/
 │   └── <deckId>.tsv         # AUTHORED  one word per line
 ├── exercises/
-│   └── <setId>.json         # AUTHORED  one exercise set (grammar/translation/writing)
+│   └── <setId>.json         # AUTHORED  one exercise set (grammar/translation/writing),
+│                            #           grammar sets optionally with course lessons
 ├── manifest.json            # GENERATED library + banks + sets, with derived fields
 └── audio/
     ├── index.json           # GENERATED spoken-text -> clip lookup
@@ -142,11 +143,70 @@ Rules shared by every kind:
   cards support does not apply here, and markup-looking text draws a validator
   warning.
 
+### Grammar lessons (optional, grammar sets only)
+
+A grammar set file may also carry `lessons`, which turns the set into one
+level of the grammar course: the app then lists it under **Grammar course**,
+with a page per lesson, instead of as a bare quiz.
+
+```json
+{
+  "schemaVersion": 2,
+  "lessons": [
+    {
+      "id": "word-order-v2",
+      "title": "Word order: the verb in second place",
+      "summary": "Put the finite verb second in every main clause.",
+      "blocks": [
+        { "type": "rule", "text": "The finite verb is always the **second** element." },
+        {
+          "type": "examples",
+          "items": [
+            { "nl": "Morgen **ga** ik naar Utrecht.", "en": "Tomorrow I'm going to Utrecht." }
+          ]
+        }
+      ]
+    }
+  ],
+  "exercises": [
+    { "id": "morgen-ga-ik-naar-school", "tags": ["word-order-v2"], "…": "…" }
+  ]
+}
+```
+
+- `id` — lowercase slug, unique within the set. It is the lesson's URL
+  segment and the tag that links exercises to it. Like exercise ids, never
+  reassign one.
+- `title`, `summary` — plain text. `summary` is one sentence.
+- `blocks` — the lesson body, in reading order. One of:
+
+  | `type`     | Fields                                               |
+  | ---------- | ---------------------------------------------------- |
+  | `heading`  | `text`                                               |
+  | `text`     | `text`                                               |
+  | `rule`     | `text` — the core rule, shown in a highlighted box    |
+  | `tip`      | `text`                                               |
+  | `list`     | `items` (strings)                                    |
+  | `table`    | `headers` (strings), `rows` (string arrays, one cell per header), optional `caption` |
+  | `examples` | `items`: `{ "nl", "en", "note"? }` — `nl` is voiced in Dutch |
+  | `mistake`  | `wrong`, `right`, `why`                              |
+
+  Unlike exercise text, every string inside a block may carry the card markup
+  subset (`**bold**`, `*italic*`, `__underline__`), with the same rules as
+  card text: it is parsed into React elements, never HTML, and unbalanced
+  markup renders literally.
+- **Every exercise in a set with lessons names exactly one lesson id in its
+  `tags`**, and every lesson has at least one exercise. A lesson's practice
+  round is the set's exercises carrying its id, and its progress is the same
+  per-exercise progress the whole set uses — there is no separate lesson
+  progress to drift.
+
 ## Manifest `exerciseSets` (generated)
 
 When the library lists exercise sets, the manifest carries them after `decks`,
-each entry being the authored fields plus derived `exerciseCount` and
-`revision` (first 12 hex of sha256 of the set file's exact bytes — the cache
+each entry being the authored fields plus derived `exerciseCount`,
+`lessonCount` (only for a grammar set whose file carries lessons — absent
+otherwise, so a set without lessons keeps its exact bytes) and `revision` (first 12 hex of sha256 of the set file's exact bytes — the cache
 key, same mechanism as decks). When the library lists none, the key is absent
 entirely, so a library without sets produces byte-identical output to one
 predating the field.
@@ -362,3 +422,7 @@ display order; only the hash input is sorted.
    `exercises/<id>.json` (schema version, item shape per kind, unique slug ids,
    `answerIndex` in range), and every file in `exercises/` is claimed by
    exactly one entry.
+9. A set file's `lessons`, when present, belong to a grammar set; lesson ids
+   are unique slugs; every block has a known type and its required fields;
+   every table row has one cell per header; every exercise names exactly one
+   lesson id in its tags; and every lesson has at least one exercise.

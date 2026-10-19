@@ -6,8 +6,10 @@ import {
 import { z } from "zod";
 
 import { STUDY_DIRECTIONS } from "@/features/study/directions";
+import { CoursePage } from "@/routes/course-route";
 import { DeckPage } from "@/routes/deck-route";
 import { OverviewPage } from "@/routes/index-route";
+import { LessonPage } from "@/routes/lesson-route";
 import { PracticePage } from "@/routes/practice-route";
 import { NotFoundPage, RootLayout, RouteErrorPage } from "@/routes/root-layout";
 import { StudyPage } from "@/routes/study-route";
@@ -19,6 +21,8 @@ import { StudyPage } from "@/routes/study-route";
  *   /deck/$deckId        the deck's own page: word list, direction, start
  *   /deck/$deckId/study  the session
  *   /practice/$setId     a practice set: grammar, translation or writing
+ *   /grammar/$setId      a grammar course level: its lessons, in order
+ *   /grammar/$setId/$lessonId   one lesson
  *
  * The deck used to open in a drawer over the grid, which capped how much could
  * be shown and nested a scroll area inside the page's own. A real page has the
@@ -86,12 +90,36 @@ const studyRoute = createRoute({
   component: StudyPage,
 });
 
-// No search params: a practice set has no direction or tag options, so its
-// whole configuration is the set id in the path.
+/**
+ * A practice set has no direction or tag options. Its one option is `lesson`:
+ * a grammar course's lesson id, narrowing the round to that lesson's
+ * exercises. Absent, or naming no lesson of the set, means the whole set.
+ */
+const practiceSearchSchema = z.object({
+  lesson: z.string().min(1).optional().catch(undefined),
+});
+
+export type PracticeSearch = z.output<typeof practiceSearchSchema>;
+
 const practiceRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/practice/$setId",
+  validateSearch: (search: Record<string, unknown>): PracticeSearch =>
+    practiceSearchSchema.parse(search),
   component: PracticePage,
+});
+
+// The lesson id is a path param, like the deck id: it names the resource.
+const courseRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/grammar/$setId",
+  component: CoursePage,
+});
+
+const lessonRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/grammar/$setId/$lessonId",
+  component: LessonPage,
 });
 
 const routeTree = rootRoute.addChildren([
@@ -99,6 +127,8 @@ const routeTree = rootRoute.addChildren([
   deckRoute,
   studyRoute,
   practiceRoute,
+  courseRoute,
+  lessonRoute,
 ]);
 
 export const router = createRouter({

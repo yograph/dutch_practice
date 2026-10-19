@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { type ReactNode, useState } from "react";
 import { toast } from "sonner";
 
 import { Progress } from "@/components/ui/progress";
@@ -17,6 +17,13 @@ import { WritingRunner } from "./writing-runner";
 interface PracticeSessionProps {
   set: ExerciseSet;
   progress: PracticeProgress;
+  /** Replaces the end screen's "Back to overview"; see `PracticeComplete`. */
+  backAction?: ReactNode;
+  /**
+   * True when `set` is a narrowed view of a larger set (one lesson's
+   * exercises): "Reset progress" then clears only the exercises in view.
+   */
+  isPartial?: boolean;
 }
 
 /**
@@ -24,9 +31,17 @@ interface PracticeSessionProps {
  * remounts the runner, which is what "practice again" means — a fresh queue
  * ordered from the progress as it stands then.
  */
-export function PracticeSession({ set, progress }: PracticeSessionProps) {
+export function PracticeSession({
+  set,
+  progress,
+  backAction,
+  isPartial = false,
+}: PracticeSessionProps) {
   const [sessionId, setSessionId] = useState(0);
-  const resetProgress = useResetPracticeProgress(set.id);
+  const resetProgress = useResetPracticeProgress(
+    set.id,
+    isPartial ? set.exercises.map((exercise) => exercise.id) : undefined,
+  );
 
   const startNewSession = () => setSessionId((id) => id + 1);
 
@@ -51,6 +66,7 @@ export function PracticeSession({ set, progress }: PracticeSessionProps) {
       isResetting={resetProgress.isPending}
       onPracticeAgain={startNewSession}
       onResetProgress={handleResetProgress}
+      backAction={backAction}
     />
   );
 }
@@ -73,6 +89,7 @@ function orderQueue(set: ExerciseSet, progress: PracticeProgress): number[] {
 interface PracticeRunnerProps {
   set: ExerciseSet;
   progress: PracticeProgress;
+  backAction: ReactNode;
   isResetting: boolean;
   onPracticeAgain: () => void;
   onResetProgress: () => void;
@@ -81,6 +98,7 @@ interface PracticeRunnerProps {
 function PracticeRunner({
   set,
   progress,
+  backAction,
   isResetting,
   onPracticeAgain,
   onResetProgress,
@@ -101,6 +119,7 @@ function PracticeRunner({
         isResetting={isResetting}
         onPracticeAgain={onPracticeAgain}
         onResetProgress={onResetProgress}
+        backAction={backAction}
       />
     );
   }
